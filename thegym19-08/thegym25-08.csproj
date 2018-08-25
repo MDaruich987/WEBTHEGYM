@@ -133,6 +133,7 @@
     <Compile Include="ConsultarPlanes.aspx.designer.cs">
       <DependentUpon>ConsultarPlanes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\Class1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
