@@ -105,6 +105,7 @@
     <Content Include="WebInicioempleado.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinessLayer\TheGym.cs" />
     <Compile Include="ConsultaActividades.aspx.cs">
       <DependentUpon>ConsultaActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,7 +134,7 @@
     <Compile Include="ConsultarPlanes.aspx.designer.cs">
       <DependentUpon>ConsultarPlanes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DataLayer\Class1.cs" />
+    <Compile Include="DataLayer\DataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

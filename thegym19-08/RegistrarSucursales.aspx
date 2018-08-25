@@ -73,7 +73,8 @@
                                  <br />
                              </td>
                              <td colspan="2">
-                                 <asp:TextBox ID="tbnombre" runat="server" Height="32px" Width="298px"></asp:TextBox>
+                                 <asp:TextBox ID="tbnombre" runat="server" Height="32px" Width="298px" MaxLength="50"></asp:TextBox>
+                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="*" ForeColor="Red" Height="40px" ControlToValidate="tbnombre" ValidationExpression="^[a-zA-Z]*$"></asp:RegularExpressionValidator>
                                  <br />
                                  <br />
                              </td>
@@ -85,7 +86,7 @@
                                  <br />
                                  &nbsp;</td>
                              <td>
-                                 <asp:TextBox ID="tbdireccion" runat="server" Height="31px" Width="296px"></asp:TextBox>
+                                 <asp:TextBox ID="tbdireccion" runat="server" Height="31px" Width="296px" MaxLength="50"></asp:TextBox>
                                  <br />
                                  <br />
                              </td>
@@ -99,7 +100,8 @@
                                  <br />
                              </td>
                              <td>
-                                 <asp:TextBox ID="tbtelefono" runat="server" Height="35px" Width="297px"></asp:TextBox>
+                                 <asp:TextBox ID="tbtelefono" runat="server" Height="35px" Width="297px" MaxLength="10"></asp:TextBox>
+                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="*" Height="40px" ForeColor="Red" ControlToValidate="tbtelefono" ValidationExpression="^\+$" ValidationGroup="check"></asp:RegularExpressionValidator>
                                  <br />
                                  <br />
                              </td>
@@ -128,7 +130,7 @@
                          <tr>
                              <td class="auto-style1">&nbsp;</td>
                              <td>
-                                 <asp:Button ID="btnregistrar" runat="server" Height="29px" Text="Registrar" Width="201px" />
+                                 <asp:Button ID="btnregistrar" runat="server" Height="29px" Text="Registrar" Width="201px" OnClick="btnregistrar_Click" />
                              </td>
                              <td>&nbsp;</td>
                              <td>&nbsp;</td>

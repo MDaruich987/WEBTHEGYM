@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using thegym19_08.BusinessLayer;
 
 namespace thegym19_08
 {
@@ -12,6 +13,31 @@ namespace thegym19_08
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnregistrar_Click(object sender, EventArgs e)
+        {
+            //string Nombre;
+            //string Direccion;
+            //int Telefono;
+
+            //Nombre = tbnombre.Text;
+            //Direccion = tbdireccion.Text;
+            //Telefono = Convert.ToInt16(tbtelefono.Text);
+
+            TheGym k = new TheGym
+            {
+                NombreSucursal = tbnombre.Text,
+                DireccionSucursal = tbdireccion.Text,
+                TelefonoSucursal = Convert.ToInt64(tbtelefono.Text)
+            };
+
+            k.AddNewSucursal();
+
+
+            tbnombre.Text = string.Empty;
+            tbdireccion.Text = string.Empty;
+            tbtelefono.Text = string.Empty;
         }
     }
 }
