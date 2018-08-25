@@ -16,7 +16,7 @@ namespace thegym19_08.BusinessLayer
         public long TelefonoSucursal;
 
         public string NombreClienteBusc;
-        public string DNIClienteBusc;
+        public string DNIClienteBusc="";
 
         public void AddNewSucursal()
         {

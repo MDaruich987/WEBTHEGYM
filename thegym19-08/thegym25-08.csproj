@@ -206,6 +206,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="css\" />
+    <Folder Include="ImagenesSistema\" />
     <Folder Include="images\" />
     <Folder Include="js\" />
     <Folder Include="Models\" />
