@@ -88,7 +88,7 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style24">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style28">
                                                      <asp:Label ID="lblapellido0" runat="server" Text="Apellido:"></asp:Label>
@@ -99,7 +99,7 @@
                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="tbapellido0" ErrorMessage="*Ingrese solo letras" ForeColor="Red" ValidationExpression="^[A-Za-z]*$"> </asp:RegularExpressionValidator>
                                                  </td>
                                                  <td class="auto-style18">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbapellido0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbapellido0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                              </tr>
                                              <tr>
@@ -113,14 +113,14 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style22">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style29">
                                                      <asp:Label ID="lbltelefono1" runat="server" Text="Teléfono:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style15">
                                                      <asp:TextBox ID="tbtelefono1" runat="server" TabIndex="6" TextMode="Number" Width="123px"></asp:TextBox>
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style18" rowspan="3">
                                                      <asp:Calendar ID="clrfechanacimiento0" runat="server" Height="16px" OnSelectionChanged="clrfechanacimiento0_SelectionChanged1" TabIndex="9" Width="16px"></asp:Calendar>
@@ -141,7 +141,7 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style24">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbemail1" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbemail1" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style28">
                                              <br />
@@ -154,7 +154,7 @@
                                              <br />
                                              <br />
                                                      <asp:TextBox ID="tbfechanacimiento1" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
-                                                     <asp:Button ID="btcalendar0" runat="server" CausesValidation="False" Height="27px" OnClick="btcalendar_Click" Text="&lt;" Width="19px" />
+                                                     <asp:Button ID="btcalendar0" runat="server" CausesValidation="False" Height="23px" OnClick="btcalendar_Click" Text="&lt;" Width="19px" />
                                              <br />
                                              <br />
                                                  </td>
@@ -178,7 +178,6 @@
                                              <br />
                                              <br />
                                              <br />
-                                                     <asp:Label ID="LblReg" runat="server"></asp:Label>
                                                  </td>
                                                  <td class="auto-style5">
                                              <br />
@@ -192,8 +191,9 @@
                                                  </td>
                                              </tr>
                                              <tr>
-                                                 <td class="auto-style33"></td>
-                                                 <td class="auto-style16">&nbsp;</td>
+                                                 <td class="auto-style33" colspan="2">
+                                                     <asp:Label ID="LblReg" runat="server"></asp:Label>
+                                                 </td>
                                                  <td class="auto-style17">&nbsp;&nbsp;&nbsp;
                                              <br />
                                                      <asp:Button ID="btnaceptar0" runat="server" Height="32px" OnClick="btnaceptar0_Click" TabIndex="10" Text="Aceptar" Width="126px" />
