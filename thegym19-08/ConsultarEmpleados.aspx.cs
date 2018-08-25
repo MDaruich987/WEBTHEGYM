@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace thegym19_08
 {
-    public partial class Registrocliente : System.Web.UI.Page
+    public partial class ConsultarEmpleados : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -66,8 +66,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsultaActividades.aspx" />
+    <Content Include="Consultarclientes.aspx" />
+    <Content Include="ConsultarEmpleados.aspx" />
+    <Content Include="ConsultarPlanes.aspx" />
     <Content Include="packages.config" />
     <Content Include="Inicioempleado.Master" />
+    <Content Include="InicioGerente.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -87,14 +92,47 @@
     <Content Include="Original PSD Information.txt" />
     <Content Include="pricing.html" />
     <Content Include="register.html" />
-    <Content Include="Registrocliente.aspx" />
+    <Content Include="RegistrarActividades.aspx" />
+    <Content Include="Registrarclientes.aspx" />
+    <Content Include="RegistrarEmpleados.aspx" />
+    <Content Include="RegistrarPlanes.aspx" />
+    <Content Include="RegistrarSucursales.aspx" />
     <Content Include="single_class.html" />
     <Content Include="trainers.html" />
     <Content Include="w3layouts-license.txt" />
     <Content Include="Web.config" />
+    <Content Include="WebGerenteInicio.aspx" />
     <Content Include="WebInicioempleado.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultaActividades.aspx.cs">
+      <DependentUpon>ConsultaActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaActividades.aspx.designer.cs">
+      <DependentUpon>ConsultaActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultarclientes.aspx.cs">
+      <DependentUpon>Consultarclientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultarclientes.aspx.designer.cs">
+      <DependentUpon>Consultarclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarEmpleados.aspx.cs">
+      <DependentUpon>ConsultarEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultarEmpleados.aspx.designer.cs">
+      <DependentUpon>ConsultarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarPlanes.aspx.cs">
+      <DependentUpon>ConsultarPlanes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultarPlanes.aspx.designer.cs">
+      <DependentUpon>ConsultarPlanes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -105,13 +143,55 @@
     <Compile Include="Inicioempleado.Master.designer.cs">
       <DependentUpon>Inicioempleado.Master</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrocliente.aspx.cs">
-      <DependentUpon>Registrocliente.aspx</DependentUpon>
+    <Compile Include="InicioGerente.Master.cs">
+      <DependentUpon>InicioGerente.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registrocliente.aspx.designer.cs">
-      <DependentUpon>Registrocliente.aspx</DependentUpon>
+    <Compile Include="InicioGerente.Master.designer.cs">
+      <DependentUpon>InicioGerente.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarActividades.aspx.cs">
+      <DependentUpon>RegistrarActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarActividades.aspx.designer.cs">
+      <DependentUpon>RegistrarActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrarclientes.aspx.cs">
+      <DependentUpon>Registrarclientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarclientes.aspx.designer.cs">
+      <DependentUpon>Registrarclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEmpleados.aspx.cs">
+      <DependentUpon>RegistrarEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarEmpleados.aspx.designer.cs">
+      <DependentUpon>RegistrarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarPlanes.aspx.cs">
+      <DependentUpon>RegistrarPlanes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPlanes.aspx.designer.cs">
+      <DependentUpon>RegistrarPlanes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarSucursales.aspx.cs">
+      <DependentUpon>RegistrarSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarSucursales.aspx.designer.cs">
+      <DependentUpon>RegistrarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGerenteInicio.aspx.cs">
+      <DependentUpon>WebGerenteInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGerenteInicio.aspx.designer.cs">
+      <DependentUpon>WebGerenteInicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebInicioempleado.aspx.cs">
       <DependentUpon>WebInicioempleado.aspx</DependentUpon>
@@ -125,7 +205,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="css\" />
     <Folder Include="images\" />
-    <Folder Include="Imágenes\" />
     <Folder Include="js\" />
     <Folder Include="Models\" />
   </ItemGroup>

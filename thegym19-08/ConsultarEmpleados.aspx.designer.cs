@@ -10,70 +10,52 @@
 namespace thegym19_08 {
     
     
-    public partial class Registrocliente {
+    public partial class ConsultarEmpleados {
         
         /// <summary>
-        /// Control form1.
+        /// Control Panel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Control btnnuevocliente.
+        /// Control lblbuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnnuevocliente;
+        protected global::System.Web.UI.WebControls.Label lblbuscar;
         
         /// <summary>
-        /// Control lbllinea.
+        /// Control tbbuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbllinea;
+        protected global::System.Web.UI.WebControls.TextBox tbbuscar;
         
         /// <summary>
-        /// Control btnconsultarcliente.
+        /// Control btnbuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnconsultarcliente;
+        protected global::System.Web.UI.WebControls.Button btnbuscar;
         
         /// <summary>
-        /// Control smanager1.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager smanager1;
-        
-        /// <summary>
-        /// Control UpdatePanel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// Control panelregistrarcliente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelregistrarcliente;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// Control lblnombre.
@@ -148,15 +130,6 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.TextBox tbfechanacimiento;
         
         /// <summary>
-        /// Control clrfechanacimiento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar clrfechanacimiento;
-        
-        /// <summary>
         /// Control lbldomicilio.
         /// </summary>
         /// <remarks>
@@ -220,30 +193,48 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label lblfotografia;
         
         /// <summary>
-        /// Control FileUpload1.
+        /// Control imgfotografia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.Image imgfotografia;
         
         /// <summary>
-        /// Control btnaceptar0.
+        /// Control lblplancontratado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaceptar0;
+        protected global::System.Web.UI.WebControls.Label lblplancontratado;
         
         /// <summary>
-        /// Control btncancelar.
+        /// Control tbplancontratado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncancelar;
+        protected global::System.Web.UI.WebControls.TextBox tbplancontratado;
+        
+        /// <summary>
+        /// Control btneditar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btneditar;
+        
+        /// <summary>
+        /// Control btninhabilitar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btninhabilitar;
     }
 }
