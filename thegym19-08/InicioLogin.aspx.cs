@@ -14,7 +14,7 @@ namespace thegym19_08
         SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void btnlogeo_Click(object sender, EventArgs e)
@@ -53,6 +53,7 @@ namespace thegym19_08
                             //lblerrorlogin.Text = "admin";
                             //enviamos como parametro al form de inicio del admin su nombre y apellido consultado en el datatable
                             Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][0].ToString();
+                            Session["inicio"] = usuario;
                             Response.Redirect("WebInicioempleado.aspx?parametro=" + Label3.Text);
 
                         }

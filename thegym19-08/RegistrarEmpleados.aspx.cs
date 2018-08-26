@@ -64,7 +64,7 @@ namespace thegym19_08
 
         protected void btnaceptar0_Click(object sender, EventArgs e)
         {
-
+            /*
             TheGym k = new TheGym
             {
                 NombreEmpladoIns = tbnombre0.Text,
@@ -95,7 +95,49 @@ namespace thegym19_08
 
             LblReg.Text = ("Empleado registrado con éxito.");
         }
+        */
 
+           // -------------------METODO MICA
+
+            if (conex.State != ConnectionState.Open)
+            {
+                //abrimos la conexion si no esta abierta
+                conex.Open();
+            }
+            try
+            {
+
+                //creamos un comando y le pasamos el procedimiento y la conexion
+                SqlCommand cmd = new SqlCommand("insert into empleado (Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio, DNI, Fecha_cont, Titulo, Experiencia, FK_cargo) values(@Nombre, @Apellido, @Fecha_nac, @Email, @Telefono, @Domicilio, @DNI, @Fecha_cont, @Titulo, @Experiencia, @FK_cargo)", conex);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@Nombre", tbnombre0.Text);
+                cmd.Parameters.AddWithValue("@Apellido", tbapellido0.Text);
+                cmd.Parameters.AddWithValue("@Fecha_nac", Convert.ToDateTime(tbfechanacimiento2.Text));
+                cmd.Parameters.AddWithValue("@Email", tbemail1.Text);
+                cmd.Parameters.AddWithValue("@Telefono", Convert.ToInt32(tbtelefono1.Text));
+                cmd.Parameters.AddWithValue("@Domicilio", tbdireccion.Text);
+                cmd.Parameters.AddWithValue("@DNI", Convert.ToInt32(tbdni0.Text));
+                cmd.Parameters.AddWithValue("@Fecha_cont", Convert.ToDateTime(tbfechacontratacion0.Text));
+                cmd.Parameters.AddWithValue("@Titulo", tbtitulo.Text);
+                cmd.Parameters.AddWithValue("@Experiencia", tbexperiencia.Text);
+                cmd.Parameters.AddWithValue("@FK_cargo", ddlcargo.SelectedItem.Value);
+                //cmd.Parameters.AddWithValue("@Cod", SqlDbType.Int).Value = GridPersonal.DataKeys[e.RowIndex].Values["Cod"].ToString();
+                cmd.ExecuteNonQuery();
+                LblReg.Text = "Empleado registrado Exitosamente.";
+                conex.Close();
+            }
+            catch (Exception)
+            {
+
+                //lbltitabajoeventonuevo.Text = ":(";
+                if (conex.State == ConnectionState.Open)
+                {
+                    conex.Close();
+                }
+            }
+
+            //------------------FINMETODOMICA
+        }
         protected void tbfechanacimiento0_TextChanged(object sender, EventArgs e)
         {
 

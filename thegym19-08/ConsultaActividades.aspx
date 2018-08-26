@@ -26,7 +26,9 @@
 					 <div class="view view-fifth">
 				  	   <img src="images/pic3.jpg" class="img-responsive" alt=""/>
 					      <div class="mask">
-	                       	<div class="info">Registrar</div>
+	                       	<div class="info">
+                                <asp:Button ID="btnregistrar" runat="server" BackColor="#00BFF0" BorderStyle="None" Height="28px" OnClick="btnregistrar_Click" Text="Registrar" />
+                              </div>
 			              </div>
 	                  </div>
 			     </a></div>
@@ -41,7 +43,9 @@
 					 <div class="view view-fifth">
 				  	   <img src="images/pic2.jpg" class="img-responsive"  alt=""/>
 					      <div class="mask">
-	                       	<div class="info">Consultar</div>
+	                       	<div class="info"><a href="RegistrarActividades.aspx">
+	 	    		            <asp:Button ID="btnconsultar" runat="server" BackColor="#00BFF0" BorderStyle="None" ForeColor="White" Height="28px" Text="Consultar" />
+			     </a></div>
 			              </div>
 	                  </div>
 			     </a></div>
@@ -85,7 +89,7 @@
                                          <td>
                                              <br />
                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                             <asp:Button ID="btnbuscar" runat="server" Height="24px" Text="Buscar" Width="144px" />
+                                             <asp:Button ID="btnbuscar" runat="server" Height="24px" Text="Buscar" Width="144px" OnClick="btnbuscar_Click" />
                                          </td>
                                      </tr>
                                      <tr>
@@ -121,3 +125,9 @@
 
                  
 </asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
+    <a href="#menu" class="class scroll">
+    <asp:Label ID="lblmensajebienvenida" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+    </a>
+</asp:Content>
+

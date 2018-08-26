@@ -17,6 +17,7 @@ namespace thegym19_08
             {
                 clrfechanacimiento0.Visible = false;
             }
+
         }
 
         protected void btnaceptar0_Click(object sender, EventArgs e)

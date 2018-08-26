@@ -210,7 +210,7 @@
                                          <tr>
                                              <td class="auto-style33"></td>
                                              <td class="auto-style4">
-                                                 <asp:Button ID="btnaceptar1" runat="server" Height="32px" TabIndex="10" Text="Aceptar" Width="126px" />
+                                                 <asp:Button ID="btnaceptar1" runat="server" Height="32px" TabIndex="10" Text="Aceptar" Width="126px" OnClick="btnaceptar1_Click1" />
                                              </td>
                                              <td class="auto-style5">&nbsp;&nbsp;&nbsp;
                                                  <br />
@@ -235,3 +235,9 @@
 
 
 </asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
+		     <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
+    <asp:Label ID="lblmensajebienvenida" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+    </a></a>
+</asp:Content>
+

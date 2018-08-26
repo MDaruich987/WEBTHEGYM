@@ -11,15 +11,29 @@ namespace thegym19_08
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                            if (Request.Params["parametro"]!=null)
+            //si efectivamente se ha iniciado sesión
+            if (Session["inicio"] != null)
+            {
+                //declaramos una variale sesion para mantener el dato del usuario
+                string usuario = (string)Session["inicio"];
+                if (Request.Params["parametro"] != null)
                 {
                     //para que el label capte el nombre y apellido enviado desde el form de acceso
-                    lblmensajebienvenida.Text = "Bienvenido "+Request.Params["parametro"];
+                    lblmensajebienvenida.Text = "Bienvenido " + Request.Params["parametro"];
                 }
                 else
                 {
+                    //si no, muestra un mensaje de bienvenida solamente
                     lblmensajebienvenida.Text = "Bienvenido";
                 }
+
+            }
+            else
+            {
+                //si no se ha iniciado sesion me manda al inicio
+                //Response.Redirect("InicioLogin.aspx");
+            }
+
 
             }
 

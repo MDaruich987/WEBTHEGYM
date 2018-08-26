@@ -176,7 +176,7 @@
                                          <td>
                                              &nbsp;</td>
                                          <td>
-                                             <asp:Button ID="BTNRegistrarPP1" runat="server" Text="Registrar" />
+                                             <asp:Button ID="BTNRegistrarPP1" runat="server" Text="Registrar" OnClick="BTNRegistrarPP1_Click" />
                                          </td>
                                          <td>&nbsp;</td>
                                          <td>
@@ -200,3 +200,9 @@
 
 
 </asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
+		     <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
+    <asp:Label ID="lblmensajebienvenida" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+    </a></a>
+</asp:Content>
+

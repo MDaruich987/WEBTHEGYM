@@ -11,6 +11,17 @@ namespace thegym19_08
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+        }
+
+        protected void btnbuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnregistrar_Click(object sender, EventArgs e)
+        {
 
         }
     }
