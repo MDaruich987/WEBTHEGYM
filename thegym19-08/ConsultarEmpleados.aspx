@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<%--    <form id="form1" runat="server">--%>
+<%--    </form>--%>
 
 <%--    imagenes botones--%>
     <br />
@@ -72,13 +72,15 @@
                                              <asp:Label ID="lblbuscar" runat="server" Text="Buscar:"></asp:Label>
                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                              <asp:TextBox ID="tbbuscar" runat="server" Width="363px"></asp:TextBox>
+                                             &nbsp;&nbsp;
+                                             <asp:CheckBox ID="CkbDNI" runat="server" Text="DNI" />
                                          </td>
                                      </tr>
                                      <tr>
                                          <td>
                                              <br />
                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                             <asp:Button ID="btnbuscar" runat="server" Height="24px" Text="Buscar" Width="144px" />
+                                             <asp:Button ID="btnbuscar" runat="server" Height="24px" Text="Buscar" Width="144px" OnClick="btnbuscar_Click" />
                                          </td>
                                      </tr>
                                      <tr>
@@ -90,7 +92,7 @@
                                                  <tr>
                                                      <td class="auto-style4">&nbsp;</td>
                                                      <td>
-                                                         <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" Height="235px" Width="469px" style="margin-left: 196px">
+                                                         <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" Height="235px" Width="469px" style="margin-left: 196px" EmptyDataText="No se encontraron resultados" ShowHeaderWhenEmpty="True">
                                                          </asp:GridView>
                                                      </td>
                                                      <td>&nbsp;</td>
@@ -99,7 +101,9 @@
                                          </td>
                                      </tr>
                                      <tr>
-                                         <td>&nbsp;</td>
+                                         <td>
+                                             <asp:Label ID="lblerrorbusqueda" runat="server"></asp:Label>
+                                         </td>
                                      </tr>
                                      <tr>
                                          <td>

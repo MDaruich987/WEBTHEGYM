@@ -12,6 +12,7 @@ namespace thegym19_08
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
     }
 }
