@@ -112,6 +112,7 @@
                                                      <asp:Label ID="lblapellido0" runat="server" Text="Apellido:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style14">
+                                                     <br />
                                                      <asp:TextBox ID="tbapellido0" runat="server" TabIndex="2" Width="144px"></asp:TextBox>
                                                      <br />
                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="tbapellido0" ErrorMessage="*Ingrese solo letras" ForeColor="Red" ValidationExpression="^[A-Za-z]*$"> </asp:RegularExpressionValidator>
@@ -134,16 +135,16 @@
                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style29">
+                                                     <br />
                                                      <asp:Label ID="lbltelefono1" runat="server" Text="Teléfono:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style15">
+                                                     <br />
                                                      <asp:TextBox ID="tbtelefono1" runat="server" TabIndex="6" TextMode="Number" Width="123px"></asp:TextBox>
                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style18" rowspan="8">
-                                                     <asp:Calendar ID="clrfechanacimiento0" runat="server" Height="16px" OnSelectionChanged="clrfechanacimiento0_SelectionChanged1" TabIndex="9" Width="16px" SelectedDate="1997-03-12"></asp:Calendar>
-                                                     <asp:Calendar ID="clrfechacontratacion" runat="server" Height="16px" OnSelectionChanged="clrfechacontratacion_SelectionChanged" TabIndex="9" Width="16px"></asp:Calendar>
-                                                 </td>
+                                                     &nbsp;</td>
                                              </tr>
                                              <tr>
                                                  <td class="auto-style31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;<asp:Label ID="lblemail1" runat="server" Text="E-mail:"></asp:Label>
@@ -197,8 +198,8 @@
                                                  </td>
                                                  <td class="auto-style8">
                                                      <br />
-                                                     <asp:TextBox ID="tbfechanacimiento2" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
-                                                     <asp:Button ID="btcalendar1" runat="server" CausesValidation="False" Height="27px" OnClick="btcalendar_Click" Text="&lt;" Width="19px" />
+                                                     <asp:TextBox ID="tbfechanacimiento2" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" TabIndex="4" Width="130px"  TextMode="Date"></asp:TextBox>
+                                                     
                                              <br />
                                              <br />
                                                  </td>
@@ -217,8 +218,7 @@
                                                      <asp:Label ID="lblfechanacimiento3" runat="server" Text="Fecha de Contratación:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style8">
-                                                     <asp:TextBox ID="tbfechacontratacion0" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
-                                                     <asp:Button ID="btmfechacontratacion" runat="server" CausesValidation="False" Height="27px" OnClick="btmfechacontratacion_Click" Text="&lt;" Width="19px" />
+                                                     <asp:TextBox ID="tbfechacontratacion0" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" TabIndex="4" Width="130px" TextMode="Date"></asp:TextBox>
                                                  </td>
                                              </tr>
                                              <tr>

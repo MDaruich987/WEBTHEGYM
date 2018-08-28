@@ -27,7 +27,7 @@ namespace thegym19_08
 
         }
 
-        protected void btnbuscar_Click(object sender, EventArgs e)
+        protected void btnbuscaractividad_Click(object sender, EventArgs e)
         {
             if (tbbuscar.Text == string.Empty)
             {
