@@ -8,7 +8,7 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<%--    imagenes botones--%>
+    <%--    imagenes botones--%>
     <br />
     <br />
     		    <div class="row content-middle">
@@ -79,13 +79,14 @@
                                              <asp:Label ID="lblbuscar" runat="server" Text="Buscar:"></asp:Label>
                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                              <asp:TextBox ID="tbbuscar" runat="server" Width="363px"></asp:TextBox>
+                                             <asp:Label ID="LblError" runat="server" Font-Bold="True" ForeColor="Red" Height="30px" Text="Ingrese el nombre de una actividad" Visible="False"></asp:Label>
                                          </td>
                                      </tr>
                                      <tr>
                                          <td>
                                              <br />
                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                             <asp:Button ID="btnbuscar" runat="server" Height="24px" Text="Buscar" Width="144px" />
+                                             <asp:Button ID="btnbuscar" runat="server" Height="24px" Text="Buscar" Width="144px" OnClick="btnbuscar_Click" />
                                          </td>
                                      </tr>
                                      <tr>
@@ -97,7 +98,9 @@
                                                  <tr>
                                                      <td class="auto-style4">&nbsp;</td>
                                                      <td>
-                                                         <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" Height="235px" Width="469px" style="margin-left: 196px">
+                                                         <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" Height="235px" Width="600px" style="margin-left: 196px" AutoGenerateEditButton="True">
+                                                             <EditRowStyle Width="150px" />
+                                                             <RowStyle Width="150px" />
                                                          </asp:GridView>
                                                      </td>
                                                      <td>&nbsp;</td>
