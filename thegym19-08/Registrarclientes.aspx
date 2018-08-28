@@ -123,8 +123,7 @@
                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style18" rowspan="3">
-                                                     <asp:Calendar ID="clrfechanacimiento0" runat="server" Height="16px" OnSelectionChanged="clrfechanacimiento0_SelectionChanged1" TabIndex="9" Width="16px"></asp:Calendar>
-                                                 </td>
+                                                     &nbsp;</td>
                                              </tr>
                                              <tr>
                                                  <td class="auto-style31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;<asp:Label ID="lblemail1" runat="server" Text="E-mail:"></asp:Label>
@@ -153,8 +152,7 @@
                                                  <td class="auto-style14">
                                              <br />
                                              <br />
-                                                     <asp:TextBox ID="tbfechanacimiento1" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
-                                                     <asp:Button ID="btcalendar0" runat="server" CausesValidation="False" Height="23px" OnClick="btcalendar_Click" Text="&lt;" Width="19px" />
+                                                     <asp:TextBox ID="tbfechanacimiento1" runat="server" CssClass="form-control-static" TabIndex="4" Width="119px" TextMode="Date"></asp:TextBox>
                                              <br />
                                              <br />
                                                  </td>
@@ -168,6 +166,7 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style5">
+                                                     <br />
                                              <br />
                                                      <asp:FileUpload ID="FileUpload2" runat="server" Height="22px" Width="161px" />
                                              <br />
@@ -181,11 +180,13 @@
                                                  </td>
                                                  <td class="auto-style5">
                                              <br />
+                                                     <asp:Label ID="LblDomicilio" runat="server" Text="Domicilio:"></asp:Label>
                                              <br />
                                              <br />
                                              <br />
                                                  </td>
                                                  <td class="auto-style8">
+                                                     <asp:TextBox ID="tbdomicilio" runat="server"></asp:TextBox>
                                              <br />
                                              <br />
                                                  </td>
@@ -223,7 +224,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
-		     <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
+             <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
     <asp:Label ID="lblmensajebienvenida" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
     </a></a>
 </asp:Content>
