@@ -67,13 +67,13 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblError;
         
         /// <summary>
-        /// Control btnbuscar.
+        /// Control btnbuscaractividad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnbuscar;
+        protected global::System.Web.UI.WebControls.Button btnbuscaractividad;
         
         /// <summary>
         /// Control GridView1.

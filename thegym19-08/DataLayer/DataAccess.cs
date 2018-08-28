@@ -10,6 +10,9 @@ namespace thegym19_08.DataLayer
 {
     public class DataAccess
     {
+
+        static private string Var;
+
         public static string ConnectionString
         {
             get
@@ -47,7 +50,7 @@ namespace thegym19_08.DataLayer
 
             catch (Exception ex)
             {
-
+                Var = ex.Message.ToString();
             }
 
             finally

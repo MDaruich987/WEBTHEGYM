@@ -175,24 +175,6 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
-        /// Control clrfechanacimiento0.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar clrfechanacimiento0;
-        
-        /// <summary>
-        /// Control clrfechacontratacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar clrfechacontratacion;
-        
-        /// <summary>
         /// Control lblemail1.
         /// </summary>
         /// <remarks>
@@ -292,15 +274,6 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.TextBox tbfechanacimiento2;
         
         /// <summary>
-        /// Control btcalendar1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btcalendar1;
-        
-        /// <summary>
         /// Control lblcargo.
         /// </summary>
         /// <remarks>
@@ -335,15 +308,6 @@ namespace thegym19_08 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbfechacontratacion0;
-        
-        /// <summary>
-        /// Control btmfechacontratacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btmfechacontratacion;
         
         /// <summary>
         /// Control lbldatosacademicos.

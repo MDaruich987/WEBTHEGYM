@@ -26,12 +26,12 @@ namespace thegym19_08.BusinessLayer
         //variables para realizar registro de empleado
         public string NombreEmpladoIns;
         public string ApellidoEmpleadoIns;
-        public string FechaNacEmpleadoIns;
+        public DateTime FechaNacEmpleadoIns;
         public string EmailEmpleadoIns;
         public long TelefEmpleadoIns;
         public string DomicilioEmpleadoIns;
         public int DNIEmpleadoIns;
-        public string FechaContEmpleadoIns;
+        public DateTime FechaContEmpleadoIns;
         public string TitulEmpleadoIns;
         public string ExperEmpleadoIns;
         public int CargoEmpleadoIns;
@@ -144,6 +144,14 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetActividad", parameters);
             return dt;
         }
+
+        public DataTable GetCargos()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllCargos",parameters);
+            return dt;
+        }
+
 
         //Obtener todos los profesores
         public DataTable GetProfesores()
