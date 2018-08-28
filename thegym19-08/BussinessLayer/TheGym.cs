@@ -29,6 +29,7 @@ namespace thegym19_08.BusinessLayer
         public DateTime FechaNacEmpleadoIns;
         public string EmailEmpleadoIns;
         public long TelefEmpleadoIns;
+        public string FotoEmpleadoIns;
         public string DomicilioEmpleadoIns;
         public int DNIEmpleadoIns;
         public DateTime FechaContEmpleadoIns;
@@ -87,7 +88,7 @@ namespace thegym19_08.BusinessLayer
 
         public void AddNewEmpleado()
         {
-            SqlParameter[] parameters = new SqlParameter[11];
+            SqlParameter[] parameters = new SqlParameter[12];
             parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombreEmpladoIns, SqlDbType.NVarChar, 50);
             parameters[1] = DataLayer.DataAccess.AddParameter("@Apellido", ApellidoEmpleadoIns, SqlDbType.NVarChar, 50);
             parameters[2] = DataLayer.DataAccess.AddParameter("@Fecha_nac", FechaNacEmpleadoIns, SqlDbType.Date, 20);
@@ -99,6 +100,7 @@ namespace thegym19_08.BusinessLayer
             parameters[8] = DataLayer.DataAccess.AddParameter("@Titulo", TitulEmpleadoIns, SqlDbType.NVarChar, 50);
             parameters[9] = DataLayer.DataAccess.AddParameter("@Experiencia", ExperEmpleadoIns, SqlDbType.NVarChar, 1000);
             parameters[10] = DataLayer.DataAccess.AddParameter("@FK_cargo", CargoEmpleadoIns, SqlDbType.Int, 10);
+            parameters[11] = DataLayer.DataAccess.AddParameter("@Foto", FotoEmpleadoIns, SqlDbType.NVarChar, 500);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddEmpleado", parameters);
         }
 
