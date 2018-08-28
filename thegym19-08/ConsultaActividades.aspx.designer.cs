@@ -58,6 +58,15 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.TextBox tbbuscar;
         
         /// <summary>
+        /// Control LblError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblError;
+        
+        /// <summary>
         /// Control btnbuscar.
         /// </summary>
         /// <remarks>

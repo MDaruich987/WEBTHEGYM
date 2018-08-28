@@ -128,7 +128,53 @@
                                                  <tr>
                                                      <td class="auto-style4">&nbsp;</td>
                                                      <td>
-                                                         <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" Height="235px" Width="469px">
+                                                         <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" Height="182px" Width="469px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Font-Bold="False" Font-Underline="False">
+                                                             <AlternatingRowStyle BackColor="White" Font-Underline="False" ForeColor="#284775" />
+                                                             <Columns>
+                                                                 
+                                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-Width="100"  >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="Apellido" HeaderText="Apellido" ItemStyle-Width="100" >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="DNI" HeaderText="DNI" ItemStyle-Width="100" >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="Fecha_nac" HeaderText="Fecha Nacimiento" ItemStyle-Width="100" >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="Email" HeaderText="Emai" ItemStyle-Width="100" >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="Telefono" HeaderText="Telefono" ItemStyle-Width="100" >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="Domicilio" HeaderText="Domicilio" ItemStyle-Width="100" ConvertEmptyStringToNull="true" >
+                                                                 <ItemStyle Width="100px" />
+                                                                 </asp:BoundField>
+                                                                 <asp:BoundField DataField="Foto" HeaderText="Foto" ItemStyle-Width="150" >
+                                                                 <ItemStyle Width="150px" />
+                                                                 </asp:BoundField>
+                                                                 <%--<asp:TemplateField>
+                                                                     <ItemTemplate>
+                                                                         <asp:Button ID="Button1" runat="server"  Text="Seleccionar" OnClick="GridView1_SelectedIndexChanged" />
+                                                                        
+                                                                     </ItemTemplate>
+                                                                 </asp:TemplateField>--%>
+                                                                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+                                                             </Columns>
+                                                             <EditRowStyle BackColor="#999999" Font-Underline="true" />
+                                                             <EmptyDataRowStyle Font-Underline="False" />
+                                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" Font-Underline="False" />
+                                                             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" Font-Underline="False" />
+                                                             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                                             <RowStyle BackColor="#F7F6F3" Font-Underline="False" ForeColor="#333333" />
+                                                             <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                                             <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                                             <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                                             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                                          </asp:GridView>
                                                      </td>
                                                      <td>&nbsp;</td>
@@ -260,7 +306,7 @@
                                                  <tr>
                                                      <td class="auto-style9">&nbsp;</td>
                                                      <td>
-                                                         <asp:Button ID="btneditar" runat="server" Height="32px" TabIndex="10" Text="Editar" Width="126px" />
+                                                         <asp:Button ID="btneditar" runat="server" Height="32px" TabIndex="10" Text="Editar" Width="126px" OnClick="btneditar_Click" />
                                                      </td>
                                                      <td>
                                                          <asp:Button ID="btninhabilitar" runat="server" Height="32px" TabIndex="11" Text="Inhabilitar" Width="126px" />

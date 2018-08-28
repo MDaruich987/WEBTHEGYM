@@ -76,7 +76,7 @@
                                              <br />
                                          </td>
                                          <td>
-                                             <asp:TextBox ID="TBNombre" runat="server" Width="182px"></asp:TextBox>
+                                             <asp:TextBox ID="TbNombre" runat="server" Width="182px"></asp:TextBox>
                                              <br />
                                              <br />
                                              <br />
@@ -117,11 +117,43 @@
                                              <asp:Label ID="LblHorario0" runat="server" Text="De:"></asp:Label>
                                              &nbsp;
                                              <asp:DropDownList ID="DplistInicio" runat="server" Height="29px" Width="77px">
+                                                 <asp:ListItem>8:00</asp:ListItem>
+                                                 <asp:ListItem>9:00</asp:ListItem>
+                                                 <asp:ListItem>10:00</asp:ListItem>
+                                                 <asp:ListItem>11:00</asp:ListItem>
+                                                 <asp:ListItem>12:00</asp:ListItem>
+                                                 <asp:ListItem>13:00</asp:ListItem>
+                                                 <asp:ListItem>14:00</asp:ListItem>
+                                                 <asp:ListItem>15:00</asp:ListItem>
+                                                 <asp:ListItem>16:00</asp:ListItem>
+                                                 <asp:ListItem>17:00</asp:ListItem>
+                                                 <asp:ListItem>18:00</asp:ListItem>
+                                                 <asp:ListItem>19:00</asp:ListItem>
+                                                 <asp:ListItem>20:00</asp:ListItem>
+                                                 <asp:ListItem>21:00</asp:ListItem>
+                                                 <asp:ListItem>22:00</asp:ListItem>
+                                                 <asp:ListItem>23:00</asp:ListItem>
                                              </asp:DropDownList>
                                              &nbsp;
                                              <asp:Label ID="LblHorario1" runat="server" Text="a:"></asp:Label>
                                              &nbsp;
                                              <asp:DropDownList ID="DplistFin" runat="server" Height="24px" Width="77px">
+                                                 <asp:ListItem>9:00</asp:ListItem>
+                                                 <asp:ListItem>10:00</asp:ListItem>
+                                                 <asp:ListItem>11:00</asp:ListItem>
+                                                 <asp:ListItem>12:00</asp:ListItem>
+                                                 <asp:ListItem>13:00</asp:ListItem>
+                                                 <asp:ListItem>14:00</asp:ListItem>
+                                                 <asp:ListItem>15:00</asp:ListItem>
+                                                 <asp:ListItem>16:00</asp:ListItem>
+                                                 <asp:ListItem>17:00</asp:ListItem>
+                                                 <asp:ListItem>18:00</asp:ListItem>
+                                                 <asp:ListItem>19:00</asp:ListItem>
+                                                 <asp:ListItem>20:00</asp:ListItem>
+                                                 <asp:ListItem>21:00</asp:ListItem>
+                                                 <asp:ListItem>22:00</asp:ListItem>
+                                                 <asp:ListItem>23:00</asp:ListItem>
+                                                 <asp:ListItem>24:00</asp:ListItem>
                                              </asp:DropDownList>
                                              <br />
                                              <br />
@@ -135,7 +167,15 @@
                                              <br />
                                          </td>
                                          <td>
-                                             <asp:DropDownList ID="DropDownList2" runat="server" CssClass="auto-style2" Height="29px" Width="182px">
+                                             <asp:DropDownList ID="DdlCupos" runat="server" CssClass="auto-style2" Height="29px" Width="182px">
+                                                 <asp:ListItem>5</asp:ListItem>
+                                                 <asp:ListItem>10</asp:ListItem>
+                                                 <asp:ListItem>15</asp:ListItem>
+                                                 <asp:ListItem>20</asp:ListItem>
+                                                 <asp:ListItem>25</asp:ListItem>
+                                                 <asp:ListItem>30</asp:ListItem>
+                                                 <asp:ListItem>35</asp:ListItem>
+                                                 <asp:ListItem>40</asp:ListItem>
                                              </asp:DropDownList>
                                              <br />
                                              <br />
@@ -159,7 +199,7 @@
                                              <br />
                                          </td>
                                          <td>
-                                             <asp:TextBox ID="TextBox1" runat="server" Height="43px" TextMode="MultiLine" Width="182px"></asp:TextBox>
+                                             <asp:TextBox ID="TbDescripcion" runat="server" Height="43px" TextMode="MultiLine" Width="182px"></asp:TextBox>
                                          </td>
                                          <td>&nbsp;</td>
                                          <td>&nbsp;</td>

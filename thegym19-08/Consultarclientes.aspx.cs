@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//agregar estas dos librerias para que reconozca el objeto TheGym
 using thegym19_08.BusinessLayer;
 using System.Data;
 
@@ -12,16 +11,20 @@ namespace thegym19_08
 {
     public partial class Consultarclientes : System.Web.UI.Page
     {
+        static string DNIEdit;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (!Page.IsPostBack)
+            {
 
+            }
         }
-
-        //COMENTAR TODO!
 
         protected void btnbuscar_Click(object sender, EventArgs e)
         {
-            //si el checkbox esta chequeado, quiere decir que buscamos por el DNI
+            GridView1.Visible = true;
             if (CkbDNI.Checked)
             {
                 TheGym k = new TheGym();
@@ -36,7 +39,6 @@ namespace thegym19_08
             }
             else
             {
-                //si no, buscamos por el nombre
                 TheGym k = new TheGym();
                 k.NombreClienteBusc = tbbuscar.Text;
                 DataTable dt = k.GetClienteNom();
@@ -47,9 +49,87 @@ namespace thegym19_08
                 }
             }
 
+   
 
         }
 
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    tbnombre.Text = GridView1
+        //}
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DNIEdit = GridView1.SelectedRow.Cells[2].Text;
+            tbnombre.ReadOnly = false;
+            tbapellido.ReadOnly = false;
+            tbdni.ReadOnly = false;
+            tbemail.ReadOnly = false;
+            tbfechanacimiento.ReadOnly = false;
+            tbtelefono.ReadOnly = false;
+            tbdomicilio.ReadOnly = false;
+            tbnombre.Text = GridView1.SelectedRow.Cells[0].Text;
+            tbapellido.Text = GridView1.SelectedRow.Cells[1].Text;
+            tbdni.Text = GridView1.SelectedRow.Cells[2].Text;
+            tbfechanacimiento.Text = GridView1.SelectedRow.Cells[3].Text;
+            tbemail.Text = GridView1.SelectedRow.Cells[4].Text;
+            tbtelefono.Text = GridView1.SelectedRow.Cells[5].Text;
+            //tbdomicilio.Text = GridView1.SelectedRow.Cells[7].Text;
+            if (GridView1.SelectedRow.Cells[6].Text == string.Empty)
+            {
+                tbdomicilio.Text = "";
+            }
+            else
+            {
+                tbdomicilio.Text = GridView1.SelectedRow.Cells[6].Text;
+            }
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void btneditar_Click(object sender, EventArgs e)
+        {
+            TheGym k = new TheGym
+            {
+                NombreClienteEditar = tbnombre.Text,
+                ApellidoClienteEditar = tbapellido.Text,
+                DNIClienteEditar = tbdni.Text,
+                FechaClienteEditar = tbfechanacimiento.Text,
+                EmailClienteEditar = tbemail.Text,
+                TelefonoClienteEditar = tbtelefono.Text,
+                DomicilioClienteEditar = tbdomicilio.Text
+            };
+
+            k.DNIEditar = DNIEdit;
+
+            k.UpdateCliente();
+
+            tbapellido.Text = string.Empty;
+            tbnombre.Text = string.Empty;
+            tbbuscar.Text = string.Empty;
+            tbemail.Text = string.Empty;
+            DNIEdit = string.Empty;
+            tbdni.Text = string.Empty;
+            tbfechanacimiento.Text = string.Empty;
+            tbtelefono.Text = string.Empty;
+            tbdomicilio.Text = string.Empty;
+
+            GridView1.Visible = false;
+            
+
+        }
     }
 }
