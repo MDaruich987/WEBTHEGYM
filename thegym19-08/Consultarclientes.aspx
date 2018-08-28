@@ -48,9 +48,9 @@
                         <tr>
                             <td class="auto-style6">&nbsp;</td>
                             <td class="auto-style5">
-	 	    	<div class="auto-style7"><a href="pricing.html">
+	 	    	<div class="auto-style7"><a href="Registrarclientes.aspx">
 	 	    		<ul class="spinning">
-	 	    			<li class="live">REGISTRAR <span class="m_1">Actividad</span></li>
+	 	    			<li class="live">REGISTRAR <span class="m_1">cliente</span></li>
 	 	    			<li class="room"></li>
 	 	    			<div class="clear"></div>	
 	 	    		</ul>
@@ -63,9 +63,9 @@
 			     </a></div>
 				            </td>
                             <td>
-				 <div class="auto-style2"><a href="pricing.html">
+				 <div class="auto-style2"><a href="Consultarclientes.aspx">
 	 	    		<ul class="spinning">
-	 	    			<li class="live">Consultar <span class="m_1">Actividad</span></li>
+	 	    			<li class="live">Consultar <span class="m_1">Cliente</span></li>
 	 	    			<li class="room"></li>
 	 	    			<div class="clear"></div>	
 	 	    		</ul>
