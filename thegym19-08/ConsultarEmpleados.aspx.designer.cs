@@ -40,6 +40,15 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.TextBox tbbuscar;
         
         /// <summary>
+        /// Control CkbDNI.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CkbDNI;
+        
+        /// <summary>
         /// Control btnbuscar.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace thegym19_08 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// Control lblerrorbusqueda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblerrorbusqueda;
         
         /// <summary>
         /// Control lblnombre.

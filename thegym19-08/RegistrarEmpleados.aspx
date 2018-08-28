@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-    <%--    imagenes botones--%>
+    <%--</form>--%>
     <br />
     <br />
     		    <div class="row content-middle">
@@ -53,16 +53,16 @@
                     </table>
                     </div>
 		   </div>
-<%--contenedor gris--%>
+    <%--<form id="Form1" runat="server">--%>
            <div class="main">
         <div class="auto-style3" style="margin-left: 62px;">
 
-<%--cuando salga error de runat server--%>
-<form id="Form1" runat="server">
+<%--</form>--%>
+<%--<form id="Form1" runat="server">--%>
                  <br />
                  <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                      <ContentTemplate>
-                         <asp:Panel ID="Panel1" runat="server" backcolor="#AAE3FF" bordercolor="#00BFF0" borderstyle="Solid" height="530px">
+                         <asp:Panel ID="Panel1" runat="server" backcolor="#AAE3FF" bordercolor="#00BFF0" borderstyle="Solid" height="757px">
                              <ul class="spinning">
                                  <a href="pricing.html">
                                  <li class="live">registrar <span class="m_1">empleado</span></li>
@@ -82,30 +82,42 @@
                                                  </td>
                                              </tr>
                                              <tr>
+                                                 <td class="auto-style31">&nbsp;</td>
+                                                 <td class="auto-style3" colspan="2">
+                                                     <asp:Label ID="lbldatosacademicos0" runat="server" Font-Bold="True" Font-Size="Medium" Text="DATOS PERSONALES:"></asp:Label>
+                                                 </td>
+                                                 <td class="auto-style28">
+                                                     &nbsp;</td>
+                                                 <td class="auto-style14">
+                                                     &nbsp;</td>
+                                                 <td class="auto-style18">
+                                                     &nbsp;</td>
+                                             </tr>
+                                             <tr>
                                                  <td class="auto-style31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;
                                                      <asp:Label ID="lblnombre0" runat="server" Text="Nombre:"></asp:Label>
-                                             <br />
+                                                     <br />
                                                  </td>
                                                  <td class="auto-style3">
-                                             <br />
+                                                     <br />
                                                      <asp:TextBox ID="tbnombre0" runat="server" TabIndex="1" Width="144px"></asp:TextBox>
-                                             <br />
+                                                     <br />
                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="tbnombre0" ErrorMessage="*Ingrese solo letras" ForeColor="Red" ValidationExpression="^[A-Za-z]*$"> </asp:RegularExpressionValidator>
-                                             <br />
+                                                     <br />
                                                  </td>
                                                  <td class="auto-style24">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style28">
                                                      <asp:Label ID="lblapellido0" runat="server" Text="Apellido:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style14">
                                                      <asp:TextBox ID="tbapellido0" runat="server" TabIndex="2" Width="144px"></asp:TextBox>
-                                             <br />
+                                                     <br />
                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="tbapellido0" ErrorMessage="*Ingrese solo letras" ForeColor="Red" ValidationExpression="^[A-Za-z]*$"> </asp:RegularExpressionValidator>
                                                  </td>
                                                  <td class="auto-style18">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbapellido0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbapellido0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                              </tr>
                                              <tr>
@@ -119,17 +131,18 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style22">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style29">
                                                      <asp:Label ID="lbltelefono1" runat="server" Text="Teléfono:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style15">
                                                      <asp:TextBox ID="tbtelefono1" runat="server" TabIndex="6" TextMode="Number" Width="123px"></asp:TextBox>
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
-                                                 <td class="auto-style18" rowspan="3">
-                                                     <asp:Calendar ID="clrfechanacimiento0" runat="server" Height="16px" OnSelectionChanged="clrfechanacimiento0_SelectionChanged1" TabIndex="9" Width="16px"></asp:Calendar>
+                                                 <td class="auto-style18" rowspan="8">
+                                                     <asp:Calendar ID="clrfechanacimiento0" runat="server" Height="16px" OnSelectionChanged="clrfechanacimiento0_SelectionChanged1" TabIndex="9" Width="16px" SelectedDate="1997-03-12"></asp:Calendar>
+                                                     <asp:Calendar ID="clrfechacontratacion" runat="server" Height="16px" OnSelectionChanged="clrfechacontratacion_SelectionChanged" TabIndex="9" Width="16px"></asp:Calendar>
                                                  </td>
                                              </tr>
                                              <tr>
@@ -147,59 +160,116 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style24">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbemail1" Display="Dynamic" ErrorMessage="!" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbemail1" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style28">
                                              <br />
+                                                     <asp:Label ID="lbltelefono2" runat="server" Text="Dirección:"></asp:Label>
                                              <br />
-                                                     <asp:Label ID="lblfechanacimiento1" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
                                              <br />
                                              <br />
                                                  </td>
                                                  <td class="auto-style14">
                                              <br />
+                                                     <asp:TextBox ID="tbdireccion" runat="server" TabIndex="6" Width="123px"></asp:TextBox>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                              <br />
-                                                     <asp:TextBox ID="tbfechanacimiento1" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
-                                                     <asp:Button ID="btcalendar0" runat="server" CausesValidation="False" Height="27px" OnClick="btcalendar_Click" Text="&lt;" Width="19px" />
                                              <br />
                                              <br />
                                                  </td>
                                              </tr>
                                              <tr>
-                                                 <td class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                             <br />
-                                                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblfotografia1" runat="server" Text="Fotografía:"></asp:Label>
-                                             <br /> &nbsp;&nbsp;
-                                             <br />
-                                             <br />
+                                                 <td class="auto-style5">&nbsp;&nbsp;&nbsp;<asp:Label ID="lblfotografia1" runat="server" Text="Fotografía:"></asp:Label>
+                                             <br /> 
                                                  </td>
                                                  <td class="auto-style5">
                                              <br />
                                                      <asp:FileUpload ID="FileUpload2" runat="server" Height="22px" Width="161px" />
                                              <br />
-                                             <br />
-                                             <br />
                                                  </td>
                                                  <td class="auto-style5">
                                              <br />
-                                             <br />
-                                             <br />
-                                                     <asp:Label ID="LblReg" runat="server"></asp:Label>
                                                  </td>
                                                  <td class="auto-style5">
-                                             <br />
-                                             <br />
+                                                     <asp:Label ID="lblfechanacimiento4" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
                                              <br />
                                              <br />
                                                  </td>
                                                  <td class="auto-style8">
+                                                     <br />
+                                                     <asp:TextBox ID="tbfechanacimiento2" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
+                                                     <asp:Button ID="btcalendar1" runat="server" CausesValidation="False" Height="27px" OnClick="btcalendar_Click" Text="&lt;" Width="19px" />
                                              <br />
                                              <br />
                                                  </td>
                                              </tr>
                                              <tr>
-                                                 <td class="auto-style33"></td>
-                                                 <td class="auto-style16">&nbsp;</td>
+                                                 <td class="auto-style5">
+                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                     <asp:Label ID="lblcargo" runat="server" Text="Cargo:"></asp:Label>
+                                                 </td>
+                                                 <td class="auto-style5">
+                                                     <asp:DropDownList ID="ddlcargo" runat="server" Height="32px" Width="151px">
+                                                     </asp:DropDownList>
+                                                 </td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">
+                                                     <asp:Label ID="lblfechanacimiento3" runat="server" Text="Fecha de Contratación:"></asp:Label>
+                                                 </td>
+                                                 <td class="auto-style8">
+                                                     <asp:TextBox ID="tbfechacontratacion0" runat="server" CssClass="form-control-static" OnTextChanged="tbfechanacimiento0_TextChanged" ReadOnly="True" TabIndex="4" Width="119px"></asp:TextBox>
+                                                     <asp:Button ID="btmfechacontratacion" runat="server" CausesValidation="False" Height="27px" OnClick="btmfechacontratacion_Click" Text="&lt;" Width="19px" />
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td class="auto-style5">
+                                                     <br />
+                                                     <br />
+                                                 </td>
+                                                 <td class="auto-style5" colspan="2">
+                                                     <br />
+                                                     <br />
+                                                     <asp:Label ID="lbldatosacademicos" runat="server" Font-Bold="True" Font-Size="Medium" Text="DATOS ACADÉMICOS:"></asp:Label>
+                                                 </td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style8">&nbsp;</td>
+                                             </tr>
+                                             <tr>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style8">&nbsp;</td>
+                                             </tr>
+                                             <tr>
+                                                 <td class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                     <asp:Label ID="lblfotografia2" runat="server" Text="Título:"></asp:Label>
+                                                 </td>
+                                                 <td class="auto-style5">
+                                                     <asp:TextBox ID="tbtitulo" runat="server" TabIndex="7" Width="144px"></asp:TextBox>
+                                                 </td>
+                                                 <td class="auto-style5">
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="tbtitulo" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                 </td>
+                                                 <td class="auto-style5">
+                                                     <asp:Label ID="lblexperiencia" runat="server" Text="Experiencia:"></asp:Label>
+                                                 </td>
+                                                 <td class="auto-style8">
+                                                     <asp:TextBox ID="tbexperiencia" runat="server" TabIndex="7" Width="130px"></asp:TextBox>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style5">&nbsp;</td>
+                                                 <td class="auto-style8">&nbsp;</td>
+                                             </tr>
+                                             <tr>
+                                                 <td class="auto-style33" colspan="2">
+                                                     <br />
+                                                     <asp:Label ID="LblReg" runat="server"></asp:Label>
+                                                 </td>
                                                  <td class="auto-style17">&nbsp;&nbsp;&nbsp;
                                              <br />
                                                      <asp:Button ID="btnaceptar0" runat="server" Height="32px" OnClick="btnaceptar0_Click" TabIndex="10" Text="Aceptar" Width="126px" />
@@ -218,7 +288,7 @@
                          </asp:Panel>
                      </ContentTemplate>
                  </asp:UpdatePanel>
-</form>
+<%--</form>--%>
                  <br />
                  <br />
                  <br />
