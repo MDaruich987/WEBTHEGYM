@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using thegym19_08.BusinessLayer;
 
 namespace thegym19_08
 {
@@ -17,11 +18,20 @@ namespace thegym19_08
         protected void btnaceptar1_Click(object sender, EventArgs e)
         {
 
-        }
+            TheGym k = new TheGym
+            {
+                Nombreplanins = tbnombre.Text,
+                duracionplanins = ListBox1.SelectedValue,
+                precioplanins = tbprecio.Text
+            };
 
-        protected void btnaceptar1_Click1(object sender, EventArgs e)
-        {
+            k.AddNewPlan();
 
+
+            tbnombre.Text = string.Empty;
+            tbprecio.Text = string.Empty;
         }
     }
-}
+
+
+    }

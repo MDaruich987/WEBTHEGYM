@@ -31,7 +31,7 @@
                         <tr>
                             <td class="auto-style6">&nbsp;</td>
                             <td class="auto-style5">
-	 	    	<div class="auto-style7"><a href="pricing.html">
+	 	    	<div class="auto-style7"><a href="RegistrarPlanes.aspx">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">REGISTRAR <span class="m_1">plan</span></li>
 	 	    			<li class="room"></li>
@@ -133,11 +133,12 @@
                                              <td class="auto-style6">&nbsp;</td>
                                          </tr>
                                          <tr>
-                                             <td class="auto-style8">&nbsp;&nbsp;&nbsp;<asp:Label ID="lblfotografia" runat="server" Text="Fotografía:"></asp:Label>
+                                             <td class="auto-style8">&nbsp;&nbsp;&nbsp;<asp:Label ID="lblfotografia" runat="server" Text="Precio:"></asp:Label>
                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                              <td class="auto-style8" colspan="3">
                                                  <br />
-                                                 <asp:FileUpload ID="FileUpload1" runat="server" Height="23px" Width="305px" />
+                                                 <asp:TextBox ID="tbprecio" runat="server" Height="22px" TabIndex="1" Width="169px"></asp:TextBox>
+                                                 <br />
                                                  <br />
                                              </td>
                                              <td class="auto-style11"></td>
