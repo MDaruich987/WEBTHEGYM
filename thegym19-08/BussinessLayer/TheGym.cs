@@ -64,6 +64,12 @@ namespace thegym19_08.BusinessLayer
         public string TelefonoCliente;
         public string DomicilioCliente;
         public string DNICliente;
+        //variables para registrar plan
+        public string Nombreplanins;
+        public string duracionplanins;
+        public string precioplanins;
+
+       
 
 
 
@@ -94,6 +100,16 @@ namespace thegym19_08.BusinessLayer
             parameters[9] = DataLayer.DataAccess.AddParameter("@Experiencia", ExperEmpleadoIns, SqlDbType.NVarChar, 1000);
             parameters[10] = DataLayer.DataAccess.AddParameter("@FK_cargo", CargoEmpleadoIns, SqlDbType.Int, 10);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddEmpleado", parameters);
+        }
+
+        //metodo para agregar un nuevo plan
+        public void AddNewPlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[3];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", Nombreplanins, SqlDbType.VarChar, 50);
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Duracion", duracionplanins, SqlDbType.Int, 50);
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Precio", precioplanins, SqlDbType.Money, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddPlan", parameters);
         }
 
         //método para agregar una nueva actividad
