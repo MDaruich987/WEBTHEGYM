@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using thegym19_08.BusinessLayer;
 
 namespace thegym19_08
 {
@@ -13,56 +14,42 @@ namespace thegym19_08
         {
             LblReg.Text = ("");
 
-            if (!IsPostBack)
-            {
-                clrfechanacimiento0.Visible = false;
-            }
-
         }
 
         protected void btnaceptar0_Click(object sender, EventArgs e)
         {
-            LblReg.Text = ("Cliente registrado con éxito.");
 
 
-            string NomEmp;
-            string ApEmp;
-            int DNIEmp;
-            string EmailEmp;
-            int TelEmp;
-
-            NomEmp = tbnombre0.Text;
-            ApEmp = tbapellido0.Text;
-            EmailEmp = tbemail1.Text;
-
-            DNIEmp = Convert.ToInt32(tbdni0.Text);
-            TelEmp = Convert.ToInt32(tbtelefono1.Text);
-
-        }
-
-
-        protected void clrfechanacimiento0_SelectionChanged1(object sender, EventArgs e)
-        {
-            tbfechanacimiento1.Text = clrfechanacimiento0.SelectedDate.ToLongDateString();
-            clrfechanacimiento0.Visible = false;
-        }
-
-        protected void tbfechanacimiento0_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btcalendar_Click(object sender, EventArgs e)
-        {
-
-            if (clrfechanacimiento0.Visible)
+            //Configuracion para registrar cliente en la base de datos
+            //Creo el objeto k
+            TheGym k = new TheGym
             {
-                clrfechanacimiento0.Visible = false;
-            }
-            else
+                NombreCliente = tbnombre0.Text,
+                ApellidoCliente = tbapellido0.Text,
+                EmailCliente = tbemail1.Text,
+                FechaCliente = tbfechanacimiento1.Text,
+                TelefonoCliente = tbtelefono1.Text,
+                DomicilioCliente = tbdomicilio.Text,
+                DNICliente = tbdni0.Text
+            };
+
+            try
             {
-                clrfechanacimiento0.Visible = true;
+                k.AddNewCliente();
+                LblReg.Text = ("Cliente registrado con éxito.");
+
             }
+            catch
+            {
+
+            }
+            tbnombre0.Text = string.Empty;
+            tbapellido0.Text = string.Empty;
+            tbfechanacimiento1.Text = string.Empty;
+            tbemail1.Text = string.Empty;
+            tbtelefono1.Text = string.Empty;
+            tbdomicilio.Text = string.Empty;
+            tbdni0.Text = string.Empty;
         }
 
         protected void btncancelar_Click1(object sender, EventArgs e)

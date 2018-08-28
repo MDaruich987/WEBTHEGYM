@@ -56,8 +56,16 @@ namespace thegym19_08.BusinessLayer
         public string HorarioFinActividad;
         public string CuposActividad;
         public string DescripcionActividad;
+        // variables para registrar cliente
+        public string NombreCliente;
+        public string ApellidoCliente;
+        public string FechaCliente;
+        public string EmailCliente;
+        public string TelefonoCliente;
+        public string DomicilioCliente;
+        public string DNICliente;
 
-    
+
 
         //métodos
         //método para agregar una nueva sucursal
@@ -168,6 +176,20 @@ namespace thegym19_08.BusinessLayer
             SqlParameter[] parameters = new SqlParameter[0];
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllSucursales", parameters);
             return dt;
+        }
+
+        //Metodo para Registrar Cliente 
+        public void AddNewCliente()
+        {
+            SqlParameter[] parameters = new SqlParameter[7];
+            parameters[0] = DataLayer.DataAccess.AddParameter("Nombre", NombreCliente, SqlDbType.NVarChar, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("Apellido", ApellidoCliente, SqlDbType.NVarChar, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("Fecha_Nac", FechaCliente, SqlDbType.Date, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("Email", EmailCliente, SqlDbType.NVarChar, 100);
+            parameters[4] = DataLayer.DataAccess.AddParameter("Telefono", TelefonoCliente, SqlDbType.BigInt, 50);
+            parameters[5] = DataLayer.DataAccess.AddParameter("Domicilio", DomicilioCliente, SqlDbType.NVarChar, 50);
+            parameters[6] = DataLayer.DataAccess.AddParameter("@DNI", DNICliente, SqlDbType.Int, 100);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddCliente", parameters);
         }
 
     }
