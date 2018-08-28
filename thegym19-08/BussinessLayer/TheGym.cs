@@ -46,6 +46,8 @@ namespace thegym19_08.BusinessLayer
         public string DNIClienteEditar;
         //variables para consultar una actividad
         public string NombreActividadBuscar;
+        //variables para consultar cliente
+        public string NombreClienteBuscar;
         //variables para registrar actividad
         public string NombreActividad;
         public string ProfesorActividad;
