@@ -31,13 +31,13 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblNombre;
         
         /// <summary>
-        /// Control TBNombre.
+        /// Control TbNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBNombre;
+        protected global::System.Web.UI.WebControls.TextBox TbNombre;
         
         /// <summary>
         /// Control LblProfesor.
@@ -130,13 +130,13 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblCupos;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control DdlCupos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DdlCupos;
         
         /// <summary>
         /// Control LblFoto.
@@ -166,13 +166,13 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblDescrip0;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TbDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TbDescripcion;
         
         /// <summary>
         /// Control BTNRegistrarPP1.

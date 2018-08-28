@@ -46,6 +46,15 @@ namespace thegym19_08.BusinessLayer
         public string DNIClienteEditar;
         //variables para consultar una actividad
         public string NombreActividadBuscar;
+        //variables para registrar actividad
+        public string NombreActividad;
+        public string ProfesorActividad;
+        public string SucursalActividad;
+        public string HorarioInicioActividad;
+        public string HorarioFinActividad;
+        public string CuposActividad;
+        public string DescripcionActividad;
+
     
 
         //métodos
@@ -76,6 +85,22 @@ namespace thegym19_08.BusinessLayer
             parameters[10] = DataLayer.DataAccess.AddParameter("@FK_cargo", CargoEmpleadoIns, SqlDbType.Int, 10);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddEmpleado", parameters);
         }
+
+        //método para agregar una nueva actividad
+
+        public void AddNewActividad()
+        {
+            SqlParameter[] parameters = new SqlParameter[7];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre",NombreActividad,SqlDbType.VarChar,50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Profesor", ProfesorActividad, SqlDbType.Int, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Sucursal", SucursalActividad, SqlDbType.Int, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Cupos", CuposActividad, SqlDbType.Int, 50);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@Hora_inicio", HorarioInicioActividad, SqlDbType.Time, 50);
+            parameters[5] = DataLayer.DataAccess.AddParameter("@Hora_fin", HorarioFinActividad, SqlDbType.Time, 50);
+            parameters[6] = DataLayer.DataAccess.AddParameter("@Descripcion", DescripcionActividad, SqlDbType.VarChar, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddActividad", parameters);
+        }
+
 
         //método para consultar un cliente
         public DataTable GetClienteNom()
@@ -117,6 +142,21 @@ namespace thegym19_08.BusinessLayer
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre",NombreActividadBuscar,SqlDbType.VarChar,50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetActividad", parameters);
+            return dt;
+        }
+
+        //Obtener todos los profesores
+        public DataTable GetProfesores()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllProfesores", parameters);
+            return dt;
+        }
+
+        public DataTable GetSucursales()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllSucursales", parameters);
             return dt;
         }
 
