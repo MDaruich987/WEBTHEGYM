@@ -14,6 +14,7 @@ namespace thegym19_08
 {
     public partial class RegistrarEmpleados : System.Web.UI.Page
     {
+
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,7 +22,7 @@ namespace thegym19_08
 
             if (!IsPostBack)
             {
-                AddSubmitEvent();
+                //AddSubmitEvent();
                 GetCargos();
                 
                
@@ -71,8 +72,8 @@ namespace thegym19_08
                 ApellidoEmpleadoIns = tbapellido0.Text,
                 FechaNacEmpleadoIns = Convert.ToDateTime(tbfechanacimiento2.Text),
                 EmailEmpleadoIns = tbemail1.Text,
-                FotoEmpleadoIns = "~/ImagenesSistema/" + FileUpload2.FileName, 
-                TelefEmpleadoIns=Convert.ToInt32(tbtelefono1.Text),
+                FotoEmpleadoIns = "~/ImagenesSistema/" + fuImage.FileName, 
+                TelefEmpleadoIns=Convert.ToInt64(tbtelefono1.Text),
                 DomicilioEmpleadoIns=tbdireccion.Text,
                 DNIEmpleadoIns= Convert.ToInt32(tbdni0.Text),
                 FechaContEmpleadoIns=Convert.ToDateTime(tbfechacontratacion0.Text),
@@ -118,10 +119,10 @@ namespace thegym19_08
 
         private void SaveProductPhoto()
         {
-            if (FileUpload2.PostedFile != null)
+            if (fuImage.PostedFile != null)
             {
-                string filename = FileUpload2.FileName.ToString();
-                string fileExt = System.IO.Path.GetExtension(FileUpload2.FileName);
+                string filename = fuImage.FileName.ToString();
+                string fileExt = System.IO.Path.GetExtension(fuImage.FileName);
 
                 if (filename.Length > 96)
                 {
@@ -131,17 +132,17 @@ namespace thegym19_08
                 {
                     //Alert.Show("Only jpeg, jpg, bmp & png images are allowed!");
                 }
-                else if (FileUpload2.PostedFile.ContentLength > 40000000)
+                else if (fuImage.PostedFile.ContentLength > 40000000)
                 {
                     //Alert.Show("Image size shold not be greater than 40MB !");
                 }
                 else
                 {
-                    FileUpload2.SaveAs(Server.MapPath("~/ImagenesSistema/" + filename));
+                    fuImage.SaveAs(Server.MapPath("~/ImagenesSistema/" + filename));
                 }
             }
         }
 
-
+        
     }
 }

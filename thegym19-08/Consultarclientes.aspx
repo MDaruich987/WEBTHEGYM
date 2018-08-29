@@ -199,6 +199,8 @@
                                                                                  <asp:Label ID="Label8" runat="server" Text='<%# Bind("Domicilio") %>'></asp:Label>
                                                                              </ItemTemplate>
                                                                          </asp:TemplateField>
+                                                                         <asp:ImageField DataImageUrlField="Foto" HeaderText="Foto">
+                                                                         </asp:ImageField>
                                                                          <asp:CommandField ButtonType="Button" ShowEditButton="True" />
                                                                          <asp:CommandField ButtonType="Button" SelectText="" CancelText="" DeleteText="Inhabilitar" EditText="" InsertText="" NewText="" ShowDeleteButton="True" UpdateText="" />
                                                                      </Columns>

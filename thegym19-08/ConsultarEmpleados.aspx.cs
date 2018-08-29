@@ -14,9 +14,9 @@ namespace thegym19_08
     public partial class ConsultarEmpleados : System.Web.UI.Page
     {
         //cadena de conexion MICA
-        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
-        //cadena de conexion MAXI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MAXI
+        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
@@ -53,7 +53,7 @@ namespace thegym19_08
 
             //creamos el comando y le pasamos el llamado al procedimiento almacenado
             string sentencia = "%" + tbbuscar.Text + "%";
-            SqlCommand comd = new SqlCommand("select  Id_empleado, Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio, DNI, Fecha_cont, Titulo, Experiencia from empleado where Nombre like @param or DNI like @param", conex);
+            SqlCommand comd = new SqlCommand("select  Id_empleado, Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio, DNI, Fecha_cont, Titulo, Experiencia, Foto from empleado where Nombre like @param or DNI like @param", conex);
             comd.Parameters.AddWithValue("@param", SqlDbType.VarChar).Value = sentencia;
             SqlDataAdapter da = new SqlDataAdapter(comd);
             DataTable dt = new DataTable();
