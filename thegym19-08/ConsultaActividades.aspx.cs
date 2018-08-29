@@ -26,13 +26,13 @@ namespace thegym19_08
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            LLenar_GvActividades();
         }
 
         private void LLenar_GvActividades()
         {
             //creamos el comando y le pasamos el llamado al procedimiento almacenado
-            SqlCommand comd = new SqlCommand("select a.Id_actividad as Id_actividad ,a.Nombre as nombre_actividad, da.Descripcion as descripcion_actividad, e.Nombre as nombre_empleado, s.Nombre as nombre_sucursal   from Actividad a inner join DetalleActividad da on a.Id_actividad=da.FK_actividad  inner join Empleado e on e.Id_empleado = da.FK_empleado inner join Sucursal s on s.Id_sucursal = da.FK_sucursal ", conex);
+            SqlCommand comd = new SqlCommand("select a.Id_actividad as Id_actividad ,a.Nombre as nombre_actividad, da.Descripcion as descripcion_actividad, e.Nombre as nombre_empleado, s.Nombre as nombre_sucursal from Actividad a inner join DetalleActividad da on a.Id_actividad=da.FK_actividad  inner join Empleado e on e.Id_empleado = da.FK_empleado inner join Sucursal s on s.Id_sucursal = da.FK_sucursal where a.Estado='H' ", conex);
             SqlDataAdapter da = new SqlDataAdapter(comd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -45,10 +45,6 @@ namespace thegym19_08
 
 
 
-        protected void btnregistrar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void btnbuscaractividad_Click(object sender, EventArgs e)
         {
@@ -57,7 +53,7 @@ namespace thegym19_08
             string sentencia = "%" + tbbuscar.Text + "%";
             try
             {
-                SqlCommand comd = new SqlCommand("select a.Id_actividad as Id_actividad ,a.Nombre as nombre_actividad, da.Descripcion as descripcion_actividad, e.Nombre as nombre_empleado, s.Nombre as nombre_sucursal from Actividad a inner join DetalleActividad da on a.Id_actividad=da.FK_actividad  inner join Empleado e on e.Id_empleado = da.FK_empleado inner join Sucursal s on s.Id_sucursal = da.FK_sucursal where a.Nombre like @param", conex);
+                SqlCommand comd = new SqlCommand("select a.Id_actividad as Id_actividad ,a.Nombre as nombre_actividad, da.Descripcion as descripcion_actividad, e.Nombre as nombre_empleado, s.Nombre as nombre_sucursal from Actividad a inner join DetalleActividad da on a.Id_actividad=da.FK_actividad  inner join Empleado e on e.Id_empleado = da.FK_empleado inner join Sucursal s on s.Id_sucursal = da.FK_sucursal where a.Estado='H' and a.Nombre like @param", conex);
                 comd.Parameters.AddWithValue("@param", SqlDbType.VarChar).Value = sentencia;
                 SqlDataAdapter da = new SqlDataAdapter(comd);
                 DataTable dt = new DataTable();
@@ -185,6 +181,53 @@ namespace thegym19_08
             {
                 lblmensajerror.Text = ex.Message.ToString();
                 conex.Close();
+            }
+        }
+
+        protected void gvactividad_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "Delete":
+                    string Id = gvactividad.DataKeys[Convert.ToInt32(e.CommandArgument)].Value.ToString();
+                    try
+                    {
+                        //tomamos el valor ID del empleado seleccionado
+                        int Iddelete = Convert.ToInt32(Id);
+                        //llamos al procedimiento almacenado
+                        SqlCommand cmd = new SqlCommand("PA_InhabilitarActividad", conex);
+                        //esablecemos el dataadpater y le indicamos que trabajaremos con un procedimiento almacenado
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        {
+                            //definimos el valor de la variable para le procedimiento
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Iddelete;
+                        }
+                        //abrimos la conexion
+                        if (conex.State != ConnectionState.Open)
+                        {
+                            conex.Open();
+                        }
+                        //ejectuamos el comando
+                        cmd.ExecuteNonQuery();
+                        //cerramos la conexion
+                        conex.Close();
+                        //obtenemos el indice de la fila editada
+                        gvactividad.EditIndex = -1;
+                        //PanelFormulario.Visible = false;
+                        lblmensajerror.Text = "Plan Inhabilitado Correctamente.";
+                        LLenar_GvActividades();
+                    }
+                    catch (Exception ex)
+                    {
+                        lblmensajerror.Text = ex.Message.ToString();
+                        conex.Close();
+                    }
+
+                    break;
+
+
+
             }
         }
     }

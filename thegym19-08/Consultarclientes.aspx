@@ -97,7 +97,7 @@
                  <br />
                  <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                      <ContentTemplate>
-                         <asp:Panel ID="Panel1" runat="server" BackColor="#F0F0F0" BorderColor="#00BFF0" BorderStyle="Solid" CssClass="auto-style12" Height="613px">
+                         <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" CssClass="auto-style12" Height="613px">
                              <ul class="spinning">
                                  <a href="pricing.html">
                                  <li class="live">consultar <span class="m_1">cliente</span></li>
@@ -204,7 +204,7 @@
                                                                          <asp:CommandField ButtonType="Button" ShowEditButton="True" />
                                                                          <asp:CommandField ButtonType="Button" SelectText="" CancelText="" DeleteText="Inhabilitar" EditText="" InsertText="" NewText="" ShowDeleteButton="True" UpdateText="" />
                                                                      </Columns>
-                                                                     <HeaderStyle BackColor="#72D0F4" BorderColor="#006699" BorderStyle="None" />
+                                                                     <HeaderStyle BackColor="#72D0F4" BorderColor="White" BorderStyle="None" />
                                                                  </asp:GridView>
                                                              </td>
                                                          </tr>

@@ -170,48 +170,6 @@ namespace thegym19_08
             }
         }
 
-   /*     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            int id;
-            try
-            {
-                //tomamos el valor ID del empleado seleccionado
-                TextBox txt = new TextBox();
-                txt = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtid");
-                id = Convert.ToInt32(txt.Text);
-
-                //llamos al procedimiento almacenado
-                SqlCommand cmd = new SqlCommand("PA_Actualizaplans", conex);
-                //esablecemos el dataadpater y le indicamos que trabajaremos con un procedimiento almacenado
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                {
-                    //definimos el valor de la variable para le procedimiento
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = id;
-                }
-                //abrimos la conexion
-                if (conex.State != ConnectionState.Open)
-                {
-                    conex.Open();
-                }
-                //ejectuamos el comando
-                cmd.ExecuteNonQuery();
-                //cerramos la conexion
-                conex.Close();
-                //obtenemos el indice de la fila editada
-                GridView1.EditIndex = -1;
-                LlenarGvPlanes();
-                //PanelFormulario.Visible = false;
-                lblerror.Text = "Plan Inhabilitado Correctamente.";
-                //falta el procedimiento almacenado que debe recibir el id y los estados para los empleados
-            }
-            catch (Exception ex)
-            {
-                lblerror.Text = ex.Message.ToString();
-                conex.Close();
-            }
-        } */
-
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             switch (e.CommandName)

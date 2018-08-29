@@ -36,7 +36,7 @@
 				  	   <img src="images/pic3.jpg" class="img-responsive" alt=""/>
 					      <div class="mask">
 	                       	<div class="info">
-                                <asp:Button ID="btnregistrar" runat="server" BackColor="#00BFF0" BorderStyle="None" Height="28px" OnClick="btnregistrar_Click" Text="Registrar" />
+                                <asp:Button ID="btnregistrar" runat="server" BackColor="#00BFF0" BorderStyle="None" Height="28px" Text="Registrar" />
                               </div>
 			              </div>
 	                  </div>
@@ -70,7 +70,7 @@
             <br />
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <asp:Panel ID="Panel1" runat="server" BackColor="#AAE3FF" BorderColor="#00BFF0" BorderStyle="Solid" Height="531px">
+                    <asp:Panel ID="Panel1" runat="server" BackColor="#F8F8F8" BorderColor="#00BFF0" BorderStyle="Solid" Height="531px">
                         <asp:ScriptManager ID="ScriptManager1" runat="server">
                         </asp:ScriptManager>
                         <table class="nav-justified">
@@ -112,8 +112,7 @@
                                                     <tr>
                                                         <td class="auto-style4">&nbsp;</td>
                                                         <td>
-                                                            <asp:GridView ID="gvactividad" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style6" ForeColor="#333333" GridLines="None" Height="211px" OnPageIndexChanged="gvactividad_PageIndexChanged" OnRowCancelingEdit="gvactividad_RowCancelingEdit" OnRowEditing="gvactividad_RowEditing" OnRowUpdating="gvactividad_RowUpdating" PageSize="4" Width="617px">
-                                                                <AlternatingRowStyle BackColor="White" />
+                                                            <asp:GridView ID="gvactividad" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="auto-style6" Height="211px" OnPageIndexChanged="gvactividad_PageIndexChanged" OnRowCancelingEdit="gvactividad_RowCancelingEdit" OnRowEditing="gvactividad_RowEditing" OnRowUpdating="gvactividad_RowUpdating" PageSize="4" Width="617px" DataKeyNames="Id_actividad" Font-Names="bizagi-font" Font-Overline="False" OnRowCommand="gvactividad_RowCommand">
                                                                 <Columns>
                                                                     <asp:TemplateField HeaderText="ID">
                                                                         <EditItemTemplate>
@@ -158,16 +157,7 @@
                                                                     <asp:CommandField ButtonType="Button" ShowEditButton="True" />
                                                                     <asp:CommandField ButtonType="Button" DeleteText="Inhabilitar" ShowDeleteButton="True" />
                                                                 </Columns>
-                                                                <EditRowStyle BackColor="#2461BF" />
-                                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                                                <RowStyle BackColor="#EFF3FB" />
-                                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                                                <HeaderStyle BackColor="#72D0F4" BorderStyle="None" />
                                                             </asp:GridView>
                                                         </td>
                                                         <td>&nbsp;</td>
