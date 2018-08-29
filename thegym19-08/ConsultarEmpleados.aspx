@@ -220,6 +220,7 @@
                                         </tr>
                                         <tr>
                                             <td>
+                                                <br />
                                                 <asp:Label ID="lblerrorbusqueda" runat="server"></asp:Label>
                                             </td>
                                         </tr>
@@ -250,7 +251,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
-		     <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
+             <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
     <asp:Label ID="lblmensajebienvenida" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
     </a></a>
 </asp:Content>

@@ -15,6 +15,16 @@ namespace thegym19_08
     {
         //cadena de conexion MICA
         SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MAXI
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion CAMI
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MILI
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion DAVID
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+
+
         //tutorial
         //http://sistemasddm.blogspot.com/2013/09/guardar-actualizar-y-eliminar-registros.html
         protected void Page_Load(object sender, EventArgs e)
@@ -38,68 +48,7 @@ namespace thegym19_08
 
         protected void btnbuscar_Click(object sender, EventArgs e)
         {
-            /* //Busca por el DNI
-             if (CkbDNI.Checked)
-             {
-                 try
-                 {
-                     //el try captura el error para controlarlo y que se muestre en
-                     //un label y no congele toda la página
-                     lblerrorbusqueda.Text = "cheked";
-                     TheGym k = new TheGym();
-                     k.DNIEmpleadoBusc = tbbuscar.Text;
-                     k.NombreEmpleadoBusc = "";
-                     k.CargoEmpleadoBusc = "";
-                     DataTable dt = k.GetEmpleadoNom();
-                     if (dt.Rows.Count > 0)
-                     {
-                         GridView1.DataSource = dt;
-                         GridView1.DataBind();
-                     }
-                     else
-                     {                     
-                         lblerrorbusqueda.Text = "No se encontraron empleados que coincidan";
-                     }
-
-                 }
-                 catch (Exception ex)
-                 {
-                     //hacemos que el error de SQL, si es que existe se muestre como mensaje
-                     lblerrorbusqueda.Text = ex.Message.ToString();
-
-                 }
-
-             }
-             else
-             {
-                 //si no esta chequeado busca el nombre
-                 try
-                 {
-                     //lblerrorbusqueda.Text = "no cheked";
-                     TheGym k = new TheGym();
-                     k.NombreEmpleadoBusc = tbbuscar.Text;
-                     k.DNIEmpleadoBusc = "";
-                     k.CargoEmpleadoBusc = "";
-                     DataTable dt = k.GetEmpleadoNom();
-                     //lblerrorbusqueda.Text = "salida SP";
-                     if (dt.Rows.Count > 0)
-                     {
-                         GridView1.DataSource = dt;
-                         GridView1.DataBind();
-                     }
-                     else
-                     {
-                         lblerrorbusqueda.Text = "No se encontraron empleados que coincidan";
-                     }
-                 }
-                 catch (Exception ex)
-                 {
-                     //hacemos que el error de SQL, si es que existe se muestre como mensaje
-                     lblerrorbusqueda.Text = ex.Message.ToString();
-
-                 }
-
-                             */
+            
             //si los tb no estan vacios entonces podemos agregar el evento
 
             //creamos el comando y le pasamos el llamado al procedimiento almacenado
