@@ -200,6 +200,12 @@
                                                                             <asp:Label ID="Label10" runat="server" Text='<%# Bind("Experiencia") %>'></asp:Label>
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
+                                                                    
+                                                                    
+                                                                    <asp:ImageField DataImageUrlField="Foto" HeaderText="Foto">
+                                                                    </asp:ImageField>
+                                                                    
+                                                                    
                                                                     <asp:CommandField ButtonType="Button" CancelText="" DeleteText="" HeaderText="Editar" ShowEditButton="True" />
                                                                     <asp:CommandField ButtonType="Button" DeleteText="Inhabilitar" HeaderText="Inhabilitar" ShowDeleteButton="True" />
                                                                 </Columns>

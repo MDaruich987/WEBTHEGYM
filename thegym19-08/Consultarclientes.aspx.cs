@@ -13,9 +13,9 @@ namespace thegym19_08
     public partial class Consultarclientes : System.Web.UI.Page
     {
         //cadena de conexion MICA
-        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
-        //cadena de conexion MAXI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MAXI
+        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
@@ -33,7 +33,7 @@ namespace thegym19_08
         private void LLenar_GvClientes()
         {
             //creamos el comando y le pasamos el llamado al procedimiento almacenado
-            SqlCommand comd = new SqlCommand("select Id_cliente,DNI, Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio  from cliente where Estado='H'", conex);
+            SqlCommand comd = new SqlCommand("select Id_cliente,DNI, Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio, Foto  from Cliente where Estado='H'", conex);
             SqlDataAdapter da = new SqlDataAdapter(comd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -48,7 +48,7 @@ namespace thegym19_08
 
             //creamos el comando y le pasamos el llamado al procedimiento almacenado
             string sentencia = "%" + tbbuscar.Text + "%";
-            SqlCommand comd = new SqlCommand("select Id_cliente,DNI, Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio  from cliente where Estado='H' and Nombre like @param ", conex);
+            SqlCommand comd = new SqlCommand("select Id_cliente,DNI, Nombre, Apellido, Fecha_nac, Email, Telefono, Domicilio, Foto from Cliente where Estado='H' and Nombre like @param ", conex);
             comd.Parameters.AddWithValue("@param", SqlDbType.VarChar).Value = sentencia;
             SqlDataAdapter da = new SqlDataAdapter(comd);
             DataTable dt = new DataTable();
