@@ -211,7 +211,7 @@
                                          <tr>
                                              <td class="auto-style33"></td>
                                              <td class="auto-style4">
-                                                 <asp:Button ID="btnaceptar1" runat="server" Height="32px" TabIndex="10" Text="Aceptar" Width="126px" OnClick="btnaceptar1_Click1" />
+                                                 <asp:Button ID="btnaceptar1" runat="server" Height="32px" TabIndex="10" Text="Aceptar" Width="126px" OnClick="btnaceptar1_Click" />
                                              </td>
                                              <td class="auto-style5">&nbsp;&nbsp;&nbsp;
                                                  <br />
