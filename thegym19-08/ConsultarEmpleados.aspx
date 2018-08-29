@@ -73,7 +73,7 @@
             </asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <asp:Panel ID="Panel1" runat="server" BackColor="#AAE3FF" BorderColor="#00BFF0" BorderStyle="Solid" Height="696px">
+                    <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" Height="696px">
                         <ul class="spinning">
                             <a href="pricing.html">
                             <li class="live">consultar <span class="m_1">empleados</span></li>
@@ -110,7 +110,7 @@
                                                 <table class="nav-justified">
                                                     <tr>
                                                         <td>
-                                                            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="auto-style3" DataKeyNames="Id_empleado" EmptyDataText="No se encontraron resultados" EnableSortingAndPagingCallbacks="True" ForeColor="Black" GridLines="Horizontal" Height="235px" OnPageIndexChanged="GridView1_PageIndexChanged" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" PageSize="5" ShowHeaderWhenEmpty="True" Width="469px" Font-Overline="False" Font-Size="Small" OnRowDeleting="GridView1_RowDeleting">
+                                                            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style3" DataKeyNames="Id_empleado" EmptyDataText="No se encontraron resultados" EnableSortingAndPagingCallbacks="True" Height="235px" OnPageIndexChanged="GridView1_PageIndexChanged" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" PageSize="5" ShowHeaderWhenEmpty="True" Width="469px" Font-Overline="False" Font-Size="Small" OnRowDeleting="GridView1_RowDeleting">
                                                                 <Columns>
                                                                     <asp:TemplateField HeaderText="ID">
                                                                         <EditItemTemplate>
@@ -209,14 +209,7 @@
                                                                     <asp:CommandField ButtonType="Button" CancelText="" DeleteText="" HeaderText="Editar" ShowEditButton="True" />
                                                                     <asp:CommandField ButtonType="Button" DeleteText="Inhabilitar" HeaderText="Inhabilitar" ShowDeleteButton="True" />
                                                                 </Columns>
-                                                                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                                                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                                                                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                                                                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                                                                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                                                                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                                                                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                                                                <SortedDescendingHeaderStyle BackColor="#242121" />
+                                                                <HeaderStyle BackColor="#AAE3FF" />
                                                             </asp:GridView>
                                                         </td>
                                                         <td>&nbsp;</td>
