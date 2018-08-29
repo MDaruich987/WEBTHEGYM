@@ -170,14 +170,14 @@ namespace thegym19_08
             }
         }
 
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+   /*     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int id;
             try
             {
                 //tomamos el valor ID del empleado seleccionado
                 TextBox txt = new TextBox();
-                txt = (TextBox)GridView1.Rows[e.RowIndex].FindControl("Id_empleado");
+                txt = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtid");
                 id = Convert.ToInt32(txt.Text);
 
                 //llamos al procedimiento almacenado
@@ -210,7 +210,7 @@ namespace thegym19_08
                 lblerror.Text = ex.Message.ToString();
                 conex.Close();
             }
-        }
+        } */
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -301,6 +301,9 @@ namespace thegym19_08
 
         }
 
-
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            lblerror.Text = "Plan inhabilitado correctamente";
+        }
     }
 }

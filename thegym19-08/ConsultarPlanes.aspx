@@ -146,7 +146,7 @@
                                                                  </asp:TemplateField>
                                                                  <asp:TemplateField HeaderText="Duracion">
                                                                      <EditItemTemplate>
-                                                                         <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Duracion") %>' TextMode="Number" Width="64px"></asp:TextBox>
+                                                                         <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Duracion") %>' Width="64px"></asp:TextBox>
                                                                      </EditItemTemplate>
                                                                      <ItemTemplate>
                                                                          <asp:Label ID="Label4" runat="server" Text='<%# Bind("Duracion") %>'></asp:Label>
