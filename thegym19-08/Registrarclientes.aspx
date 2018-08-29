@@ -168,7 +168,20 @@
                                                  <td class="auto-style5">
                                                      <br />
                                              <br />
-                                                     <asp:FileUpload ID="FileUpload2" runat="server" Height="22px" Width="161px" />
+                                                     <div id="div48" style="width:80%;float:left;">
+                                                         <asp:UpdatePanel ID="UpdatePanel2" runat=server>
+                                                             <ContentTemplate>
+                                                                 <asp:FileUpload ID="fuImage" runat="server" Width="250px" /> 
+
+                                                             </ContentTemplate>
+                                                             <Triggers>
+                                                                 <asp:PostBackTrigger ControlID="btnaceptar0" />
+
+                                                             </Triggers>
+
+                                                         </asp:UpdatePanel>
+
+                                                     </div>
                                              <br />
                                              <br />
                                              <br />

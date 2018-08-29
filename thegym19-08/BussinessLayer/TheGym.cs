@@ -65,6 +65,7 @@ namespace thegym19_08.BusinessLayer
         public string TelefonoCliente;
         public string DomicilioCliente;
         public string DNICliente;
+        public string FotoCliente;
         //variables para registrar plan
         public string Nombreplanins;
         public string duracionplanins;
@@ -199,7 +200,7 @@ namespace thegym19_08.BusinessLayer
         //Metodo para Registrar Cliente 
         public void AddNewCliente()
         {
-            SqlParameter[] parameters = new SqlParameter[7];
+            SqlParameter[] parameters = new SqlParameter[8];
             parameters[0] = DataLayer.DataAccess.AddParameter("Nombre", NombreCliente, SqlDbType.NVarChar, 50);
             parameters[1] = DataLayer.DataAccess.AddParameter("Apellido", ApellidoCliente, SqlDbType.NVarChar, 50);
             parameters[2] = DataLayer.DataAccess.AddParameter("Fecha_Nac", FechaCliente, SqlDbType.Date, 50);
@@ -207,6 +208,7 @@ namespace thegym19_08.BusinessLayer
             parameters[4] = DataLayer.DataAccess.AddParameter("Telefono", TelefonoCliente, SqlDbType.BigInt, 50);
             parameters[5] = DataLayer.DataAccess.AddParameter("Domicilio", DomicilioCliente, SqlDbType.NVarChar, 50);
             parameters[6] = DataLayer.DataAccess.AddParameter("@DNI", DNICliente, SqlDbType.Int, 100);
+            parameters[7] = DataLayer.DataAccess.AddParameter("@Foto", FotoCliente, SqlDbType.NVarChar, 500);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddCliente", parameters);
         }
 
