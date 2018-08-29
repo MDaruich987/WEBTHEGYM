@@ -212,5 +212,13 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddCliente", parameters);
         }
 
+        public DataTable GetActividades()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllActividades", parameters);
+            return dt;
+        }
+
+
     }
 }
