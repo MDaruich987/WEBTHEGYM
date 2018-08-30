@@ -6,12 +6,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.SessionState;
 
 namespace thegym19_08
 {
     public partial class InicioLogin : System.Web.UI.Page
     {
-        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MICA
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MAXI
+        //SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion CAMI
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //cadena de conexion MILI
+        SqlConnection conex = new SqlConnection("Data Source=DESKTOP-T2J3I6L;Initial Catalog=TheGym;Integrated Security=True");
+        //cadena de conexion DAVID
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -33,9 +44,9 @@ namespace thegym19_08
                     //creamos un comando sql, le pasamos la consulta a enviar a la base de datos y la conexion
                     SqlCommand com = new SqlCommand("select Apellido,FK_cargo,Nombre from EMPLEADO e  inner join Usuario u on e.Id_empleado = u.FK_empleado where u.Usuario = @nick and u.Contraseña = @con" , conex);
                     //con el @ parametrizamos nuestros elementos, y ahora le agregamos el valor
-                    com.Parameters.AddWithValue("nick", usuario);
+                    com.Parameters.AddWithValue("@nick", usuario);
                     //primero pasamos el nombre del parametro y luego valor que tendra
-                    com.Parameters.AddWithValue("con", contraseña);
+                    com.Parameters.AddWithValue("@con", contraseña);
                     //creamos un objetosql data adapter y le pasamos nuestro comando sql
                     SqlDataAdapter dap = new SqlDataAdapter(com);
                     //creamos un data table 
@@ -47,7 +58,7 @@ namespace thegym19_08
                     {
                         //si al contar las filas del data table tenemos uno, el login es correcto
                         //verificamos si es un admin o empleado
-                        if (dat.Rows[0][1].ToString() == "1")
+                        if (dat.Rows[0][1].ToString() == "3")
                         {
                             //es empleada
                             //lblerrorlogin.Text = "admin";
@@ -65,13 +76,13 @@ namespace thegym19_08
                     }
                     else
                     {
-                        Label3.Text = "Usuario y/o contraseña incorrectos";
+                        Label1.Text = "Usuario y/o contraseña incorrectos";
                     }
 
                 }
                 catch (Exception)
                 {
-                    Label3.Text = "Error";
+                    Label1.Text = "Error";
 
                 }
                 /////////////////////
@@ -79,7 +90,7 @@ namespace thegym19_08
             //si no mostramos un mensaje indicando que debe ingresar
             else
             {
-                Label3.Text = "Ingrese usuario y contraseña";
+                Label1.Text = "Ingrese usuario y contraseña";
             }
 
         }
