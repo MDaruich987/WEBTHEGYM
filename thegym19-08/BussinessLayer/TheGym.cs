@@ -70,7 +70,10 @@ namespace thegym19_08.BusinessLayer
         public string Nombreplanins;
         public string duracionplanins;
         public string precioplanins;
-
+        //variables para registrar Detalles de Plan
+        public string FK_plan;
+        public string FK_actividad;
+        public string Dias_semanas;
        
 
 
@@ -110,8 +113,8 @@ namespace thegym19_08.BusinessLayer
         {
             SqlParameter[] parameters = new SqlParameter[3];
             parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", Nombreplanins, SqlDbType.VarChar, 50);
-            parameters[0] = DataLayer.DataAccess.AddParameter("@Duracion", duracionplanins, SqlDbType.Int, 50);
-            parameters[0] = DataLayer.DataAccess.AddParameter("@Precio", precioplanins, SqlDbType.Money, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Duracion", duracionplanins, SqlDbType.Int, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Precio", precioplanins, SqlDbType.Money, 50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddPlan", parameters);
         }
 
@@ -201,12 +204,12 @@ namespace thegym19_08.BusinessLayer
         public void AddNewCliente()
         {
             SqlParameter[] parameters = new SqlParameter[8];
-            parameters[0] = DataLayer.DataAccess.AddParameter("Nombre", NombreCliente, SqlDbType.NVarChar, 50);
-            parameters[1] = DataLayer.DataAccess.AddParameter("Apellido", ApellidoCliente, SqlDbType.NVarChar, 50);
-            parameters[2] = DataLayer.DataAccess.AddParameter("Fecha_Nac", FechaCliente, SqlDbType.Date, 50);
-            parameters[3] = DataLayer.DataAccess.AddParameter("Email", EmailCliente, SqlDbType.NVarChar, 100);
-            parameters[4] = DataLayer.DataAccess.AddParameter("Telefono", TelefonoCliente, SqlDbType.BigInt, 50);
-            parameters[5] = DataLayer.DataAccess.AddParameter("Domicilio", DomicilioCliente, SqlDbType.NVarChar, 50);
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombreCliente, SqlDbType.NVarChar, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Apellido", ApellidoCliente, SqlDbType.NVarChar, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Fecha_Nac", FechaCliente, SqlDbType.Date, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Email", EmailCliente, SqlDbType.NVarChar, 100);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@Telefono", TelefonoCliente, SqlDbType.BigInt, 50);
+            parameters[5] = DataLayer.DataAccess.AddParameter("@Domicilio", DomicilioCliente, SqlDbType.NVarChar, 50);
             parameters[6] = DataLayer.DataAccess.AddParameter("@DNI", DNICliente, SqlDbType.Int, 100);
             parameters[7] = DataLayer.DataAccess.AddParameter("@Foto", FotoCliente, SqlDbType.NVarChar, 500);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddCliente", parameters);
@@ -218,6 +221,24 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllActividades", parameters);
             return dt;
         }
+
+        public DataTable GetLastPlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetLastPlan", parameters);
+            return dt;
+        }
+
+        public void AddDetallePlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[3];
+            parameters [0] = DataLayer.DataAccess.AddParameter("@FK_plan", FK_plan, SqlDbType.Int, 100);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@FK_actividad", FK_actividad, SqlDbType.Int, 100);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Dias_semana", FK_actividad, SqlDbType.Int, 100);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddDetallePlan", parameters);
+        }
+
+
 
 
     }
