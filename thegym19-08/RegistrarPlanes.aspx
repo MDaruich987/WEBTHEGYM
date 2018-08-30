@@ -174,7 +174,9 @@
                                                  </asp:ListBox>
                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ListBox2" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar1_Click"></asp:RequiredFieldValidator>
                                              </td>
-                                             <td class="auto-style6">&nbsp;</td>
+                                             <td class="auto-style6">
+                                                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Agregar" />
+                                             </td>
                                          </tr>
                                          <tr>
                                              <td class="auto-style31">&nbsp;</td>
@@ -237,7 +239,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
-		     <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
+             <a href="#menu" class="class scroll"><a href="#menu" class="class scroll">
     <asp:Label ID="lblmensajebienvenida" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
     </a></a>
 </asp:Content>
