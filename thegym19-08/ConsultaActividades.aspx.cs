@@ -13,13 +13,13 @@ namespace thegym19_08
     public partial class ConsultaActividades : System.Web.UI.Page
     {
         //cadena de conexion MICA
-        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MAXI
         //SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
-        SqlConnection conex = new SqlConnection("Data Source=DESKTOP-T2J3I6L;Initial Catalog=TheGym;Integrated Security=True");
+       // SqlConnection conex = new SqlConnection("Data Source=DESKTOP-T2J3I6L;Initial Catalog=TheGym;Integrated Security=True");
         //cadena de conexion DAVID
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
 
@@ -135,53 +135,6 @@ namespace thegym19_08
         }
 
 
-        protected void gvactividad_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
-            string Nombre, Descripcion;
-            int Id;
-            try
-            {
-                //tomamos los valores de los txt que acmbiaron en el gridview
-                TextBox txt = new TextBox();
-                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtid");
-                Id = Convert.ToInt32(txt.Text);
-                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtnombre");
-                Nombre = txt.Text;
-                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtdescrip");
-                Descripcion = txt.Text;
-                //llamos al procedimiento almacenado
-                SqlCommand cmd = new SqlCommand("PA_ActualizaActividad", conex);
-                //esablecemos el dataadpater y le indicamos que trabajaremos con un procedimiento almacenado
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                {
-                    //definimos los valores de las variables del procedimiento
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Id;
-                    cmd.Parameters.AddWithValue("@nomb", SqlDbType.VarChar).Value = Nombre;
-
-                }
-                //abrimos la conexion
-                if (conex.State != ConnectionState.Open)
-                {
-                    conex.Open();
-                }
-                //ejectuamos el comando
-                cmd.ExecuteNonQuery();
-                //cerramos la conexion
-                conex.Close();
-                //obtenemos el indice de la fila editada
-                gvactividad.EditIndex = -1;
-                LLenar_GvActividades();
-                //PanelFormulario.Visible = false;
-                lblmensajerror.Text = "Actividad Actualizada Correctamente.";
-            }
-            catch (Exception ex)
-            {
-                lblmensajerror.Text = ex.Message.ToString();
-                conex.Close();
-            }
-        }
 
         protected void gvactividad_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -227,6 +180,53 @@ namespace thegym19_08
 
 
 
+            }
+        }
+
+        protected void gvactividad_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string Nombre, Descripcion;
+            int Id;
+            try
+            {
+                //tomamos los valores de los txt que acmbiaron en el gridview
+                TextBox txt = new TextBox();
+                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtid");
+                Id = Convert.ToInt32(txt.Text);
+                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtnombre");
+                Nombre = txt.Text;
+                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtdescrip");
+                Descripcion = txt.Text;
+                //llamos al procedimiento almacenado
+                SqlCommand cmd = new SqlCommand("PA_ActualizaActividad", conex);
+                //esablecemos el dataadpater y le indicamos que trabajaremos con un procedimiento almacenado
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                {
+                    //definimos los valores de las variables del procedimiento
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Id;
+                    cmd.Parameters.AddWithValue("@nomb", SqlDbType.VarChar).Value = Nombre;
+
+                }
+                //abrimos la conexion
+                if (conex.State != ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+                //ejectuamos el comando
+                cmd.ExecuteNonQuery();
+                //cerramos la conexion
+                conex.Close();
+                //obtenemos el indice de la fila editada
+                gvactividad.EditIndex = -1;
+                LLenar_GvActividades();
+                //PanelFormulario.Visible = false;
+                lblmensajerror.Text = "Actividad Actualizada Correctamente.";
+            }
+            catch (Exception ex)
+            {
+                lblmensajerror.Text = ex.Message.ToString();
+                conex.Close();
             }
         }
     }

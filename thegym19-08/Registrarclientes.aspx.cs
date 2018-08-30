@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using thegym19_08.BusinessLayer;
+//librerias que nos permiten redimensionar la imagen
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace thegym19_08
 {
@@ -16,42 +21,95 @@ namespace thegym19_08
 
         }
 
-        protected void btnaceptar0_Click(object sender, EventArgs e)
+        private void SaveClienteFoto()
         {
-
-            SaveProductPhoto();
-
-            //Configuracion para registrar cliente en la base de datos
-            //Creo el objeto k
-            TheGym k = new TheGym
+            if (fuImage.PostedFile != null)
             {
-                NombreCliente = tbnombre0.Text,
-                ApellidoCliente = tbapellido0.Text,
-                EmailCliente = tbemail1.Text,
-                FechaCliente = tbfechanacimiento1.Text,
-                TelefonoCliente = tbtelefono1.Text,
-                DomicilioCliente = tbdomicilio.Text,
-                DNICliente = tbdni0.Text,
-                FotoCliente = "~/ImagenesSistema/" + fuImage.FileName
-            };
+                string filename = fuImage.FileName.ToString();
+                string fileExt = System.IO.Path.GetExtension(fuImage.FileName);
 
-            try
-            {
-                k.AddNewCliente();
-                LblReg.Text = ("Cliente registrado con éxito.");
+                if (filename.Length > 96)
+                {
+                    LblReg.Text = ("El nomnre de la imagen no debe exceder los 96 caracteres");
+                }
+                else if (fileExt != ".jpeg" && fileExt != ".jpg" && fileExt != ".png" && fileExt != ".bmp")
+                {
+                    LblReg.Text = ("Solo se admiten formatos como jpeg, jpg, bmp & png ");
+                }
+                else if (fuImage.PostedFile.ContentLength > 40000000)
+                {
+                    LblReg.Text = ("El tamaño de la imagen no debe ser mayor a 40MB !");
+                }
+                else
+                {
 
+                    //fuImage.SaveAs(Server.MapPath("~/ImagenesSistema/" + filename));
+                    try
+                    {
+                        int alto;
+                        int ancho;
+                        ///////
+                        // como no se puede obtener el path directo del upload file, lo que hacemos es guardarla en una carpeta distinta con su tamaño original
+                        fuImage.PostedFile.SaveAs(Server.MapPath("~/Uploads/") + fuImage.PostedFile.FileName);
+                        System.Drawing.Image img;
+                        //importamos la libreria drawing y abrimos la imagen en un bitmap
+                        Bitmap imagen = new Bitmap(Server.MapPath("~/Uploads/") + fuImage.PostedFile.FileName);
+                        //obtenemos su alto y ancho
+                        ancho = imagen.Width;
+                        alto = imagen.Height;
+                        //la redimensionamos con el metodo resizeImage
+                        if (alto > ancho)
+                        {
+                            img = ResizeImage(imagen, 150, 130);
+                        }
+                        else
+                        {
+                            img = ResizeImage(imagen, 150, 150);
+                        }
+
+                        img.Save(Server.MapPath("~/ImagenesSistema/") + tbnombre0.Text + ".jpg");
+                        ///////
+                        LblReg.Text = "El producto se agregó correctamente";
+                    }
+                    catch (Exception)
+                    {
+
+                        LblReg.Text = "La imagen no se agregó correctamente";
+                    }
+                }
             }
-            catch
-            {
 
+        }
+
+        //utilizamos este metodo para redimensionar la imagen
+        public static System.Drawing.Image ResizeImage(System.Drawing.Image srcImage, int newWidth, int newHeight)
+        {
+            using (Bitmap imagenBitmap =
+               new Bitmap(newWidth, newHeight, PixelFormat.Format32bppRgb))
+            {
+                imagenBitmap.SetResolution(
+                   Convert.ToInt32(srcImage.HorizontalResolution),
+                   Convert.ToInt32(srcImage.HorizontalResolution));
+
+                using (Graphics imagenGraphics =
+                        Graphics.FromImage(imagenBitmap))
+                {
+                    imagenGraphics.SmoothingMode =
+                       SmoothingMode.AntiAlias;
+                    imagenGraphics.InterpolationMode =
+                       InterpolationMode.HighQualityBicubic;
+                    imagenGraphics.PixelOffsetMode =
+                       PixelOffsetMode.HighQuality;
+                    imagenGraphics.DrawImage(srcImage,
+                       new Rectangle(0, 0, newWidth, newHeight),
+                       new Rectangle(0, 0, srcImage.Width, srcImage.Height),
+                       GraphicsUnit.Pixel);
+                    MemoryStream imagenMemoryStream = new MemoryStream();
+                    imagenBitmap.Save(imagenMemoryStream, ImageFormat.Jpeg);
+                    srcImage = System.Drawing.Image.FromStream(imagenMemoryStream);
+                }
             }
-            tbnombre0.Text = string.Empty;
-            tbapellido0.Text = string.Empty;
-            tbfechanacimiento1.Text = string.Empty;
-            tbemail1.Text = string.Empty;
-            tbtelefono1.Text = string.Empty;
-            tbdomicilio.Text = string.Empty;
-            tbdni0.Text = string.Empty;
+            return srcImage;
         }
 
         protected void btncancelar_Click1(object sender, EventArgs e)
@@ -64,32 +122,60 @@ namespace thegym19_08
             tbtelefono1.Text = ("");
         }
 
-        private void SaveProductPhoto()
+
+
+        protected void btnaceptar0_Click(object sender, EventArgs e)
         {
-            if (fuImage.PostedFile != null)
+            try
             {
-                string filename = fuImage.FileName.ToString();
-                string fileExt = System.IO.Path.GetExtension(fuImage.FileName);
+                SaveClienteFoto();
+                //Configuracion para registrar cliente en la base de datos
+                //Creo el objeto k
+                TheGym k = new TheGym
+                {
+                    NombreCliente = tbnombre0.Text,
+                    ApellidoCliente = tbapellido0.Text,
+                    EmailCliente = tbemail1.Text,
+                    FechaCliente = tbfechanacimiento1.Text,
+                    TelefonoCliente = tbtelefono1.Text,
+                    DomicilioCliente = tbdomicilio.Text,
+                    DNICliente = tbdni0.Text,
+                    FotoCliente = "~/ImagenesSistema/" + fuImage.FileName
+                };
 
-                if (filename.Length > 96)
+                try
                 {
-                    //Alert.Show("image name should not exceed 96 characters!");
+                    k.AddNewCliente();
+                    LblReg.Text = ("Cliente registrado con éxito.");
+
                 }
-                else if (fileExt != ".jpeg" && fileExt != ".jpg" && fileExt != ".png" && fileExt != ".bmp")
+                catch
                 {
-                    //Alert.Show("Only jpeg, jpg, bmp & png images are allowed!");
+
                 }
-                else if (fuImage.PostedFile.ContentLength > 40000000)
-                {
-                    //Alert.Show("Image size shold not be greater than 40MB !");
-                }
-                else
-                {
-                    fuImage.SaveAs(Server.MapPath("~/ImagenesSistema/" + filename));
-                }
+                tbnombre0.Text = string.Empty;
+                tbapellido0.Text = string.Empty;
+                tbfechanacimiento1.Text = string.Empty;
+                tbemail1.Text = string.Empty;
+                tbtelefono1.Text = string.Empty;
+                tbdomicilio.Text = string.Empty;
+                tbdni0.Text = string.Empty;
             }
-        }
+
+            catch (Exception ex)
+            {
+
+                LblReg.Text = ex.Message.ToString();
+            }
 
 
-    }
+     }
+           
+
+ }
+
 }
+
+
+
+
