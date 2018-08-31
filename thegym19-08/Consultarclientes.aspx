@@ -6,7 +6,7 @@
             height: 276px;
         }
         .auto-style3 {
-            height: 661px;
+            height: 1240px;
             width: 1026px;
             margin-left: 0px;
         }
@@ -40,6 +40,15 @@
         }
         .auto-style17 {
             margin-left: 50px;
+        }
+        .auto-style18 {
+            width: 262px;
+        }
+        .auto-style19 {
+            width: 227px;
+        }
+        .auto-style21 {
+            width: 159px;
         }
     </style>
 </asp:Content>
@@ -97,7 +106,7 @@
                  <br />
                  <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                      <ContentTemplate>
-                         <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" CssClass="auto-style12" Height="613px">
+                         <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" CssClass="auto-style12" Height="1205px">
                              <ul class="spinning">
                                  <a href="pricing.html">
                                  <li class="live">consultar <span class="m_1">cliente</span></li>
@@ -133,76 +142,15 @@
                                                      <table class="nav-justified">
                                                          <tr>
                                                              <td>
-                                                                 <asp:GridView ID="gridviewclientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="auto-style17" DataKeyNames="Id_cliente" Height="193px" OnPageIndexChanged="GridView1_PageIndexChanged"  OnRowCancelingEdit="GridView1_RowCancelingEdit"  OnRowEditing="GridView1_RowEditing" PageSize="5" Width="615px" OnRowCommand="MyRowCommand">
+                                                                 <asp:GridView ID="gridviewclientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="auto-style17"  Height="193px" >
                                                                      <Columns>
-                                                                         <asp:TemplateField HeaderText="ID">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtid" runat="server" Height="23px" ReadOnly="True" Text='<%# Bind("Id_cliente") %>' Width="18px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Id_cliente") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="DNI">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtdni" runat="server" Height="23px" Text='<%# Bind("DNI") %>' TextMode="Number" Width="64px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("DNI") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="Nombre">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtnombre" runat="server" Height="21px" Text='<%# Bind("Nombre") %>' Width="95px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label3" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="Apellido">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtapellido" runat="server" Height="21px" Text='<%# Bind("Apellido") %>' Width="112px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label4" runat="server" Text='<%# Bind("Apellido") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="Fecha Nacimiento">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtfechanacimiento" runat="server" Height="20px" Text='<%# Bind("Fecha_nac") %>' TextMode="Date" Width="113px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label5" runat="server" Text='<%# Bind("Fecha_nac") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="Email">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtemail" runat="server" Height="20px" Text='<%# Bind("Email") %>' TextMode="Email" Width="120px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label6" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="Telefono">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txttelefono" runat="server" Height="20px" Text='<%# Bind("Telefono") %>' TextMode="Number" Width="121px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label7" runat="server" Text='<%# Bind("Telefono") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:TemplateField HeaderText="Domicilio">
-                                                                             <EditItemTemplate>
-                                                                                 <asp:TextBox ID="txtdomicilio" runat="server" Height="21px" Text='<%# Bind("Domicilio") %>' Width="147px"></asp:TextBox>
-                                                                             </EditItemTemplate>
-                                                                             <ItemTemplate>
-                                                                                 <asp:Label ID="Label8" runat="server" Text='<%# Bind("Domicilio") %>'></asp:Label>
-                                                                             </ItemTemplate>
-                                                                         </asp:TemplateField>
-                                                                         <asp:ImageField DataImageUrlField="Foto" HeaderText="Foto">
+                                                                         <asp:BoundField HeaderText="ID" />
+                                                                         <asp:BoundField HeaderText="Nombre" />
+                                                                         <asp:BoundField HeaderText="Apellido" />
+                                                                         <asp:BoundField HeaderText="DNI" />
+                                                                         <asp:ImageField HeaderText="Fotografia">
                                                                          </asp:ImageField>
-                                                                         <asp:CommandField ButtonType="Button" ShowEditButton="True" />
-                                                                         <asp:CommandField ButtonType="Button" SelectText="" CancelText="" DeleteText="Inhabilitar" EditText="" InsertText="" NewText="" ShowDeleteButton="True" UpdateText="" />
+                                                                         <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
                                                                      </Columns>
                                                                      <HeaderStyle BackColor="#72D0F4" BorderColor="White" BorderStyle="None" />
                                                                  </asp:GridView>
@@ -218,6 +166,144 @@
                                                  <td colspan="2">
                                                      &nbsp;&nbsp;&nbsp;
                                                      <asp:Label ID="lblerror" runat="server"></asp:Label>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td colspan="2">
+                                                     <table class="nav-justified">
+                                                         <tr>
+                                                             <td>
+                                                                 <ul class="spinning">
+                                                                     <a href="pricing.html">
+                                                                     <li class="live">FICHA <span class="m_1">DEL CLIENTE</span></li>
+                                                                     </a>
+                                                                 </ul>
+                                                             </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>&nbsp;</td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>
+                                                                 <table class="nav-justified">
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                             <asp:Label ID="lblnombre" runat="server" Text="Nombre:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style18">
+                                                                             <asp:TextBox ID="tbnombre" runat="server" CssClass="auto-style8" ReadOnly="True" TabIndex="1" Width="187px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style19">
+                                                                             <asp:Label ID="lblapellido" runat="server" Text="Apellido:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td>
+                                                                             <asp:TextBox ID="tbapellido" runat="server" TabIndex="2" Width="173px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                             <asp:Label ID="lbldni" runat="server" Text="DNI:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style18">
+                                                                             <asp:TextBox ID="tbdni" runat="server" CssClass="auto-style10" ReadOnly="True" TabIndex="3" Width="190px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style19">
+                                                                             <asp:Label ID="lblfechanacimiento" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td>
+                                                                             <asp:TextBox ID="tbfechanacimiento" runat="server" TabIndex="4" Width="173px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                             <asp:Label ID="lbldomicilio" runat="server" Text="Domicilio:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style18">
+                                                                             <asp:TextBox ID="tbdomicilio" runat="server" ReadOnly="True" TabIndex="5" Width="192px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style19">
+                                                                             <asp:Label ID="lbltelefono" runat="server" Text="Teléfono:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td>
+                                                                             <asp:TextBox ID="tbtelefono" runat="server" ReadOnly="True" TabIndex="6" Width="173px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                             <asp:Label ID="lblemail" runat="server" Text="E-mail:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style18">
+                                                                             <asp:TextBox ID="tbemail" runat="server" ReadOnly="True" TabIndex="7" Width="192px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style19">
+                                                                             <asp:Label ID="lblfotografia" runat="server" Text="Fotografía:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td rowspan="3">
+                                                                             <asp:Image ID="imgfotografia" runat="server" Height="118px" Width="171px" />
+                                                                         </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                             <asp:Label ID="lblplancontratado" runat="server" Text="Plan:"></asp:Label>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style18">
+                                                                             <asp:TextBox ID="tbplancontratado" runat="server" ReadOnly="True" TabIndex="7" Width="192px"></asp:TextBox>
+                                                                             <br />
+                                                                             <br />
+                                                                         </td>
+                                                                         <td class="auto-style19">&nbsp;</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;</td>
+                                                                         <td class="auto-style18">&nbsp;</td>
+                                                                         <td class="auto-style19">&nbsp;</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td class="auto-style21">&nbsp;</td>
+                                                                         <td class="auto-style18">
+                                                                             <asp:Button ID="btneditar" runat="server" Height="32px" TabIndex="10" Text="Editar" Width="126px" />
+                                                                         </td>
+                                                                         <td class="auto-style19">
+                                                                             <asp:Button ID="btninhabilitar" runat="server" Height="32px" TabIndex="11" Text="Inhabilitar" Width="126px" />
+                                                                         </td>
+                                                                         <td>&nbsp;</td>
+                                                                     </tr>
+                                                                 </table>
+                                                             </td>
+                                                         </tr>
+                                                     </table>
                                                  </td>
                                              </tr>
                                          </table>
