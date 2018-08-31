@@ -41,7 +41,7 @@ namespace thegym19_08
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ddlCargo.Enabled = true;
             GetCargos();
             DNIEdit = GridView1.SelectedRow.Cells[2].Text;
             TbNombre.ReadOnly = false;

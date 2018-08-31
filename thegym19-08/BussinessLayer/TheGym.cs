@@ -85,7 +85,46 @@ namespace thegym19_08.BusinessLayer
         public string TituloEmpleadoEdit;
         public string ExperienciaEmpleadoEdit;
         public string CargoEmpleadoEdit;
-       
+        //variables para editar Actividad
+        public string NombreActividadEdit;
+        public string SucursalActividadEdit;
+        public string DescripcionActividadEdit;
+        public string ProfesorActividadEdit;
+        public string HorarioInicioEdit;
+        public string HorarioFinEdit;
+        public string CuposActividadEdit;
+        public string IdEmpleado;
+        public string IdActividad;
+        public string IdSucursal;
+        //variable para encontrar id de profesor
+        public string NombreProfesor;
+        public string ApellidoProfesor;
+        
+
+        public void UpdateActividad()
+        {
+            SqlParameter[] parameters = new SqlParameter[10];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Id_sucursal", IdSucursal, SqlDbType.Int, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Id_empleado", IdEmpleado, SqlDbType.Int, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Id_actividad", IdActividad, SqlDbType.Int, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Nombre", NombreActividadEdit, SqlDbType.NVarChar, 50);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@FK_empleado", ProfesorActividadEdit, SqlDbType.Int, 50);
+            parameters[5] = DataLayer.DataAccess.AddParameter("@Cupos", CuposActividadEdit, SqlDbType.Int, 50);
+            parameters[6] = DataLayer.DataAccess.AddParameter("@Hora_inicio", HorarioInicioEdit, SqlDbType.Time, 50);
+            parameters[7] = DataLayer.DataAccess.AddParameter("@Hora_fin", HorarioFinEdit, SqlDbType.Time, 50);
+            parameters[8] = DataLayer.DataAccess.AddParameter("@Descripcion", DescripcionActividadEdit, SqlDbType.NVarChar, 500);
+            parameters[9] = DataLayer.DataAccess.AddParameter("@FK_sucursal", SucursalActividadEdit, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_UpdateActividad", parameters);
+        }
+
+        public DataTable GetIdProfesor()
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombreProfesor, SqlDbType.NVarChar, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Apellido", ApellidoProfesor, SqlDbType.NVarChar, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetIdProfesor", parameters);
+            return dt;
+        }
 
         public void UpdateEmpleado()
         {

@@ -12,7 +12,8 @@ namespace thegym19_08
 {
     public partial class ConsultaActividades : System.Web.UI.Page
     {
-        
+        static string idemp;
+        static string idsuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,6 +22,114 @@ namespace thegym19_08
                 lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
             }
         }
+
+        protected void btnbuscaractividad_Click(object sender, EventArgs e)
+        {
+            TheGym k = new TheGym
+            {
+                NombreActividadBuscar = tbbuscar.Text,
+            };
+            DataTable dt = new DataTable();
+            dt = k.GetActividad();
+            if (dt.Rows.Count > 0)
+            {
+                gvactividad.DataSource = dt;
+                gvactividad.DataBind();
+            }
+            
+        }
+
+        private void GetSucursales()
+        {
+            TheGym k = new TheGym();
+            DataTable dt = k.GetSucursales();
+            if (dt.Rows.Count > 0)
+            {
+                DroplisSucursal.DataValueField = "Id_sucursal";
+                DroplisSucursal.DataTextField = "Nombre";
+                DroplisSucursal.DataSource = dt;
+                DroplisSucursal.DataBind();
+            }
+        }
+
+        protected void gvactividad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetProfesores();
+            GetSucursales();
+            TxbNombre.ReadOnly = false;
+            //TxbProfesor.ReadOnly = false;
+            TxbDesc.ReadOnly = false;
+            TxbDe.ReadOnly = false;
+            TxbA.ReadOnly = false;
+            TxbCupos.ReadOnly = false;
+            TxbNombre.Text = gvactividad.SelectedRow.Cells[1].Text;
+            TxbDesc.Text = gvactividad.SelectedRow.Cells[2].Text;
+            //TxbProfesor.Text = gvactividad.SelectedRow.Cells[3].Text;
+            DroplisSucursal.ClearSelection();
+            DroplisSucursal.Items.FindByText(gvactividad.SelectedRow.Cells[4].Text).Selected=true;
+            idsuc = DroplisSucursal.SelectedValue;
+            TxbDe.Text = gvactividad.SelectedRow.Cells[5].Text;
+            TxbA.Text = gvactividad.SelectedRow.Cells[6].Text;
+            ddlProfesor.ClearSelection();
+            ddlProfesor.Items.FindByText(gvactividad.SelectedRow.Cells[3].Text).Selected=true;
+            idemp = ddlProfesor.SelectedValue;
+            TxbCupos.Text = gvactividad.SelectedRow.Cells[7].Text;
+        }
+
+        protected void BtnEditar_Click(object sender, EventArgs e)
+         {
+            TheGym k = new TheGym
+            {
+                IdActividad = gvactividad.SelectedRow.Cells[0].Text,
+                IdEmpleado = idemp,
+                IdSucursal = idsuc,
+                NombreActividadEdit = TxbNombre.Text,
+                ProfesorActividadEdit = ddlProfesor.SelectedValue,
+                CuposActividadEdit = TxbCupos.Text,
+                HorarioInicioEdit = TxbDe.Text,
+                HorarioFinEdit = TxbA.Text,
+                DescripcionActividadEdit = TxbDesc.Text,
+                SucursalActividadEdit = DroplisSucursal.SelectedValue
+            };
+
+            k.UpdateActividad();
+
+            TxbNombre.Text = string.Empty;
+            TxbDesc.Text = string.Empty;
+            TxbDe.Text = string.Empty;
+            TxbCupos.Text = string.Empty;
+            TxbA.Text = string.Empty;
+            ddlProfesor.ClearSelection();
+            DroplisSucursal.ClearSelection();
+            tbbuscar.Text = string.Empty;
+            TxbA.ReadOnly = true;
+            TxbCupos.ReadOnly = true;
+            TxbDe.ReadOnly = true;
+            TxbDesc.ReadOnly = true;
+            TxbNombre.ReadOnly = true;
+
+
+            DataTable aux2 = new DataTable();
+            gvactividad.DataSource = aux2;
+            gvactividad.DataBind();
+            gvactividad.Dispose();
+
+        }
+
+        private void GetProfesores()
+        {
+            TheGym k = new TheGym();
+            DataTable dt = k.GetProfesores();
+            if (dt.Rows.Count > 0)
+            {
+                ddlProfesor.DataValueField = "Id_empleado";
+                ddlProfesor.DataTextField = "Profesor";
+                ddlProfesor.DataSource = dt;
+                ddlProfesor.DataBind();
+
+            }
+        }
+
 
         /*codigo delete
          *

@@ -139,13 +139,13 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblProfesor;
         
         /// <summary>
-        /// Control TxbProfesor.
+        /// Control ddlProfesor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxbProfesor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProfesor;
         
         /// <summary>
         /// Control LblSucursal.
@@ -220,13 +220,13 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblCupos;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TxbCupos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TxbCupos;
         
         /// <summary>
         /// Control LblDesc.

@@ -253,7 +253,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnombre;
+        //protected global::System.Web.UI.WebControls.Label lblnombre;
         
         /// <summary>
         /// Control tbnombre.
@@ -262,7 +262,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbnombre;
+        //protected global::System.Web.UI.WebControls.TextBox tbnombre;
         
         /// <summary>
         /// Control lblapellido.
@@ -271,7 +271,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblapellido;
+        //protected global::System.Web.UI.WebControls.Label lblapellido;
         
         /// <summary>
         /// Control tbapellido.
@@ -280,7 +280,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbapellido;
+        //protected global::System.Web.UI.WebControls.TextBox tbapellido;
         
         /// <summary>
         /// Control lbldni.
@@ -289,7 +289,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbldni;
+        //protected global::System.Web.UI.WebControls.Label lbldni;
         
         /// <summary>
         /// Control tbdni.
@@ -298,7 +298,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbdni;
+        //protected global::System.Web.UI.WebControls.TextBox tbdni;
         
         /// <summary>
         /// Control lblfechanacimiento.
@@ -307,7 +307,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblfechanacimiento;
+        //protected global::System.Web.UI.WebControls.Label lblfechanacimiento;
         
         /// <summary>
         /// Control tbfechanacimiento.
@@ -316,7 +316,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbfechanacimiento;
+        //protected global::System.Web.UI.WebControls.TextBox tbfechanacimiento;
         
         /// <summary>
         /// Control lbldomicilio.
@@ -325,7 +325,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbldomicilio;
+        //protected global::System.Web.UI.WebControls.Label lbldomicilio;
         
         /// <summary>
         /// Control tbdomicilio.
@@ -334,7 +334,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbdomicilio;
+        //protected global::System.Web.UI.WebControls.TextBox tbdomicilio;
         
         /// <summary>
         /// Control lbltelefono.
@@ -343,7 +343,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltelefono;
+        //protected global::System.Web.UI.WebControls.Label lbltelefono;
         
         /// <summary>
         /// Control tbtelefono.
@@ -352,7 +352,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbtelefono;
+        //protected global::System.Web.UI.WebControls.TextBox tbtelefono;
         
         /// <summary>
         /// Control lblemail.
@@ -361,7 +361,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblemail;
+        //protected global::System.Web.UI.WebControls.Label lblemail;
         
         /// <summary>
         /// Control tbemail.
@@ -370,7 +370,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbemail;
+        //protected global::System.Web.UI.WebControls.TextBox tbemail;
         
         /// <summary>
         /// Control lblfotografia.
@@ -379,7 +379,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblfotografia;
+        //protected global::System.Web.UI.WebControls.Label lblfotografia;
         
         /// <summary>
         /// Control imgfotografia.
@@ -388,7 +388,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgfotografia;
+        //protected global::System.Web.UI.WebControls.Image imgfotografia;
         
         /// <summary>
         /// Control lblplancontratado.
@@ -397,7 +397,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblplancontratado;
+        //protected global::System.Web.UI.WebControls.Label lblplancontratado;
         
         /// <summary>
         /// Control tbplancontratado.
@@ -406,7 +406,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbplancontratado;
+        //protected global::System.Web.UI.WebControls.TextBox tbplancontratado;
         
         /// <summary>
         /// Control btneditar.
@@ -415,7 +415,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btneditar;
+        //protected global::System.Web.UI.WebControls.Button btneditar;
         
         /// <summary>
         /// Control btninhabilitar.
@@ -424,7 +424,7 @@ namespace thegym19_08 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btninhabilitar;
+        //protected global::System.Web.UI.WebControls.Button btninhabilitar;
         
         /// <summary>
         /// Control lblmensajebienvenida.
