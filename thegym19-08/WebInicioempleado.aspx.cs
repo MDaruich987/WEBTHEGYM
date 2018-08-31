@@ -9,8 +9,12 @@ namespace thegym19_08
 {
     public partial class WebInicioempleado : System.Web.UI.Page
     {
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //lblmensajebienvenida.Text = Session["inicio"].ToString();
             //si efectivamente se ha iniciado sesión
             if (Session["inicio"] != null)
             {

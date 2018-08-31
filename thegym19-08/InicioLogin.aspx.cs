@@ -15,11 +15,11 @@ namespace thegym19_08
         //cadena de conexion MICA
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MAXI
-        //SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
-        SqlConnection conex = new SqlConnection("Data Source=DESKTOP-T2J3I6L;Initial Catalog=TheGym;Integrated Security=True");
+        //SqlConnection conex = new SqlConnection("Data Source=DESKTOP-T2J3I6L;Initial Catalog=TheGym;Integrated Security=True");
         //cadena de conexion DAVID
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
 
@@ -65,7 +65,8 @@ namespace thegym19_08
                             //enviamos como parametro al form de inicio del admin su nombre y apellido consultado en el datatable
                             Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][0].ToString();
                             Session["inicio"] = usuario;
-                            Response.Redirect("WebInicioempleado.aspx?parametro=" + Label3.Text);
+                            Response.Redirect("~/WebInicioempleado.aspx?parametro=" + Label3.Text,false);
+                            //Response.Redirect("~/WebInicioempleado.aspx",false);
 
                         }
                         else if (dat.Rows[0][1].ToString() == "2")
@@ -80,7 +81,7 @@ namespace thegym19_08
                     }
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     Label1.Text = "Error";
 

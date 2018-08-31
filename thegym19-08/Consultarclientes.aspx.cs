@@ -26,8 +26,8 @@ namespace thegym19_08
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
+            lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+
         }
 
         private void LLenar_GvClientes()

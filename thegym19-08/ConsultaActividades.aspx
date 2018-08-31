@@ -112,7 +112,7 @@
                                                     <tr>
                                                         <td class="auto-style4">&nbsp;</td>
                                                         <td>
-                                                            <asp:GridView ID="gvactividad" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="auto-style6" Height="211px" OnPageIndexChanged="gvactividad_PageIndexChanged" OnRowCancelingEdit="gvactividad_RowCancelingEdit" OnRowEditing="gvactividad_RowEditing" OnRowUpdating="gvactividad_RowUpdating" PageSize="4" Width="617px" DataKeyNames="Id_actividad" Font-Names="bizagi-font" Font-Overline="False" OnRowCommand="gvactividad_RowCommand">
+                                                            <asp:GridView ID="gvactividad" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="auto-style6" Height="211px" OnPageIndexChanged="gvactividad_PageIndexChanged" OnRowCancelingEdit="gvactividad_RowCancelingEdit" OnRowEditing="gvactividad_RowEditing" OnRowUpdating="gvactividad_RowUpdating" PageSize="4" Width="617px" Font-Names="bizagi-font" Font-Overline="False" >
                                                                 <Columns>
                                                                     <asp:TemplateField HeaderText="ID">
                                                                         <EditItemTemplate>
