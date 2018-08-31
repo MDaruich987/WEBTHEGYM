@@ -76,8 +76,7 @@
                                                  </td>
                                              </tr>
                                              <tr>
-                                                 <td class="auto-style31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;
-                                                     <asp:Label ID="lblnombre0" runat="server" Text="Nombre:"></asp:Label>
+                                                 <td class="auto-style31">&nbsp;&nbsp;&nbsp;<asp:Label ID="lblnombre0" runat="server" Text="Nombre:"></asp:Label>
                                              <br />
                                                  </td>
                                                  <td class="auto-style3">
@@ -88,18 +87,20 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style24">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style28">
+                                                     &nbsp;
                                                      <asp:Label ID="lblapellido0" runat="server" Text="Apellido:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style14">
+                                                     <br />
                                                      <asp:TextBox ID="tbapellido0" runat="server" TabIndex="2" Width="144px"></asp:TextBox>
                                              <br />
                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="tbapellido0" ErrorMessage="*Ingrese solo letras" ForeColor="Red" ValidationExpression="^[A-Za-z]*$"> </asp:RegularExpressionValidator>
                                                  </td>
                                                  <td class="auto-style18">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbapellido0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbapellido0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                                  </td>
                                              </tr>
                                              <tr>
@@ -113,14 +114,15 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style22">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbdni0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style29">
+                                                     &nbsp;
                                                      <asp:Label ID="lbltelefono1" runat="server" Text="Teléfono:"></asp:Label>
                                                  </td>
                                                  <td class="auto-style15">
                                                      <asp:TextBox ID="tbtelefono1" runat="server" TabIndex="6" TextMode="Number" Width="123px"></asp:TextBox>
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbnombre0" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style18" rowspan="3">
                                                      &nbsp;</td>
@@ -140,7 +142,7 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style24">
-                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbemail1" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbemail1" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                                  </td>
                                                  <td class="auto-style28">
                                              <br />
@@ -153,6 +155,7 @@
                                              <br />
                                              <br />
                                                      <asp:TextBox ID="tbfechanacimiento1" runat="server" CssClass="form-control-static" TabIndex="4" Width="119px" TextMode="Date"></asp:TextBox>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="tbfechanacimiento1" Display="Dynamic" ErrorMessage="*" OnDataBinding="btnaceptar0_Click" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                              <br />
                                              <br />
                                                  </td>
@@ -171,7 +174,7 @@
                                                      <div id="div48" style="width:80%;float:left;">
                                                          <asp:UpdatePanel ID="UpdatePanel2" runat=server>
                                                              <ContentTemplate>
-                                                                 <asp:FileUpload ID="fuImage" runat="server" Width="250px" /> 
+                                                                 <asp:FileUpload ID="fuImage" runat="server" Width="229px" /> 
 
                                                              </ContentTemplate>
                                                              <Triggers>
@@ -184,10 +187,10 @@
                                                      </div>
                                              <br />
                                              <br />
-                                             <br />
                                                  </td>
                                                  <td class="auto-style5">
                                              <br />
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="fuImage" Display="Dynamic" ErrorMessage="*" Font-Size="X-Large" ForeColor="Red" OnDataBinding="btnaceptar0_Click"></asp:RequiredFieldValidator>
                                              <br />
                                              <br />
                                                  </td>
@@ -199,7 +202,8 @@
                                              <br />
                                                  </td>
                                                  <td class="auto-style8">
-                                                     <asp:TextBox ID="tbdomicilio" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="tbdomicilio" runat="server" Width="126px"></asp:TextBox>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="tbdomicilio" Display="Dynamic" ErrorMessage="*" OnDataBinding="btncancelar_Click1" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>
                                              <br />
                                              <br />
                                                  </td>
