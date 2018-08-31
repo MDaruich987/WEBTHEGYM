@@ -36,7 +36,7 @@ namespace thegym19_08.BusinessLayer
         public string TitulEmpleadoIns;
         public string ExperEmpleadoIns;
         public int CargoEmpleadoIns;
-        //variables para realizar la edicion de empleado
+        //variables para realizar la edicion de Cliente
         public string DNIEditar="0";
         public string NombreClienteEditar;
         public string ApellidoClienteEditar;
@@ -74,9 +74,35 @@ namespace thegym19_08.BusinessLayer
         public string FK_plan;
         public string FK_actividad;
         public string Dias_semanas;
+        //variables para editar Empleado
+        public string NombreEmpleadoEdit;
+        public string ApellidoEmpleadoEdit;
+        public string DNIEmpleadoEdit;
+        public string DomicilioEmpleadoEdit;
+        public string TelefonoEmpleadoEdit;
+        public string EmailEmpleadoEdit;
+        public string FechaNacEmpleadoEdit;
+        public string TituloEmpleadoEdit;
+        public string ExperienciaEmpleadoEdit;
+        public string CargoEmpleadoEdit;
        
 
-
+        public void UpdateEmpleado()
+        {
+            SqlParameter[] parameters = new SqlParameter[11];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombreEmpleadoEdit, SqlDbType.NVarChar, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Apellido", ApellidoEmpleadoEdit, SqlDbType.NVarChar, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Fecha_nac", FechaNacEmpleadoEdit, SqlDbType.Date, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Email", EmailEmpleadoEdit, SqlDbType.NVarChar, 100);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@Telefono", TelefonoEmpleadoEdit, SqlDbType.BigInt, 50);
+            parameters[5] = DataLayer.DataAccess.AddParameter("@Domicilio", DomicilioEmpleadoEdit, SqlDbType.NVarChar, 50);
+            parameters[6] = DataLayer.DataAccess.AddParameter("@DNI", DNIEmpleadoEdit, SqlDbType.Int, 50);
+            parameters[7] = DataLayer.DataAccess.AddParameter("@DNIEdit", DNIEditar, SqlDbType.Int, 50);
+            parameters[8] = DataLayer.DataAccess.AddParameter("@Titulo", TituloEmpleadoEdit, SqlDbType.NVarChar, 50);
+            parameters[9] = DataLayer.DataAccess.AddParameter("@Experiencia", ExperienciaEmpleadoEdit, SqlDbType.NVarChar, 1000);
+            parameters[10] = DataLayer.DataAccess.AddParameter("@Cargo", CargoEmpleadoEdit, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_UpdateEmpleado", parameters);
+        }
 
         //métodos
         //método para agregar una nueva sucursal
@@ -147,10 +173,10 @@ namespace thegym19_08.BusinessLayer
         //método para consultar un empleado
         public DataTable GetEmpleadoNom()
         {
-            SqlParameter[] parameters = new SqlParameter[3];
+            SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombreEmpleadoBusc, SqlDbType.NVarChar, 50);
             parameters[1] = DataLayer.DataAccess.AddParameter("@DNI", DNIEmpleadoBusc, SqlDbType.Int, 50);
-            parameters[2] = DataLayer.DataAccess.AddParameter("@K_cargo", CargoEmpleadoBusc, SqlDbType.Int, 50);
+            //parameters[2] = DataLayer.DataAccess.AddParameter("@FK_cargo", CargoEmpleadoBusc, SqlDbType.Int, 50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetEmpleado", parameters);
             return dt;
         }
