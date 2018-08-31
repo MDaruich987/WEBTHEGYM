@@ -88,7 +88,7 @@
 
                  <br />
                  <br />
-                 <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" Height="1093px" CssClass="auto-style5" Width="771px">
+                 <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" Height="1154px" CssClass="auto-style5" Width="771px">
                      <ul class="spinning">
                          <a href="pricing.html">
                          <li class="live">consultar <span class="m_1">plan</span></li>
@@ -122,13 +122,13 @@
                                              <table class="nav-justified">
                                                  <tr>
                                                      <td class="auto-style4">
-                                                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style8" Height="235px">
+                                                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style8" Height="235px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                                                              <Columns>
-                                                                 <asp:BoundField HeaderText="ID" />
-                                                                 <asp:BoundField HeaderText="Nombre" />
-                                                                 <asp:BoundField HeaderText="Precio" />
-                                                                 <asp:BoundField HeaderText="Duracion" />
-                                                                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+                                                                 <asp:BoundField DataField="Id_plan" HeaderText="ID" ItemStyle-Width="150px" />
+                                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-Width="150px" />
+                                                                 <asp:BoundField DataField="Precio" HeaderText="Precio" ItemStyle-Width="150px" />
+                                                                 <asp:BoundField DataField="Duracion" HeaderText="Duracion" ItemStyle-Width="150px" />
+                                                                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" ItemStyle-Width="150px" />
                                                              </Columns>
                                                              <HeaderStyle BackColor="#AAE3FF" BorderColor="#72D0F4" />
                                                          </asp:GridView>
@@ -207,8 +207,14 @@
                                                                          <tr>
                                                                              <td>&nbsp;</td>
                                                                              <td>
-                                                                                 <asp:GridView ID="gbactividadesplanbusqueda" runat="server" CssClass="auto-style2" Height="235px" Width="400px">
+                                                                                 <asp:GridView ID="gvactividadesplanbusqueda" runat="server" CssClass="auto-style2" Height="235px" Width="400px" AutoGenerateColumns="False" OnSelectedIndexChanged="gvactividadesplanbusqueda_SelectedIndexChanged">
                                                                                      <HeaderStyle BackColor="#72D0F4" />
+                                                                                     <Columns>
+                                                                                         <asp:BoundField DataField="Id_actividad" HeaderText="ID" ItemStyle-Width="150px" />
+                                                                                         <asp:BoundField DataField="Nombre" HeaderText="Actividad" ItemStyle-Width="150px" />
+                                                                                         <asp:BoundField DataField="Dias_semanas" HeaderText="Dias a la Semana" ItemStyle-Width="150px" />
+                                                                                         <asp:CommandField ButtonType="Button" ShowSelectButton="True" ItemStyle-Width="150px" />
+                                                                                     </Columns>
                                                                                  </asp:GridView>
                                                                              </td>
                                                                              <td>&nbsp;</td>
@@ -222,12 +228,55 @@
                                                                  <td>&nbsp;</td>
                                                                  <td>&nbsp;</td>
                                                              </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">
+                                                                     <asp:Label ID="LblActividad" runat="server" Text="Actividad"></asp:Label>
+                                                                 </td>
+                                                                 <td>
+                                                                     <asp:DropDownList ID="ddlactividad" runat="server">
+                                                                     </asp:DropDownList>
+                                                                 </td>
+                                                                 <td>
+                                                                     <asp:Label ID="LblDias" runat="server" Text="Dias:"></asp:Label>
+                                                                 </td>
+                                                                 <td>
+                                                                     <asp:DropDownList ID="ddlDias" runat="server">
+                                                                        <asp:ListItem>0</asp:ListItem>
+                                                                        <asp:ListItem>1</asp:ListItem>
+                                                                        <asp:ListItem>2</asp:ListItem>
+                                                                        <asp:ListItem>3</asp:ListItem>
+                                                                        <asp:ListItem>4</asp:ListItem>
+                                                                        <asp:ListItem>5</asp:ListItem>
+                                                                        <asp:ListItem>6</asp:ListItem>
+                                                                        <asp:ListItem>7</asp:ListItem>
+                                                                     </asp:DropDownList>
+                                                                 </td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">&nbsp;</td>
+                                                                 <td colspan="2" style="text-align: right">
+                                                                     <asp:Button ID="BtnEditActividad" runat="server" Text="Editar Actividad" OnClick="BtnEditActividad_Click" />
+                                                                 </td>
+                                                                 <td>&nbsp;</td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                             </tr>
                                                          </table>
                                                      </td>
                                                  </tr>
                                                  <tr>
                                                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         <asp:Button ID="btneditar" runat="server" CssClass="auto-style3" Height="32px" TabIndex="10" Text="Editar" Width="126px" />
+                                                         <asp:Button ID="btneditar" runat="server" CssClass="auto-style3" Height="32px" TabIndex="10" Text="Editar" Width="126px" OnClick="btneditar_Click" />
                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                          <asp:Button ID="btninhabilitar0" runat="server" Height="32px" TabIndex="11" Text="Inhabilitar" Width="126px" />
                                                      </td>

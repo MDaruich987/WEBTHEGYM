@@ -99,7 +99,42 @@ namespace thegym19_08.BusinessLayer
         //variable para encontrar id de profesor
         public string NombreProfesor;
         public string ApellidoProfesor;
-        
+        //variable buscar plan
+        public string NombrePlanBusc;
+        //variable buscar Detalle Plan
+        public string IdPlanBuscar;
+        //variables para actualizar DetPlan
+        public string idActDetPlan;
+        public string IdActividadDetPlanEdit;
+        public string IdPlanDetPlanEdit;
+        public string DiasDetPlanEdit;
+        //variable para actualizar plan
+        public string NombrePlanEdit;
+        public string PrecioPlanEdit;
+        public string DuracionPlanEdit;
+
+
+        public void UpdatePlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@IdPlan", IdPlanBuscar, SqlDbType.Int, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Nombre", NombrePlanEdit, SqlDbType.VarChar, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Precio", PrecioPlanEdit, SqlDbType.Money, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Duracion", DuracionPlanEdit, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_UpdatePlan", parameters);
+        }
+
+
+        public void UpdateDetPlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@IdAct", idActDetPlan, SqlDbType.Int, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Id_plan", IdPlanDetPlanEdit, SqlDbType.Int, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Id_actividad", IdActividadDetPlanEdit, SqlDbType.Int, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Dias_semanas", DiasDetPlanEdit, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_UpdateDetPlan", parameters);
+
+        }
 
         public void UpdateActividad()
         {
@@ -303,7 +338,21 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddDetallePlan", parameters);
         }
 
+        public DataTable GetPlans()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombrePlanBusc, SqlDbType.VarChar, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetPlans", parameters);
+            return dt;
+        }
 
+        public DataTable GetDetPlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Id_plan", IdPlanBuscar, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetDetPlan", parameters);
+            return dt;
+        }
 
 
     }
