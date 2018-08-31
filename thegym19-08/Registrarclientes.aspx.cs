@@ -57,7 +57,7 @@ namespace thegym19_08
                         //obtenemos su alto y ancho
                         ancho = imagen.Width;
                         alto = imagen.Height;
-                        //la redimensionamos con el metodo resizeImage
+                        //la redimensionamos con el metodo resizeImage C:\Users\Mili\Source\Repos\WEBTHEGYM\thegym19-08\Uploads\
                         if (alto > ancho)
                         {
                             img = ResizeImage(imagen, 150, 130);
@@ -71,10 +71,10 @@ namespace thegym19_08
                         ///////
                         LblReg.Text = "El producto se agregó correctamente";
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
 
-                        LblReg.Text = "La imagen no se agregó correctamente";
+                        LblReg.Text = ex.Message.ToString();
                     }
                 }
             }
