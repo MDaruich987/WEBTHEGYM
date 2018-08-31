@@ -31,6 +31,10 @@
             float: none;
             margin-left: 37px;
         }
+        .auto-style9 {
+            float: none;
+            margin-left: 1px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -84,7 +88,7 @@
 
                  <br />
                  <br />
-                 <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" Height="901px" CssClass="auto-style5" Width="771px">
+                 <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#00BFF0" BorderStyle="Solid" Height="1093px" CssClass="auto-style5" Width="771px">
                      <ul class="spinning">
                          <a href="pricing.html">
                          <li class="live">consultar <span class="m_1">plan</span></li>
@@ -118,43 +122,13 @@
                                              <table class="nav-justified">
                                                  <tr>
                                                      <td class="auto-style4">
-                                                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style8" Height="235px" OnPageIndexChanged="GridView1_PageIndexChanged" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Width="314px" OnRowCommand="GridView1_RowCommand" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="Id_plan">
+                                                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style8" Height="235px">
                                                              <Columns>
-                                                                 <asp:TemplateField HeaderText="ID">
-                                                                     <EditItemTemplate>
-                                                                         <asp:TextBox ID="txtid" runat="server" Text='<%# Bind("Id_plan") %>' ReadOnly="True" Width="53px"></asp:TextBox>
-                                                                     </EditItemTemplate>
-                                                                     <ItemTemplate>
-                                                                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("Id_plan") %>'></asp:Label>
-                                                                     </ItemTemplate>
-                                                                 </asp:TemplateField>
-                                                                 <asp:TemplateField HeaderText="Nombre">
-                                                                     <EditItemTemplate>
-                                                                         <asp:TextBox ID="txtnombre" runat="server" Text='<%# Bind("Nombre") %>' Width="111px"></asp:TextBox>
-                                                                     </EditItemTemplate>
-                                                                     <ItemTemplate>
-                                                                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
-                                                                     </ItemTemplate>
-                                                                 </asp:TemplateField>
-                                                                 <asp:TemplateField HeaderText="Precio">
-                                                                     <EditItemTemplate>
-                                                                         <asp:TextBox ID="txtprecio" runat="server" Text='<%# Bind("Precio") %>' TextMode="Number" Width="104px"></asp:TextBox>
-                                                                     </EditItemTemplate>
-                                                                     <ItemTemplate>
-                                                                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("Precio") %>'></asp:Label>
-                                                                     </ItemTemplate>
-                                                                 </asp:TemplateField>
-                                                                 <asp:TemplateField HeaderText="Duracion">
-                                                                     <EditItemTemplate>
-                                                                         <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Duracion") %>' Width="64px"></asp:TextBox>
-                                                                     </EditItemTemplate>
-                                                                     <ItemTemplate>
-                                                                         <asp:Label ID="Label4" runat="server" Text='<%# Bind("Duracion") %>'></asp:Label>
-                                                                     </ItemTemplate>
-                                                                 </asp:TemplateField>
+                                                                 <asp:BoundField HeaderText="ID" />
+                                                                 <asp:BoundField HeaderText="Nombre" />
+                                                                 <asp:BoundField HeaderText="Precio" />
+                                                                 <asp:BoundField HeaderText="Duracion" />
                                                                  <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
-                                                                 <asp:CommandField ButtonType="Button" ShowEditButton="True" />
-                                                                 <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="Inhabilitar" />
                                                              </Columns>
                                                              <HeaderStyle BackColor="#AAE3FF" BorderColor="#72D0F4" />
                                                          </asp:GridView>
@@ -170,55 +144,100 @@
                                      </tr>
                                      <tr>
                                          <td>
-                                             <ul class="spinning">
-                                                 <a href="pricing.html">
-                                                 <li class="live">actividades <span class="m_1">DEL plan</span></li>
-                                                 </a>
-                                             </ul>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td>&nbsp;</td>
-                                     </tr>
-                                     <tr>
-                                         <td>
                                              <table class="nav-justified">
                                                  <tr>
-                                                     <td class="auto-style9">
-                                                         &nbsp;</td>
-                                                     <td colspan="3">
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         <asp:Label ID="lblplanes0" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="White" Text="Actividades Incluidas:"></asp:Label>
+                                                     <td>
+                                                         <ul class="spinning">
+                                                             <a href="pricing.html">
+                                                             <li class="live">FICHA <span class="m_1">DEL plan</span></li>
+                                                             </a>
+                                                         </ul>
                                                      </td>
                                                  </tr>
                                                  <tr>
-                                                     <td class="auto-style9" colspan="4">
+                                                     <td>&nbsp;</td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>
                                                          <table class="nav-justified">
                                                              <tr>
-                                                                 <td>&nbsp;</td>
-                                                                 <td>
-                                                                     <asp:GridView ID="gbactividadesplanbusqueda" runat="server" CssClass="auto-style2" Height="235px" Width="309px" AutoGenerateColumns="False">
-                                                                         <Columns>
-                                                                             <asp:BoundField DataField="NombreActividad" HeaderText="Nombre de Actividad" />
-                                                                         </Columns>
-                                                                         <HeaderStyle BackColor="#72D0F4" />
-                                                                     </asp:GridView>
+                                                                 <td class="auto-style9">&nbsp;<asp:Label ID="lblnombre" runat="server" Text="Nombre:"></asp:Label>
+                                                                     <br />
+                                                                     <br />
                                                                  </td>
+                                                                 <td>
+                                                                     <asp:TextBox ID="tbnombre" runat="server" CssClass="auto-style9" ReadOnly="True" TabIndex="1" Width="187px"></asp:TextBox>
+                                                                     <br />
+                                                                     <br />
+                                                                 </td>
+                                                                 <td>
+                                                                     <asp:Label ID="lblprecioplan" runat="server" Text="Precio:"></asp:Label>
+                                                                     <br />
+                                                                     <br />
+                                                                 </td>
+                                                                 <td>
+                                                                     <asp:TextBox ID="tbprecio" runat="server" ReadOnly="True" TabIndex="3" Width="190px"></asp:TextBox>
+                                                                     <br />
+                                                                     <br />
+                                                                 </td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">
+                                                                     <asp:Label ID="lblduracion" runat="server" Text="Duración"></asp:Label>
+                                                                     <br />
+                                                                     <br />
+                                                                 </td>
+                                                                 <td>
+                                                                     <asp:TextBox ID="tbduracion" runat="server" ReadOnly="True" TabIndex="2" Width="189px"></asp:TextBox>
+                                                                     <br />
+                                                                     <br />
+                                                                 </td>
+                                                                 <td>&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">&nbsp;</td>
+                                                                 <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;<asp:Label ID="lblplanes0" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="#333333" Text="Actividades Incluidas:"></asp:Label>
+                                                                     <br />
+                                                                 </td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9" colspan="4">
+                                                                     <table class="nav-justified">
+                                                                         <tr>
+                                                                             <td>&nbsp;</td>
+                                                                             <td>
+                                                                                 <asp:GridView ID="gbactividadesplanbusqueda" runat="server" CssClass="auto-style2" Height="235px" Width="400px">
+                                                                                     <HeaderStyle BackColor="#72D0F4" />
+                                                                                 </asp:GridView>
+                                                                             </td>
+                                                                             <td>&nbsp;</td>
+                                                                         </tr>
+                                                                     </table>
+                                                                 </td>
+                                                             </tr>
+                                                             <tr>
+                                                                 <td class="auto-style9">&nbsp;</td>
+                                                                 <td>&nbsp;</td>
+                                                                 <td>&nbsp;</td>
                                                                  <td>&nbsp;</td>
                                                              </tr>
                                                          </table>
                                                      </td>
                                                  </tr>
                                                  <tr>
-                                                     <td class="auto-style9">&nbsp;</td>
-                                                     <td>
-                                                         &nbsp;</td>
-                                                     <td>
-                                                         &nbsp;</td>
-                                                     <td>&nbsp;</td>
+                                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                         <asp:Button ID="btneditar" runat="server" CssClass="auto-style3" Height="32px" TabIndex="10" Text="Editar" Width="126px" />
+                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                         <asp:Button ID="btninhabilitar0" runat="server" Height="32px" TabIndex="11" Text="Inhabilitar" Width="126px" />
+                                                     </td>
                                                  </tr>
                                              </table>
                                          </td>
+                                     </tr>
+                                     <tr>
+                                         <td>
+                                             &nbsp;</td>
                                      </tr>
                                  </table>
                              </td>
