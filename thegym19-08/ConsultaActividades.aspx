@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style3 {
-            width: 95%;
+            width: 117%;
             height: 1074px;
         }
         .auto-style4 {
@@ -17,47 +17,80 @@
         .auto-style7 {
             height: 22px;
         }
+        .auto-style8 {
+            margin-left: 67px;
+            width: 401px;
+        }
+        .auto-style9 {
+            margin-left: 67px;
+            width: 675px;
+        }
+        .auto-style10 {
+            width: 477px;
+        }
+        .auto-style11 {
+            width: 927px;
+        }
+        .auto-style12 {
+            left: 0px;
+            top: 0px;
+            width: 476px;
+            height: 250px;
+        }
+        .auto-style13 {
+            width: 502px;
+        }
+        .auto-style14 {
+            left: 0px;
+            top: 0px;
+            width: 455px;
+        }
+        .auto-style15 {
+            height: 312px;
+            width: 487px;
+        }
+        .auto-style16 {
+            display: block;
+            max-width: 100%;
+            height: 208px;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--    imagenes botones--%>
     <br />
     <br />
-    		    <div class="row content-middle">
+    		    <div class="auto-style11">
 		      <!-- start content-middle -->
 				<div class="clear">
                     <table class="nav-justified">
                         <tr>
-                            <td class="auto-style5">
-	 	    	                <div class="auto-style7"><a href="RegistrarActividades.aspx">
+                            <td class="auto-style9">
+	 	    	                <div class="auto-style15"><a href="RegistrarActividades.aspx">
 	 	    		                <ul class="spinning">
 	 	    			            <li class="live">REGISTRAR <span class="m_1">actividades</span></li>
 	 	    			            <li class="room"></li>
 	 	    			<div class="clear"></div>	
 	 	    		</ul>
-					 <div class="view view-fifth">
+					 <div class="auto-style12">
 				  	   <img src="images/pic3.jpg" class="img-responsive" alt=""/>
 					      <div class="mask">
-	                       	<div class="info">
-                                <asp:Button ID="btnregistrar" runat="server" BackColor="#00BFF0" BorderStyle="None" Height="28px" Text="Registrar" />
-                              </div>
+	                       	<div class="info">Registrar</div>
 			              </div>
 	                  </div>
 			     </a></div>
 				            </td>
-                            <td>
-				 <div class="auto-style2"><a href="ConsultaActividades.aspx">
+                            <td class="auto-style13">
+				 <div class="auto-style10"><a href="ConsultaActividades.aspx">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">Consultar <span class="m_1">actividades</span></li>
 	 	    			<li class="room"></li>
 	 	    			<div class="clear"></div>	
 	 	    		</ul>
-					 <div class="view view-fifth">
-				  	   <img src="images/pic2.jpg" class="img-responsive"  alt=""/>
+					 <div class="auto-style14">
+				  	   <img src="images/pic2.jpg" class="auto-style16"  alt=""/>
 					      <div class="mask">
-	                       	<div class="info"><a href="RegistrarActividades.aspx">
-	 	    		            <asp:Button ID="btnconsultar" runat="server" BackColor="#00BFF0" BorderStyle="None" ForeColor="White" Height="28px" Text="Consultar" />
-			     </a></div>
+	                       	<div class="info">Registrar</div>
 			              </div>
 	                  </div>
 			     </a></div>

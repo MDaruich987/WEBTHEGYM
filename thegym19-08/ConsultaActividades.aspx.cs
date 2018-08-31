@@ -19,7 +19,8 @@ namespace thegym19_08
         {
             if (Session["inicio"] != null)
             {
-                lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+                lblmensajebienvenida.Text = "Bienvenido/a " + Session["inicio"].ToString();
+                string usuario = (string)Session["Usuario"];
             }
         }
 

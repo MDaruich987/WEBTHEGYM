@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
-            width: 407px;
+            width: 493px;
             height: 276px;
         }
         .auto-style3 {
@@ -18,7 +18,7 @@
             width: 301px;
         }
         .auto-style7 {
-            width: 417px;
+            width: 499px;
             height: 283px;
             margin-bottom: 0px;
         }
@@ -34,6 +34,10 @@
         .auto-style11 {
             width: 645px;
         }
+        .auto-style12 {
+            width: 881px;
+            height: 305px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -41,7 +45,7 @@
 <%--contenedor gris--%>
     <br />
     <br />
-    		    <div class="row content-middle">
+    		    <div class="auto-style12">
 		      <!-- start content-middle -->
 				<div class="clear">
                     <table class="nav-justified">
@@ -202,7 +206,7 @@
                                          <td colspan="2">
                                              <table class="nav-justified">
                                                  <tr>
-                                                     <td class="auto-style9">&nbsp;<asp:Label ID="lblnombre" runat="server" Text="Nombre:"></asp:Label>
+                                                     <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lblnombre" runat="server" Text="Nombre:"></asp:Label>
                                                          <br />
                                                          <br />
                                                      </td>
@@ -224,6 +228,7 @@
                                                  </tr>
                                                  <tr>
                                                      <td class="auto-style9">
+                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                          <asp:Label ID="lbldni" runat="server" Text="DNI:"></asp:Label>
                                                          <br />
                                                          <br />
@@ -246,6 +251,7 @@
                                                  </tr>
                                                  <tr>
                                                      <td class="auto-style9">
+                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                          <asp:Label ID="lbldomicilio" runat="server" Text="Domicilio:"></asp:Label>
                                                          <br />
                                                          <br />
@@ -268,6 +274,7 @@
                                                  </tr>
                                                  <tr>
                                                      <td class="auto-style9">
+                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                          <asp:Label ID="lblemail" runat="server" Text="E-mail:"></asp:Label>
                                                          <br />
                                                          <br />
@@ -288,6 +295,7 @@
                                                  </tr>
                                                  <tr>
                                                      <td class="auto-style9">
+                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                          <asp:Label ID="lblplancontratado" runat="server" Text="Plan:"></asp:Label>
                                                          <br />
                                                          <br />

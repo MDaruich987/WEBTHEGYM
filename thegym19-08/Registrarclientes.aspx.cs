@@ -19,7 +19,11 @@ namespace thegym19_08
         protected void Page_Load(object sender, EventArgs e)
         {
             LblReg.Text = ("");
-
+            if (Session["inicio"] != null)
+            {
+                lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+                string usuario = Session["inicio"].ToString();
+            }
         }
 
         private void SaveClienteFoto()

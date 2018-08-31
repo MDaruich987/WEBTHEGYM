@@ -3,7 +3,7 @@
     <style type="text/css">
         .auto-style2 {
             float: none;
-            width: 377px;
+            width: 477px;
             margin-left: 62px;
         }
         .auto-style5 {
@@ -15,14 +15,40 @@
             width: 448px;
         }
         .auto-style7 {
-            width: 216px;
+            width: 514px;
         }
         .auto-style9 {
             width: 286px;
         }
         .auto-style10 {
-            width: 100%;
+            width: 121%;
             height: 339px;
+        }
+        .auto-style11 {
+            float: none;
+            width: 1167px;
+            margin-left: 5px;
+        }
+        .auto-style12 {
+            width: 152px;
+        }
+        .auto-style13 {
+            width: 169px;
+        }
+        .auto-style14 {
+            width: 152px;
+            height: 28px;
+        }
+        .auto-style15 {
+            width: 286px;
+            height: 28px;
+        }
+        .auto-style16 {
+            width: 169px;
+            height: 28px;
+        }
+        .auto-style17 {
+            height: 28px;
         }
     </style>
 </asp:Content>
@@ -45,7 +71,7 @@
                     <table class="auto-style10">
                         <tr>
                             <td class="auto-style6">&nbsp;</td>
-                            <td class="auto-style5">
+                            <td class="auto-style11">
 	 	    	<div class="auto-style7"><a href="RegistrarEmpleados.aspx">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">REGISTRAR <span class="m_1">Empleados</span></li>
@@ -202,13 +228,14 @@
                                             <td>
                                                 <table class="nav-justified">
                                                     <tr>
-                                                        <td>
+                                                        <td class="auto-style12">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <asp:Label ID="LblNombre" runat="server" Text="Nombre:"></asp:Label>
                                                         </td>
                                                         <td class="auto-style9">
                                                             <asp:TextBox ID="TbNombre" runat="server" ReadOnly="True"></asp:TextBox>
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style13">
                                                             <asp:Label ID="LblApellido" runat="server" Text="Apellido:"></asp:Label>
                                                         </td>
                                                         <td>
@@ -216,19 +243,20 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style12">&nbsp;</td>
                                                         <td class="auto-style9">&nbsp;</td>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style13">&nbsp;</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="auto-style12">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <asp:Label ID="LblDNI" runat="server" Text="DNI:"></asp:Label>
                                                         </td>
                                                         <td class="auto-style9">
                                                             <asp:TextBox ID="TbDNI" runat="server" ReadOnly="True"></asp:TextBox>
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style13">
                                                             <asp:Label ID="LblFechNac" runat="server" Text="Fecha Nacimiento:"></asp:Label>
                                                         </td>
                                                         <td>
@@ -236,39 +264,41 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style12">&nbsp;</td>
                                                         <td class="auto-style9">&nbsp;</td>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style13">&nbsp;</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="auto-style14">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <asp:Label ID="LblEmail" runat="server" Text="Email:"></asp:Label>
                                                         </td>
-                                                        <td class="auto-style9">
+                                                        <td class="auto-style15">
                                                             <asp:TextBox ID="TbEmail" runat="server" ReadOnly="True"></asp:TextBox>
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style16">
                                                             <asp:Label ID="LblTelefono" runat="server" Text="Telefono:"></asp:Label>
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style17">
                                                             <asp:TextBox ID="TbTelefono" runat="server" ReadOnly="True"></asp:TextBox>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style12">&nbsp;</td>
                                                         <td class="auto-style9">&nbsp;</td>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style13">&nbsp;</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="auto-style12">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <asp:Label ID="Label1" runat="server" Text="Domicilio:"></asp:Label>
                                                         </td>
                                                         <td class="auto-style9">
                                                             <asp:TextBox ID="TbDomicilio" runat="server" ReadOnly="True"></asp:TextBox>
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style13">
                                                             <asp:Label ID="LblTitulo" runat="server" Text="Titulo:"></asp:Label>
                                                         </td>
                                                         <td>
@@ -276,19 +306,20 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style12">&nbsp;</td>
                                                         <td class="auto-style9">&nbsp;</td>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style13">&nbsp;</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="auto-style12">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <asp:Label ID="LblExperiencia" runat="server" Text="Experiencia:"></asp:Label>
                                                         </td>
                                                         <td class="auto-style9">
                                                             <asp:TextBox ID="TbExperiencia" runat="server" ReadOnly="True"></asp:TextBox>
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style13">
                                                             <asp:Label ID="LblCargo" runat="server" Text="Cargo:"></asp:Label>
                                                         </td>
                                                         <td>
@@ -297,17 +328,17 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style12">&nbsp;</td>
                                                         <td class="auto-style9">&nbsp;</td>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style13">&nbsp;</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
+                                                        <td class="auto-style12">&nbsp;</td>
                                                         <td class="auto-style9">
                                                             <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" />
                                                         </td>
-                                                        <td>
+                                                        <td class="auto-style13">
                                                             <asp:Button ID="btnInhabilitar" runat="server" Text="Inhabilitar" />
                                                         </td>
                                                         <td>&nbsp;</td>

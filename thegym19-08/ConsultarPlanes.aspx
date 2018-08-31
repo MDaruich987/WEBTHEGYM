@@ -35,6 +35,14 @@
             float: none;
             margin-left: 1px;
         }
+        .auto-style10 {
+            margin-left: 11px;
+            width: 469px;
+            height: 78px;
+        }
+        .auto-style11 {
+            height: 78px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -47,8 +55,8 @@
 				<div class="clear">
                     <table class="nav-justified">
                         <tr>
-                            <td class="auto-style6">&nbsp;</td>
-                            <td class="auto-style5">
+                            <td class="auto-style6"></td>
+                            <td class="auto-style10">
 	 	    	<div class="auto-style7"><a href="pricing.html">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">REGISTRAR <span class="m_1">Plan</span></li>
@@ -63,7 +71,7 @@
 	                  </div>
 			     </a></div>
 				            </td>
-                            <td>
+                            <td class="auto-style11">
 				 <div class="auto-style2"><a href="pricing.html">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">Consultar <span class="m_1">Plan</span></li>

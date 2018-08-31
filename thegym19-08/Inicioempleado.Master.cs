@@ -14,5 +14,12 @@ namespace thegym19_08
 
 
         }
+
+        protected void btnlogout_Click(object sender, EventArgs e)
+        {
+
+            Session.Clear();
+            Response.Redirect("~/InicioLogin.aspx");
+        }
     }
 }
