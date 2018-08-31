@@ -13,6 +13,11 @@ namespace thegym19_08
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["inicio"] != null)
+            {
+                lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+            }
+            
             if (!IsPostBack)
             {
                 GetProfesores();

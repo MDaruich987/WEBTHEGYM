@@ -15,6 +15,7 @@ namespace thegym19_08
 {
     public partial class Registrarclientes : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LblReg.Text = ("");

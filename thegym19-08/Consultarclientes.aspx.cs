@@ -13,9 +13,9 @@ namespace thegym19_08
     public partial class Consultarclientes : System.Web.UI.Page
     {
         //cadena de conexion MICA
-        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MAXI
-        //SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
@@ -26,8 +26,10 @@ namespace thegym19_08
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
-
+            if (Session["inicio"] != null)
+            {
+                lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+            }
         }
 
         private void LLenar_GvClientes()
