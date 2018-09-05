@@ -104,6 +104,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Apertuda_Caja.aspx" />
     <Content Include="WebGerenteInicio.aspx" />
     <Content Include="WebInicioempleado.aspx" />
   </ItemGroup>
@@ -197,6 +198,13 @@
     </Compile>
     <Compile Include="RegistrarSucursales.aspx.designer.cs">
       <DependentUpon>RegistrarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apertuda_Caja.aspx.cs">
+      <DependentUpon>Apertuda_Caja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apertuda_Caja.aspx.designer.cs">
+      <DependentUpon>Apertuda_Caja.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGerenteInicio.aspx.cs">
       <DependentUpon>WebGerenteInicio.aspx</DependentUpon>
