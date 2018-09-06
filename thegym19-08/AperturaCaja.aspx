@@ -26,6 +26,7 @@
                     <br />
                     <asp:Label ID="Label2" runat="server" Font-Names="Arial" Text="Usuario:"></asp:Label>
                     <br />
+                    <br />
                 </td>
                 <td>
                     <asp:TextBox ID="tbusuario" runat="server" Enabled="False"></asp:TextBox>
@@ -34,9 +35,9 @@
                     <asp:Label ID="Label5" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_caja" DataValueField="id_caja">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="Nombre">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString %>" SelectCommand="SELECT [Nombre] FROM [Sucursal]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString2 %>" SelectCommand="SELECT [Nombre] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>
