@@ -79,11 +79,17 @@
                     <br />
                     <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Numero de Caja: "></asp:Label>
                     <br />
+                    <br />
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="id_caja" DataValueField="id_caja">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString2 %>" SelectCommand="SELECT [id_caja] FROM [Caja]"></asp:SqlDataSource>
+                </td>
             </tr>
             <tr>
                 <td colspan="4">
+                    &nbsp;&nbsp;&nbsp;
                     <asp:Button ID="Button1" runat="server" Font-Names="Arial" Font-Size="Large" OnClick="Button1_Click" Text="Registrar Apertura de Caja" Width="246px" />
                 </td>
             </tr>

@@ -112,7 +112,7 @@ namespace thegym19_08.BusinessLayer
         public string NombrePlanEdit;
         public string PrecioPlanEdit;
         public string DuracionPlanEdit;
-        //variables para apertura y cierre de caja 
+        //variables para registrar apertura y cierre de caja 
         public string IdCaja;
         public string FK_empleado;
         public string Estadocaja;
@@ -334,8 +334,10 @@ namespace thegym19_08.BusinessLayer
         //    parameters[4] = DataLayer.DataAccess.AddParameter("@monto_cierre", MontoCierre, SqlDbType.Money, 50);
         //    parameters[5] = DataLayer.DataAccess.AddParameter("@fecha", FechaCaja, SqlDbType.Date, 50);
         //    parameters[6] = DataLayer.DataAccess.AddParameter("@FK_Sucursal", FK_Sucursal, SqlDbType.NVarChar, 50);
-        //    DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("", parameters);
+        //    DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_RegCaja", parameters);
         //}
+
+       
 
         public DataTable GetActividades()
         {
