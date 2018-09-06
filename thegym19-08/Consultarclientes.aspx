@@ -285,23 +285,23 @@
                                                          <br />
                                                      </td>
                                                      <td>
-                                                         <asp:Label ID="lblfotografia" runat="server" Text="Fotografía:"></asp:Label>
+                                                         <asp:Label ID="lblfotografia" runat="server" Text="Fotografía:" Visible="False"></asp:Label>
                                                          <br />
                                                          <br />
                                                      </td>
                                                      <td rowspan="3">
-                                                         <asp:Image ID="imgfotografia" runat="server" Height="118px" Width="171px" />
+                                                         <asp:Image ID="imgfotografia" runat="server" Height="118px" Width="171px" Visible="False" />
                                                      </td>
                                                  </tr>
                                                  <tr>
                                                      <td class="auto-style9">
                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         <asp:Label ID="lblplancontratado" runat="server" Text="Plan:"></asp:Label>
+                                                         <asp:Label ID="lblplancontratado" runat="server" Text="Plan:" Visible="False"></asp:Label>
                                                          <br />
                                                          <br />
                                                      </td>
                                                      <td>
-                                                         <asp:TextBox ID="tbplancontratado" runat="server" ReadOnly="True" TabIndex="7" Width="192px"></asp:TextBox>
+                                                         <asp:TextBox ID="tbplancontratado" runat="server" ReadOnly="True" TabIndex="7" Width="192px" Visible="False"></asp:TextBox>
                                                          <br />
                                                          <br />
                                                      </td>

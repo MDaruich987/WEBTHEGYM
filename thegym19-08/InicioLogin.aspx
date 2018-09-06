@@ -45,7 +45,7 @@
                 <asp:TextBox ID="tbusuario" runat="server" Height="27px" Width="180px" CssClass="auto-style1" Font-Size="Medium" ForeColor="Black"></asp:TextBox>
                 <br>
                 <asp:Label ID="lblusuario0" runat="server" Font-Size="Medium" Text="Contraseña:"></asp:Label>
-                <asp:TextBox ID="tbcontraseña" runat="server" Height="27px" Width="177px" Font-Size="Medium" ForeColor="Black"></asp:TextBox>
+                <asp:TextBox ID="tbcontraseña" runat="server" Height="27px" Width="177px" Font-Size="Medium" ForeColor="Black" TextMode="Password"></asp:TextBox>
             </h2>
               <h2>
                   <asp:Label ID="Label1" runat="server" Font-Size="Medium"></asp:Label>

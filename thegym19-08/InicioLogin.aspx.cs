@@ -13,9 +13,9 @@ namespace thegym19_08
     public partial class InicioLogin : System.Web.UI.Page
     {
         //cadena de conexion MICA
-        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MAXI
-       // SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
@@ -70,7 +70,7 @@ namespace thegym19_08
                             Response.Redirect("~/WebInicioempleado.aspx?parametro=" + Label3.Text,false);
 
                         }
-                        else if (dat.Rows[0][0].ToString() == "1" && dat.Rows[0][0].ToString() == "2")
+                        else if (dat.Rows[0][0].ToString() == "1" | dat.Rows[0][0].ToString() == "2")
                         {
                             //es gerente
                             Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][1].ToString();
