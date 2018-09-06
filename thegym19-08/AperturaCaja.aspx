@@ -34,9 +34,9 @@
                     <asp:Label ID="Label5" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="Nombre">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_caja" DataValueField="id_caja">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString %>" SelectCommand="SELECT [id_caja] FROM [Caja]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString %>" SelectCommand="SELECT [Nombre] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>
@@ -79,10 +79,7 @@
                     <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Numero de Caja: "></asp:Label>
                     <br />
                 </td>
-                <td>
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="Nombre">
-                    </asp:DropDownList>
-                </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td colspan="4">

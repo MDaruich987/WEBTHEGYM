@@ -324,17 +324,18 @@ namespace thegym19_08.BusinessLayer
         }
 
         //MEdotodo para apertura y cierre de caja
-        public void OperacionesDeCaja()
-        {
-            SqlParameter[] parameters = new SqlParameter[7];
-            parameters[0] = DataLayer.DataAccess.AddParameter("@id_caja",IdCaja, SqlDbType.NVarChar, 50);
-            parameters[1] = DataLayer.DataAccess.AddParameter("@FK_empleado",FK_empleado, SqlDbType.NVarChar, 50);
-            parameters[2] = DataLayer.DataAccess.AddParameter("@estado",Estadocaja, SqlDbType.NVarChar, 50);
-            parameters[3] = DataLayer.DataAccess.AddParameter("@monto_apertura",MontoApertura, SqlDbType.NVarChar, 50);
-            parameters[4] = DataLayer.DataAccess.AddParameter("@monto_cierre",MontoCierre, SqlDbType.NVarChar, 50);
-            parameters[5] = DataLayer.DataAccess.AddParameter("@fecha",FechaCaja, SqlDbType.NVarChar, 50);
-            parameters[6] = DataLayer.DataAccess.AddParameter("@FK_Sucursal",FK_Sucursal, SqlDbType.NVarChar, 50);
-        }
+        //public void OperacionesDeCaja()
+        //{
+        //    SqlParameter[] parameters = new SqlParameter[7];
+        //    parameters[0] = DataLayer.DataAccess.AddParameter("@id_caja", IdCaja, SqlDbType.Int, 50);
+        //    parameters[1] = DataLayer.DataAccess.AddParameter("@FK_empleado", FK_empleado, SqlDbType.NVarChar, 50);
+        //    parameters[2] = DataLayer.DataAccess.AddParameter("@estado", Estadocaja, SqlDbType.NVarChar, 50);
+        //    parameters[3] = DataLayer.DataAccess.AddParameter("@monto_apertura", MontoApertura, SqlDbType.Money, 50);
+        //    parameters[4] = DataLayer.DataAccess.AddParameter("@monto_cierre", MontoCierre, SqlDbType.Money, 50);
+        //    parameters[5] = DataLayer.DataAccess.AddParameter("@fecha", FechaCaja, SqlDbType.Date, 50);
+        //    parameters[6] = DataLayer.DataAccess.AddParameter("@FK_Sucursal", FK_Sucursal, SqlDbType.NVarChar, 50);
+        //    DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("", parameters);
+        //}
 
         public DataTable GetActividades()
         {

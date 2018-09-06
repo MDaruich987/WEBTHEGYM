@@ -21,12 +21,11 @@ namespace thegym19_08
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            TheGym k = new TheGym
-            {
-                IdCaja = tbcaja.Text,
-                id
+            //TheGym k = new TheGym
+            //{
+           
 
-            };
+            //};
         }
     }
 }
