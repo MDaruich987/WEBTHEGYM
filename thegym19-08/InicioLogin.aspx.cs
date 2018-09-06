@@ -13,9 +13,9 @@ namespace thegym19_08
     public partial class InicioLogin : System.Web.UI.Page
     {
         //cadena de conexion MICA
-        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MAXI
-        //SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion CAMI
         //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
         //cadena de conexion MILI
@@ -42,7 +42,7 @@ namespace thegym19_08
                     //abrimos la conexion
                     conex.Open();
                     //creamos un comando sql, le pasamos la consulta a enviar a la base de datos y la conexion
-                    SqlCommand com = new SqlCommand("select Apellido,FK_cargo,Nombre from EMPLEADO e  inner join Usuario u on e.Id_empleado = u.FK_empleado where u.Usuario = @nick and u.Contraseña = @con" , conex);
+                    SqlCommand com = new SqlCommand("select e.FK_cargo, e.Nombre, Apellido from Usuario u inner join Empleado e on u.FK_empleado=e.Id_empleado where u.Usuario=@nick and Contraseña=@con", conex);
                     //con el @ parametrizamos nuestros elementos, y ahora le agregamos el valor
                     com.Parameters.AddWithValue("@nick", usuario);
                     //primero pasamos el nombre del parametro y luego valor que tendra
@@ -53,26 +53,29 @@ namespace thegym19_08
                     DataTable dat = new DataTable();
                     //para llenarlo con los datos de la tabla desde el data adapter
                     dap.Fill(dat);
+                    //lblusuario.Text = dat.Rows[0][0].ToString()+ dat.Rows[0][1].ToString()+ dat.Rows[0][2].ToString();
                     //evaluamos si la consulta nos devuelve filas quiere decir que si hay un elemento que coincida
                     if (dat.Rows.Count == 1)
                     {
                         //si al contar las filas del data table tenemos uno, el login es correcto
                         //verificamos si es un admin o empleado
-                        if (dat.Rows[0][1].ToString() == "3")
-                        {
-                            //es empleada
-                            //lblerrorlogin.Text = "admin";
-                            //enviamos como parametro al form de inicio del admin su nombre y apellido consultado en el datatable
-                            Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][0].ToString();
-                            Session["inicio"] = usuario;
-                            Response.Redirect("~/WebInicioempleado.aspx?parametro=" + Label3.Text,false);
-                            //Response.Redirect("~/WebInicioempleado.aspx",false);
-
-                        }
-                        else if (dat.Rows[0][1].ToString() == "2")
+                        if (dat.Rows[0][0].ToString() == "3" | dat.Rows[0][0].ToString() == "4" | dat.Rows[0][0].ToString() == "5" | dat.Rows[0][0].ToString() == "6")
                         {
                             //es empleado
-                            Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][0].ToString();
+                            //lblerrorlogin.Text = "admin";
+                            //enviamos como parametro al form de inicio del admin su nombre y apellido consultado en el datatable
+                            Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][1].ToString();
+                            Session["inicio"] = Label3.Text;
+                            Session["Usuario"] = usuario;
+                            Response.Redirect("~/WebInicioempleado.aspx?parametro=" + Label3.Text,false);
+
+                        }
+                        else if (dat.Rows[0][0].ToString() == "1" && dat.Rows[0][0].ToString() == "2")
+                        {
+                            //es gerente
+                            Label3.Text = dat.Rows[0][2].ToString() + ", " + dat.Rows[0][1].ToString();
+                            Session["inicio"] = usuario;
+                            Response.Redirect("~/WebGerenteInicio.aspx?parametro=" + Label3.Text, false);
                         }
                     }
                     else
@@ -83,7 +86,7 @@ namespace thegym19_08
                 }
                 catch (Exception ex)
                 {
-                    Label1.Text = "Error";
+                    Label1.Text = ex.Message.ToString();
 
                 }
                 /////////////////////
