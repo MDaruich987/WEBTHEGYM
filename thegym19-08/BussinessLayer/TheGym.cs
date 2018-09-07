@@ -124,7 +124,7 @@ namespace thegym19_08.BusinessLayer
         public string IdSucursalCarga;
         
 
-
+        
         public DataTable GetAllCaja()
         {
             SqlParameter[] parameters = new SqlParameter[1];

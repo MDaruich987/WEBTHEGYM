@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblerror" runat="server" Text="Label" Visible="False"></asp:Label>
+                    <asp:Label ID="lblerror" runat="server" Font-Names="Arial" ForeColor="#0000CC"></asp:Label>
                 </td>
                 <td>&nbsp;</td>
                 <td>
