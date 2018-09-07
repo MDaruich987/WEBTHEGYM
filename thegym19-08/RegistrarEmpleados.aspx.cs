@@ -23,6 +23,13 @@ namespace thegym19_08
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["inicio"] != null)
+            {
+                lblbienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+                string usuario = Session["inicio"].ToString();
+            }
+
+
             LblReg.Text = ("");
 
             if (!IsPostBack)

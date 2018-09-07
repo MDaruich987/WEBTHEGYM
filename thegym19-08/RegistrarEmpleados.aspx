@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inicioempleado.Master" AutoEventWireup="true" CodeBehind="RegistrarEmpleados.aspx.cs" Inherits="thegym19_08.RegistrarEmpleados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/InicioGerente.Master" AutoEventWireup="true" CodeBehind="RegistrarEmpleados.aspx.cs" Inherits="thegym19_08.RegistrarEmpleados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -306,3 +306,7 @@
 
 
 </asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder2">
+    <asp:Label ID="lblbienvenida" runat="server" Font-Names="Arial" Font-Size="Larger" ForeColor="White"></asp:Label>
+</asp:Content>
+

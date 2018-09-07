@@ -15,10 +15,15 @@ namespace thegym19_08
 {
     public partial class Registrarclientes : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LblReg.Text = ("");
-
+            if (Session["inicio"] != null)
+            {
+                lblmensajebienvenida.Text = "Bienvenido " + Session["inicio"].ToString();
+                string usuario = Session["inicio"].ToString();
+            }
         }
 
         private void SaveClienteFoto()

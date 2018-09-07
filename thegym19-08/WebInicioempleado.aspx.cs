@@ -19,8 +19,9 @@ namespace thegym19_08
             if (Session["inicio"] != null)
             {
                 //declaramos una variale sesion para mantener el dato del usuario
-                string usuario = (string)Session["inicio"];
-                if (Request.Params["parametro"] != null)
+                string usuario = (string)Session["Usuario"];
+                lblmensajebienvenida.Text = "Bienvenido/a " + (String)Session["inicio"];
+                /*if (Request.Params["parametro"] != null)
                 {
                     //para que el label capte el nombre y apellido enviado desde el form de acceso
                     lblmensajebienvenida.Text = "Bienvenido " + Request.Params["parametro"];
@@ -30,6 +31,7 @@ namespace thegym19_08
                     //si no, muestra un mensaje de bienvenida solamente
                     lblmensajebienvenida.Text = "Bienvenido";
                 }
+                */
 
             }
             else

@@ -12,136 +12,130 @@ namespace thegym19_08
 {
     public partial class ConsultaActividades : System.Web.UI.Page
     {
-        //cadena de conexion MICA
-        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
-        //cadena de conexion MAXI
-        SqlConnection conex = new SqlConnection("Data Source = DESKTOP-TN40SE1\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
-        //cadena de conexion CAMI
-        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
-        //cadena de conexion MILI
-       // SqlConnection conex = new SqlConnection("Data Source=DESKTOP-T2J3I6L;Initial Catalog=TheGym;Integrated Security=True");
-        //cadena de conexion DAVID
-        //SqlConnection conex = new SqlConnection("Data Source = MICADARUICH\\SQLEXPRESS; Initial Catalog = TheGym; Integrated Security = True");
+        static string idemp;
+        static string idsuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            LLenar_GvActividades();
+            if (Session["inicio"] != null)
+            {
+                lblmensajebienvenida.Text = "Bienvenido/a " + Session["inicio"].ToString();
+                string usuario = (string)Session["Usuario"];
+            }
         }
-
-        private void LLenar_GvActividades()
-        {
-            //creamos el comando y le pasamos el llamado al procedimiento almacenado
-            SqlCommand comd = new SqlCommand("select a.Id_actividad as Id_actividad ,a.Nombre as nombre_actividad, da.Descripcion as descripcion_actividad, e.Nombre as nombre_empleado, s.Nombre as nombre_sucursal from Actividad a inner join DetalleActividad da on a.Id_actividad=da.FK_actividad  inner join Empleado e on e.Id_empleado = da.FK_empleado inner join Sucursal s on s.Id_sucursal = da.FK_sucursal where a.Estado='H' ", conex);
-            SqlDataAdapter da = new SqlDataAdapter(comd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            //llenamos el datatable con el dataadapter
-            this.gvactividad.DataSource = dt;
-            //enlazamos el gv
-            this.gvactividad.DataBind();
-        }
-
-
-
-
 
         protected void btnbuscaractividad_Click(object sender, EventArgs e)
         {
-            lblerrorbusqueda.Text = "";
-            //creamos el comando y le pasamos el llamado al procedimiento almacenado
-            string sentencia = "%" + tbbuscar.Text + "%";
-            try
+            TheGym k = new TheGym
             {
-                SqlCommand comd = new SqlCommand("select a.Id_actividad as Id_actividad ,a.Nombre as nombre_actividad, da.Descripcion as descripcion_actividad, e.Nombre as nombre_empleado, s.Nombre as nombre_sucursal from Actividad a inner join DetalleActividad da on a.Id_actividad=da.FK_actividad  inner join Empleado e on e.Id_empleado = da.FK_empleado inner join Sucursal s on s.Id_sucursal = da.FK_sucursal where a.Estado='H' and a.Nombre like @param", conex);
-                comd.Parameters.AddWithValue("@param", SqlDbType.VarChar).Value = sentencia;
-                SqlDataAdapter da = new SqlDataAdapter(comd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                //para que siempre muestre el encabezado aun si no hay resultados
-                if (dt.Rows.Count > 0)
-                {
-                    //si encuentra filas entonces llenamos el data table con el data adapter
-                    this.gvactividad.DataSource = dt;
-                    //enlazamos el gv
-                    this.gvactividad.DataBind();
-                    //y lo activamos
-                    gvactividad.Enabled = true;
-                }
-                else
-                {
-                    //si no hya resultados, añadimos filas vacias si no encuentra nada
-                    dt.Rows.Add(dt.NewRow());
-                    dt.Rows.Add(dt.NewRow());
-                    dt.Rows.Add(dt.NewRow());
-                    dt.Rows.Add(dt.NewRow());
-                    dt.Rows.Add(dt.NewRow());
-                    gvactividad.DataSource = dt;
-                    gvactividad.DataBind();
-                    gvactividad.Rows[0].Visible = false;
-                    //y deshabilitamos el gridview
-                    gvactividad.Enabled = false;
-                    lblerrorbusqueda.Text = "No se han encontrado Actividades que coincidan con la busqueda";
-
-                }
-            }
-            catch (Exception ex)
+                NombreActividadBuscar = tbbuscar.Text,
+            };
+            DataTable dt = new DataTable();
+            dt = k.GetActividad();
+            if (dt.Rows.Count > 0)
             {
-
-                lblmensajerror.Text = ex.Message.ToString();
+                gvactividad.DataSource = dt;
+                gvactividad.DataBind();
             }
-
-
+            
         }
 
-        protected void gvactividad_PageIndexChanged(object sender, EventArgs e)
+        private void GetSucursales()
         {
-            try
+            TheGym k = new TheGym();
+            DataTable dt = k.GetSucursales();
+            if (dt.Rows.Count > 0)
             {
-                LLenar_GvActividades();
-                //GridView1.PageIndex = e.;
-                this.gvactividad.DataBind();
-            }
-            catch (Exception ex)
-            {
-                lblmensajerror.Text = ex.Message.ToString();
+                DroplisSucursal.DataValueField = "Id_sucursal";
+                DroplisSucursal.DataTextField = "Nombre";
+                DroplisSucursal.DataSource = dt;
+                DroplisSucursal.DataBind();
             }
         }
 
-        protected void gvactividad_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void gvactividad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            GetProfesores();
+            GetSucursales();
+            TxbNombre.ReadOnly = false;
+            //TxbProfesor.ReadOnly = false;
+            TxbDesc.ReadOnly = false;
+            TxbDe.ReadOnly = false;
+            TxbA.ReadOnly = false;
+            TxbCupos.ReadOnly = false;
+            TxbNombre.Text = gvactividad.SelectedRow.Cells[1].Text;
+            TxbDesc.Text = gvactividad.SelectedRow.Cells[2].Text;
+            //TxbProfesor.Text = gvactividad.SelectedRow.Cells[3].Text;
+            DroplisSucursal.ClearSelection();
+            DroplisSucursal.Items.FindByText(gvactividad.SelectedRow.Cells[4].Text).Selected=true;
+            idsuc = DroplisSucursal.SelectedValue;
+            TxbDe.Text = gvactividad.SelectedRow.Cells[5].Text;
+            TxbA.Text = gvactividad.SelectedRow.Cells[6].Text;
+            ddlProfesor.ClearSelection();
+            ddlProfesor.Items.FindByText(gvactividad.SelectedRow.Cells[3].Text).Selected=true;
+            idemp = ddlProfesor.SelectedValue;
+            TxbCupos.Text = gvactividad.SelectedRow.Cells[7].Text;
+        }
+
+        protected void BtnEditar_Click(object sender, EventArgs e)
+         {
+            TheGym k = new TheGym
             {
-                //cada vez que se cambie el gridview tenemos que rellenarlo
-                gvactividad.EditIndex = e.NewEditIndex;
-                LLenar_GvActividades();
-            }
-            catch (Exception ex)
+                IdActividad = gvactividad.SelectedRow.Cells[0].Text,
+                IdEmpleado = idemp,
+                IdSucursal = idsuc,
+                NombreActividadEdit = TxbNombre.Text,
+                ProfesorActividadEdit = ddlProfesor.SelectedValue,
+                CuposActividadEdit = TxbCupos.Text,
+                HorarioInicioEdit = TxbDe.Text,
+                HorarioFinEdit = TxbA.Text,
+                DescripcionActividadEdit = TxbDesc.Text,
+                SucursalActividadEdit = DroplisSucursal.SelectedValue
+            };
+
+            k.UpdateActividad();
+
+            TxbNombre.Text = string.Empty;
+            TxbDesc.Text = string.Empty;
+            TxbDe.Text = string.Empty;
+            TxbCupos.Text = string.Empty;
+            TxbA.Text = string.Empty;
+            ddlProfesor.ClearSelection();
+            DroplisSucursal.ClearSelection();
+            tbbuscar.Text = string.Empty;
+            TxbA.ReadOnly = true;
+            TxbCupos.ReadOnly = true;
+            TxbDe.ReadOnly = true;
+            TxbDesc.ReadOnly = true;
+            TxbNombre.ReadOnly = true;
+
+
+            DataTable aux2 = new DataTable();
+            gvactividad.DataSource = aux2;
+            gvactividad.DataBind();
+            gvactividad.Dispose();
+
+        }
+
+        private void GetProfesores()
+        {
+            TheGym k = new TheGym();
+            DataTable dt = k.GetProfesores();
+            if (dt.Rows.Count > 0)
             {
-                lblmensajerror.Text = ex.Message.ToString();
+                ddlProfesor.DataValueField = "Id_empleado";
+                ddlProfesor.DataTextField = "Profesor";
+                ddlProfesor.DataSource = dt;
+                ddlProfesor.DataBind();
+
             }
         }
 
-        protected void gvactividad_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            try
-            {
-                gvactividad.EditIndex = -1;
-                LLenar_GvActividades();
-            }
-            catch (Exception ex)
-            {
-                lblmensajerror.Text = ex.Message.ToString();
-            }
-        }
 
-
-
-        protected void gvactividad_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            switch (e.CommandName)
-            {
-                case "Delete":
-                    string Id = gvactividad.DataKeys[Convert.ToInt32(e.CommandArgument)].Value.ToString();
+        /*codigo delete
+         *
+         * 
+         string Id = gvactividad.DataKeys[Convert.ToInt32(e.CommandArgument)].Value.ToString();
                     try
                     {
                         //tomamos el valor ID del empleado seleccionado
@@ -176,58 +170,12 @@ namespace thegym19_08
                         conex.Close();
                     }
 
-                    break;
+         * 
+         * 
+         * 
+         * 
+         */
 
 
-
-            }
-        }
-
-        protected void gvactividad_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            string Nombre, Descripcion;
-            int Id;
-            try
-            {
-                //tomamos los valores de los txt que acmbiaron en el gridview
-                TextBox txt = new TextBox();
-                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtid");
-                Id = Convert.ToInt32(txt.Text);
-                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtnombre");
-                Nombre = txt.Text;
-                txt = (TextBox)gvactividad.Rows[e.RowIndex].FindControl("txtdescrip");
-                Descripcion = txt.Text;
-                //llamos al procedimiento almacenado
-                SqlCommand cmd = new SqlCommand("PA_ActualizaActividad", conex);
-                //esablecemos el dataadpater y le indicamos que trabajaremos con un procedimiento almacenado
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                {
-                    //definimos los valores de las variables del procedimiento
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Id;
-                    cmd.Parameters.AddWithValue("@nomb", SqlDbType.VarChar).Value = Nombre;
-
-                }
-                //abrimos la conexion
-                if (conex.State != ConnectionState.Open)
-                {
-                    conex.Open();
-                }
-                //ejectuamos el comando
-                cmd.ExecuteNonQuery();
-                //cerramos la conexion
-                conex.Close();
-                //obtenemos el indice de la fila editada
-                gvactividad.EditIndex = -1;
-                LLenar_GvActividades();
-                //PanelFormulario.Visible = false;
-                lblmensajerror.Text = "Actividad Actualizada Correctamente.";
-            }
-            catch (Exception ex)
-            {
-                lblmensajerror.Text = ex.Message.ToString();
-                conex.Close();
-            }
-        }
     }
 }
