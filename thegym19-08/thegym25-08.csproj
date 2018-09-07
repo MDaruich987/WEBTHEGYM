@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CierreCaja.aspx" />
     <Content Include="ConsultaActividades.aspx" />
     <Content Include="Consultarclientes.aspx" />
     <Content Include="ConsultarEmpleados.aspx" />
@@ -110,6 +111,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLayer\TheGym.cs" />
+    <Compile Include="CierreCaja.aspx.cs">
+      <DependentUpon>CierreCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CierreCaja.aspx.designer.cs">
+      <DependentUpon>CierreCaja.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaActividades.aspx.cs">
       <DependentUpon>ConsultaActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
