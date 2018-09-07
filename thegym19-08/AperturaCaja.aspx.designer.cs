@@ -49,22 +49,22 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.TextBox tbusuario;
         
         /// <summary>
-        /// Label5 control.
+        /// Label8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// tbsucursal control.
+        /// ddlcaja control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbsucursal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlcaja;
         
         /// <summary>
         /// Label3 control.
@@ -139,31 +139,31 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.TextBox tbestado;
         
         /// <summary>
-        /// Label8 control.
+        /// lblerror control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label lblerror;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// Label9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// tbsucursal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.TextBox tbsucursal;
         
         /// <summary>
         /// Button1 control.

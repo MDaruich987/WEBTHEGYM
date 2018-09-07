@@ -120,12 +120,24 @@ namespace thegym19_08.BusinessLayer
         public string FechaCaja;
         //variable para Cargar sucursal
         public string IdEmpleadoCargaSuc;
+        //variable para cargar caja
+        public string IdSucursalCarga;
+        
+
+
+        public DataTable GetAllCaja()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Id_sucursal", IdSucursalCarga, SqlDbType.Int,50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllCaja", parameters);
+            return dt;
+        }
 
         public DataTable GetAllSucursal()
         {
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = DataLayer.DataAccess.AddParameter("@Id_empleado" ,IdEmpleadoCargaSuc, SqlDbType.Int,50);
-            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("@PA_GetAllSucursal", parameters);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllSucursal", parameters);
             return dt;
         }
 
@@ -134,7 +146,7 @@ namespace thegym19_08.BusinessLayer
         {
             SqlParameter[] parameters = new SqlParameter[5];
             parameters[0] = DataLayer.DataAccess.AddParameter("@FK_caja", FK_caja, SqlDbType.Int, 50);
-            parameters[1] = DataLayer.DataAccess.AddParameter("@FK_empleado", FK_empleado, SqlDbType.NVarChar, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@FK_empleado", FK_empleado, SqlDbType.Int, 50);
             parameters[2] = DataLayer.DataAccess.AddParameter("@estado", Estadocaja, SqlDbType.NVarChar, 50);
             parameters[3] = DataLayer.DataAccess.AddParameter("@monto", Monto, SqlDbType.Money, 50);
             parameters[4] = DataLayer.DataAccess.AddParameter("@fecha", FechaCaja, SqlDbType.Date, 50);

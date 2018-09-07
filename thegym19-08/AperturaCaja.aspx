@@ -32,10 +32,11 @@
                     <asp:TextBox ID="tbusuario" runat="server" Enabled="False"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="Label5" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
+                    <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Numero de Caja: "></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="tbsucursal" runat="server" Enabled="False"></asp:TextBox>
+                    <asp:DropDownList ID="ddlcaja" runat="server">
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>
@@ -71,18 +72,18 @@
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblerror" runat="server" Text="Label" Visible="False"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
                 <td>
                     <br />
-                    <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Numero de Caja: "></asp:Label>
+                    <asp:Label ID="Label9" runat="server" Text="Sucursal:"></asp:Label>
                     <br />
                     <br />
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="id_caja" DataValueField="id_caja">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString2 %>" SelectCommand="SELECT [id_caja] FROM [Caja]"></asp:SqlDataSource>
+                    <asp:TextBox ID="tbsucursal" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>

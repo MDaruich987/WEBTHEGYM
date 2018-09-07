@@ -12,6 +12,7 @@ namespace thegym19_08
     public partial class WebForm1 : System.Web.UI.Page
     {
         private static string id;
+        private static string IdSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +21,8 @@ namespace thegym19_08
             tbhora.Text = DateTime.Now.ToString("hh:mm tt");
             tbestado.Text = "Apertura";
             id = "3";
+            
+
 
             if (Session["inicio"] != null)
             {
@@ -48,7 +51,8 @@ namespace thegym19_08
                 //Response.Redirect("InicioLogin.aspx");
             }
 
-            CargaSucursal();    
+            CargaSucursal();
+            CargaCaja(); 
 
         }
         private void CargaSucursal()
@@ -59,14 +63,49 @@ namespace thegym19_08
             };
             DataTable dt = k.GetAllSucursal();
             tbsucursal.Text = dt.Rows[0][0].ToString();
+            IdSuc = dt.Rows[0][1].ToString();
         }
-        protected void Button1_Click(object sender, EventArgs e)
+
+        private void CargaCaja()
         {
             TheGym k = new TheGym
             {
-
-
+                IdSucursalCarga = IdSuc
             };
+
+            DataTable dt = new DataTable();
+            dt = k.GetAllCaja();
+            if (dt.Rows.Count>0)
+            {
+                ddlcaja.DataValueField = "id_caja";
+                ddlcaja.DataTextField = "descripcion";
+                ddlcaja.DataSource = dt;
+                ddlcaja.DataBind();
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            if (tbmonto.Text == string.Empty)
+            {
+                lblerror.Text = "Se debe ingresar un monto";
+                lblerror.Visible = true;
+            }
+            else
+            {
+                TheGym k = new TheGym
+                {
+                    FK_empleado = id,
+                    FK_caja = ddlcaja.SelectedValue,
+                    Estadocaja = tbestado.Text,
+                    FechaCaja = tbfecha.Text,
+                    Monto = tbmonto.Text
+                };
+
+                k.AperturaDeCaja();
+            }
+            
         }
     }
 }
