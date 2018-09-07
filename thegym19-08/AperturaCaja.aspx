@@ -35,9 +35,7 @@
                     <asp:Label ID="Label5" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="Nombre">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TheGymConnectionString2 %>" SelectCommand="SELECT [Nombre] FROM [Sucursal]"></asp:SqlDataSource>
+                    <asp:TextBox ID="tbsucursal" runat="server" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
