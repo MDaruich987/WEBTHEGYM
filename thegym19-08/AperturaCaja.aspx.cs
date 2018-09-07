@@ -62,11 +62,11 @@ namespace thegym19_08
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //TheGym k = new TheGym
-            //{
-           
+            TheGym k = new TheGym
+            {
 
-            //};
+
+            };
         }
     }
 }
