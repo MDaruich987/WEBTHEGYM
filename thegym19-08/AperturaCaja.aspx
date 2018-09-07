@@ -78,12 +78,12 @@
                 <td>&nbsp;</td>
                 <td>
                     <br />
-                    <asp:Label ID="Label9" runat="server" Text="Sucursal:"></asp:Label>
+                    <asp:Label ID="Label9" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
                     <br />
                     <br />
                 </td>
                 <td>
-                    <asp:TextBox ID="tbsucursal" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="tbsucursal" runat="server" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
