@@ -142,9 +142,49 @@ namespace thegym19_08
             TxTotal.Text = dt.Rows[0][0].ToString();
         }
 
+        //public int GetIdDetCaja (string fecha)
+        //{
+        //    int ID;
+        //    DataTable dt = new DataTable();
+        //    TheGym k = new TheGym
+        //    {
+        //        FechaIdDetCaja = TxFecha.Text
+        //    };
+        //    dt = k.GetEstadoDetCaja();
+        //    if (dt.Rows.Count > 0)
+        //    {
+
+        //    }
+        //    else
+        //    {
+
+        //    }
+
+        //    return ID;
+        //}
+
         protected void BtnAceptar_Click(object sender, EventArgs e)
         {
+            int ID;
+            DataTable dt = new DataTable();
+            TheGym k = new TheGym
+            {
+                FechaIdDetCaja = TxFecha.Text
+            };
+            dt = k.GetEstadoDetCaja();
+            if (dt.Rows.Count > 0)
+            {
+                dt = k.GetIdProfesor();
+                ID = Convert.ToInt32(dt.Rows[0][0].ToString());
+                
 
+
+            }
+            else
+            {
+                LblError.Text="Caja Cerrada";
+                LblError.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }
