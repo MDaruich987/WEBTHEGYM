@@ -95,6 +95,7 @@
     <Content Include="register.html" />
     <Content Include="RegistrarActividades.aspx" />
     <Content Include="Registrarclientes.aspx" />
+    <Content Include="RegistrarCorbroPlan.aspx" />
     <Content Include="RegistrarEmpleados.aspx" />
     <Content Include="RegistrarPlanes.aspx" />
     <Content Include="RegistrarSucursales.aspx" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="Registrarclientes.aspx.designer.cs">
       <DependentUpon>Registrarclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCorbroPlan.aspx.cs">
+      <DependentUpon>RegistrarCorbroPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarCorbroPlan.aspx.designer.cs">
+      <DependentUpon>RegistrarCorbroPlan.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistrarEmpleados.aspx.cs">
       <DependentUpon>RegistrarEmpleados.aspx</DependentUpon>
