@@ -11,6 +11,8 @@ namespace thegym19_08
 {
     public partial class RegistrarCorbroPlan : System.Web.UI.Page
     {
+        static string aux;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -43,6 +45,105 @@ namespace thegym19_08
             }
 
 
+
+        }
+
+        private void GetAllPlan()
+        {
+            TheGym k = new TheGym();
+            DataTable dt = new DataTable();
+            dt = k.GetAllPlans();
+            if (dt.Rows.Count > 0)
+            {
+                DdlPlan.Items.Add("Seleccione...");
+                DdlPlan.DataSource = dt;
+                DdlPlan.DataTextField = "Nombre";
+                DdlPlan.DataValueField = "Id_plan";
+                //DdlPlan.DataSource = dt;
+                DdlPlan.DataBind();
+            }
+        }
+
+        private void GetAllMedioPago()
+        {
+            TheGym k = new TheGym();
+            DataTable dt = new DataTable();
+            dt = k.GetAllMedioPago();
+            if (dt.Rows.Count > 1)
+            {
+                DdlMedioPago.DataTextField = "descripcion";
+                DdlMedioPago.DataValueField = "id_formapago";
+                DdlMedioPago.DataSource = dt;
+                DdlMedioPago.DataBind();
+            }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LblDatos.Visible = true;
+            LblCliente.Visible = true;
+            TxCliente.Visible = true;
+            LblFecha.Visible = true;
+            TxFecha.Visible = true;
+            LblPlan.Visible = true;
+            DdlPlan.Visible = true;
+            TxTotal.Visible = true;
+            LblTotal.Visible = true;
+            //LblMedioPago.Visible = true;
+            //DdlMedioPago.Visible = true;
+            GetAllPlan();
+            //GetAllMedioPago();
+            //TxCliente.Text = GridView1.SelectedRow.Cells[1].Text;
+            TxCliente.Text = GridView1.SelectedRow.Cells[2].Text + ", " + GridView1.SelectedRow.Cells[1].Text;
+            TxFecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        protected void DdlPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LblMedioPago.Visible = true;
+            DdlMedioPago.Visible = true;
+            GetAllMedioPago();
+            aux = DdlPlan.SelectedValue;
+            TheGym k = new TheGym
+            {
+                IdPlanMonto = aux
+            };
+            DataTable dt = new DataTable();
+            dt = k.GetTotalPlan();
+            TxTotal.Text = dt.Rows[0][0].ToString();
+        }
+
+        protected void DdlMedioPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DdlMedioPago.SelectedItem.Text == "Efectivo")
+            {
+                LblComprobante.Visible = false;
+                TxbComprobante.Visible = false;
+            }
+            else
+            {
+                LblComprobante.Visible = true;
+                TxbComprobante.Visible = true;
+            }
+        }
+
+        protected void DdlPlan_TextChanged(object sender, EventArgs e)
+        {
+            LblMedioPago.Visible = true;
+            DdlMedioPago.Visible = true;
+            GetAllMedioPago();
+            aux = DdlPlan.SelectedValue;
+            TheGym k = new TheGym
+            {
+                IdPlanMonto = aux
+            };
+            DataTable dt = new DataTable();
+            dt = k.GetTotalPlan();
+            TxTotal.Text = dt.Rows[0][0].ToString();
+        }
+
+        protected void BtnAceptar_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -58,6 +58,15 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.Label LblBuscar;
         
         /// <summary>
+        /// Control TxBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxBuscar;
+        
+        /// <summary>
         /// Control CkbDNI.
         /// </summary>
         /// <remarks>
@@ -184,40 +193,22 @@ namespace thegym19_08 {
         protected global::System.Web.UI.WebControls.DropDownList DdlMedioPago;
         
         /// <summary>
-        /// Control LblMonto.
+        /// Control LblComprobante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMonto;
+        protected global::System.Web.UI.WebControls.Label LblComprobante;
         
         /// <summary>
-        /// Control TxMonto.
+        /// Control TxbComprobante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxMonto;
-        
-        /// <summary>
-        /// Control LblVuelto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblVuelto;
-        
-        /// <summary>
-        /// Control TxVuelto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxVuelto;
+        protected global::System.Web.UI.WebControls.TextBox TxbComprobante;
         
         /// <summary>
         /// Control BtnAceptar.

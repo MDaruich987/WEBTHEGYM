@@ -81,7 +81,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Id_cliente" HeaderText="ID" ItemStyle-Width="150px" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-Width="150px"/>
@@ -99,7 +99,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Label ID="LblDatos" runat="server" Font-Size="X-Large" Text="Datos de Cobro"></asp:Label>
+                    <asp:Label ID="LblDatos" runat="server" Font-Size="X-Large" Text="Datos de Cobro" Visible="False"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -108,12 +108,12 @@
             </tr>
             <tr>
                 <td class="auto-style4">
-                    <asp:Label ID="LblCliente" runat="server" Height="25px" Text="Cliente:"></asp:Label>
-                    <asp:TextBox ID="TxCliente" runat="server"></asp:TextBox>
+                    <asp:Label ID="LblCliente" runat="server" Height="25px" Text="Cliente:" Visible="False"></asp:Label>
+                    <asp:TextBox ID="TxCliente" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="LblFecha" runat="server" Height="25px" Text="Fecha:"></asp:Label>
-                    <asp:TextBox ID="TxFecha" runat="server"></asp:TextBox>
+                    <asp:Label ID="LblFecha" runat="server" Height="25px" Text="Fecha:" Visible="False"></asp:Label>
+                    <asp:TextBox ID="TxFecha" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -122,13 +122,13 @@
             </tr>
             <tr>
                 <td class="auto-style4">
-                    <asp:Label ID="LblPlan" runat="server" Height="25px" Text="Plan:"></asp:Label>
-                    <asp:DropDownList ID="DdlPlan" runat="server">
+                    <asp:Label ID="LblPlan" runat="server" Height="25px" Text="Plan:" Visible="False"></asp:Label>
+                    <asp:DropDownList ID="DdlPlan" runat="server" AutoPostBack="true" OnTextChanged="DdlPlan_TextChanged" Visible="False">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;
-                    <asp:Label ID="LblTotal" runat="server" Height="25px" Text="Total:   "></asp:Label>
-&nbsp;<asp:TextBox ID="TxTotal" runat="server"></asp:TextBox>
+                    <asp:Label ID="LblTotal" runat="server" Height="25px" Text="Total:   " Visible="False"></asp:Label>
+&nbsp;<asp:TextBox ID="TxTotal" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -137,25 +137,23 @@
             </tr>
             <tr>
                 <td class="auto-style4">
-                    <asp:Label ID="LblMedioPago" runat="server" Height="25px" Text="Medio de Pago:"></asp:Label>
-                    <asp:DropDownList ID="DdlMedioPago" runat="server">
+                    <asp:Label ID="LblMedioPago" runat="server" Height="25px" Text="Medio de Pago:" Visible="False"></asp:Label>
+                    <asp:DropDownList ID="DdlMedioPago" runat="server" OnSelectedIndexChanged="DdlMedioPago_SelectedIndexChanged" Visible="False" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:Label ID="LblMonto" runat="server" Height="25px" Text="Monto:"></asp:Label>
-                    <asp:TextBox ID="TxMonto" runat="server"></asp:TextBox>
+                    <asp:Label ID="LblComprobante" runat="server" Text="Nro Comprobante:" Visible="False"></asp:Label>
+                    <asp:TextBox ID="TxbComprobante" runat="server" Visible="False" TextMode="Number"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style7"></td>
-                <td class="auto-style8"></td>
+                <td class="auto-style8">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:Label ID="LblVuelto" runat="server" Height="25px" Text="Vuelto:"></asp:Label>
-                    <asp:TextBox ID="TxVuelto" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
@@ -163,7 +161,7 @@
             </tr>
             <tr>
                 <td class="auto-style4">
-                    <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" />
+                    <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" OnClick="BtnAceptar_Click" />
                 </td>
                 <td>
                     <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" />

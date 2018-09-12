@@ -122,6 +122,8 @@ namespace thegym19_08.BusinessLayer
         public string IdEmpleadoCargaSuc;
         //variable para cargar caja
         public string IdSucursalCarga;
+        //varaible para buscar monto de plan
+        public string IdPlanMonto;
         
 
         
@@ -385,6 +387,30 @@ namespace thegym19_08.BusinessLayer
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombrePlanBusc, SqlDbType.VarChar, 50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetPlans", parameters);
+            return dt;
+        }
+
+        public DataTable GetAllPlans()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            //parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombrePlanBusc, SqlDbType.VarChar, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllPlan", parameters);
+            return dt;
+        }
+
+        public DataTable GetAllMedioPago()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            //parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombrePlanBusc, SqlDbType.VarChar, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllMedioPago", parameters);
+            return dt;
+        }
+
+        public DataTable GetTotalPlan()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Id_plan", IdPlanMonto, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetMontoPlan", parameters);
             return dt;
         }
 
