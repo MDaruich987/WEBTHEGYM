@@ -124,9 +124,8 @@ namespace thegym19_08.BusinessLayer
         public string IdSucursalCarga;
         //varaible para buscar monto de plan
         public string IdPlanMonto;
-        //variable para buscar FechaIdDetCaja
+        //Variable para buscar ID det pla
         public string FechaIdDetCaja;
-
 
 
         public DataTable GetAllCaja()
