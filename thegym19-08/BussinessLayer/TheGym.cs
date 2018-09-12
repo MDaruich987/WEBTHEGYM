@@ -124,6 +124,8 @@ namespace thegym19_08.BusinessLayer
         public string IdSucursalCarga;
         //varaible para buscar monto de plan
         public string IdPlanMonto;
+        //variable para buscar id de detalle caja
+        public string FechaIdDetCaja;
         
 
         
@@ -193,6 +195,15 @@ namespace thegym19_08.BusinessLayer
             parameters[9] = DataLayer.DataAccess.AddParameter("@FK_sucursal", SucursalActividadEdit, SqlDbType.Int, 50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_UpdateActividad", parameters);
         }
+
+        public DataTable GetIdDetCaja()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Fecha", FechaIdDetCaja, SqlDbType.Date, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetIdDetCaja", parameters);
+            return dt;
+        }
+
 
         public DataTable GetIdProfesor()
         {
@@ -403,6 +414,14 @@ namespace thegym19_08.BusinessLayer
             SqlParameter[] parameters = new SqlParameter[0];
             //parameters[0] = DataLayer.DataAccess.AddParameter("@Nombre", NombrePlanBusc, SqlDbType.VarChar, 50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllMedioPago", parameters);
+            return dt;
+        }
+
+        public DataTable GetEstadoDetCaja()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Fecha", FechaIdDetCaja, SqlDbType.Date, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetEstadoDetCaja", parameters);
             return dt;
         }
 
