@@ -69,23 +69,7 @@ namespace thegym19_08
             IdSuc = dt.Rows[0][1].ToString();
         }
 
-        //private void CargaCaja()
-        //{
-        //    TheGym k = new TheGym
-        //    {
-        //        IdSucursalCarga = IdSuc
-        //    };
 
-        //    DataTable dt = new DataTable();
-        //    dt = k.GetAllCaja();
-        //    if (dt.Rows.Count>0)
-        //    {
-        //        ddlcaja.DataValueField = "id_caja";
-        //        ddlcaja.DataTextField = "descripcion";
-        //        ddlcaja.DataSource = dt;
-        //        ddlcaja.DataBind();
-        //    }
-        //}
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -123,8 +107,7 @@ namespace thegym19_08
                     {
                         TheGym k = new TheGym
                         {
-                            FK_empleado = id,
-                            FK_caja = ddlcaja.SelectedValue,
+                            FK_empleado = id,                            
                             Estadocaja = tbestado.Text,
                             FechaCaja = tbfecha.Text,
                             Monto = tbmonto.Text

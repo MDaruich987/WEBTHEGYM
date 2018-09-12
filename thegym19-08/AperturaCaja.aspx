@@ -32,11 +32,13 @@
                     <asp:TextBox ID="tbusuario" runat="server" Enabled="False"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Numero de Caja: "></asp:Label>
+                    <br />
+                    <asp:Label ID="Label9" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
+                    <br />
+                    <br />
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlcaja" runat="server">
-                    </asp:DropDownList>
+                    <asp:TextBox ID="tbsucursal" runat="server" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -77,14 +79,9 @@
                 </td>
                 <td>&nbsp;</td>
                 <td>
-                    <br />
-                    <asp:Label ID="Label9" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
-                    <br />
-                    <br />
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:TextBox ID="tbsucursal" runat="server" Enabled="False"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td colspan="4">

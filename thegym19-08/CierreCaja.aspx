@@ -15,6 +15,13 @@
         .auto-style3 {
             width: 295px;
         }
+        .auto-style4 {
+            width: 295px;
+            height: 124px;
+        }
+        .auto-style5 {
+            height: 124px;
+        }
     </style>
 </head>
 <body>
@@ -35,9 +42,11 @@
                     <asp:TextBox ID="tbusuario" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
+                </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:TextBox ID="tbsucursal" runat="server" Enabled="False" Height="22px"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -46,13 +55,13 @@
                     <br />
                 </td>
                 <td>
-                    <asp:TextBox ID="tbfecha" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="tbfecha" runat="server" Enabled="False"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="Label6" runat="server" Font-Names="Arial" Text="Hora:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="tbhora" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="tbhora" runat="server" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -66,7 +75,7 @@
                     <asp:Label ID="Label7" runat="server" Font-Names="Arial" Text="Estado:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="tbestado" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="tbestado" runat="server" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -77,11 +86,9 @@
                 </td>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:Label ID="Label8" runat="server" Font-Names="Arial" Text="Sucursal:"></asp:Label>
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:TextBox ID="tbsucursal" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
@@ -104,18 +111,18 @@
         <br />
         <table class="auto-style1">
             <tr>
-                <td class="auto-style3">
+                <td class="auto-style4">
                     <br />
                     <asp:Label ID="lblmonto" runat="server" Font-Names="Arial" Text="Monto de Cierre:" Visible="False"></asp:Label>
                     <br />
                 </td>
-                <td>
+                <td class="auto-style5">
                     <asp:TextBox ID="tbmonto0" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
                 </td>
                 </tr>
             <tr>
                 <td class="auto-style3">
-                    <asp:Button ID="Button2" runat="server" Font-Names="Arial" Font-Size="Large" Text="Cerrar Caja" Width="237px" OnClick="Button1_Click" />
+                    <asp:Button ID="btcerrar" runat="server" Font-Names="Arial" Font-Size="Large" Text="Cerrar Caja" Width="237px" OnClick="Button1_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

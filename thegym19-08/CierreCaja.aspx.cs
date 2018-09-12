@@ -123,5 +123,4 @@ namespace thegym19_08
 
         }
     }
-    }
 }
