@@ -124,9 +124,9 @@ namespace thegym19_08.BusinessLayer
         public string IdSucursalCarga;
         //varaible para buscar monto de plan
         public string IdPlanMonto;
-        
 
-        
+
+
         public DataTable GetAllCaja()
         {
             SqlParameter[] parameters = new SqlParameter[1];
@@ -143,7 +143,7 @@ namespace thegym19_08.BusinessLayer
             return dt;
         }
 
-        //MEdotodo para apertura y cierre de caja
+        //Metodo para apertura y cierre de caja
         public void AperturaDeCaja()
         {
             SqlParameter[] parameters = new SqlParameter[5];
@@ -155,7 +155,16 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AperturaCaja", parameters);
         }
 
-
+        public void CierreDeCaja()
+        {
+            SqlParameter[] parameters = new SqlParameter[5];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@FK_caja", FK_caja, SqlDbType.Int, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@FK_empleado", FK_empleado, SqlDbType.Int, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@estado", Estadocaja, SqlDbType.NVarChar, 50);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@monto", Monto, SqlDbType.Money, 50);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@fecha", FechaCaja, SqlDbType.Date, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_CierreCaja", parameters);
+        }
         public void UpdatePlan()
         {
             SqlParameter[] parameters = new SqlParameter[4];
@@ -421,6 +430,9 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetDetPlan", parameters);
             return dt;
         }
+
+
+
 
 
     }

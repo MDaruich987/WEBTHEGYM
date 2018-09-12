@@ -32,12 +32,9 @@
                     <asp:TextBox ID="tbusuario" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="Label5" runat="server" Font-Names="Arial" Text="Caja:"></asp:Label>
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
-                    </asp:DropDownList>
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -74,7 +71,7 @@
             <tr>
                 <td>
                     <br />
-                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblerror" runat="server"></asp:Label>
                     <br />
                 </td>
                 <td>&nbsp;</td>
@@ -93,11 +90,17 @@
             </tr>
             <tr>
                 <td class="auto-style2" colspan="4">
-                    <asp:Button ID="Button1" runat="server" Font-Names="Arial" Font-Size="Large" Text="Registrar Cierre de Caja" Width="328px" />
+                    <asp:Button ID="Button1" runat="server" Font-Names="Arial" Font-Size="Large" Text="Generar Cierre" Width="237px" OnClick="Button1_Click" />
                 </td>
             </tr>
         </table>
     <div>
+    
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        </asp:GridView>
+        <br />
     
     </div>
     </form>
