@@ -12,6 +12,9 @@
         .auto-style2 {
             height: 23px;
         }
+        .auto-style3 {
+            width: 295px;
+        }
     </style>
 </head>
 <body>
@@ -55,12 +58,10 @@
             <tr>
                 <td>
                     <br />
-                    <asp:Label ID="Label3" runat="server" Font-Names="Arial" Text="Monto de Cierre:"></asp:Label>
                     <br />
                 </td>
                 <td>
-                    <asp:TextBox ID="tbmonto" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
                 <td>
                     <asp:Label ID="Label7" runat="server" Font-Names="Arial" Text="Estado:"></asp:Label>
                 </td>
@@ -100,6 +101,27 @@
         <br />
         <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         </asp:GridView>
+        <br />
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style3">
+                    <br />
+                    <asp:Label ID="lblmonto" runat="server" Font-Names="Arial" Text="Monto de Cierre:" Visible="False"></asp:Label>
+                    <br />
+                </td>
+                <td>
+                    <asp:TextBox ID="tbmonto0" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
+                </td>
+                </tr>
+            <tr>
+                <td class="auto-style3">
+                    <asp:Button ID="Button2" runat="server" Font-Names="Arial" Font-Size="Large" Text="Cerrar Caja" Width="237px" OnClick="Button1_Click" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <br />
+        <br />
         <br />
     
     </div>

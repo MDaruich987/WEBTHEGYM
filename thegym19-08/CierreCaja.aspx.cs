@@ -70,57 +70,51 @@ namespace thegym19_08
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string fecha;
+            string id;
             try
             {
-                //abrimos la conexion
-                conex.Open();
-                //creamos un comando sql, le pasamos la consulta a enviar a la base de datos y la conexion
-                SqlCommand com = new SqlCommand("select * from DetalleCaja where Fecha = convert(date, getdate())", conex);
-                //creamos un objetosql data adapter y le pasamos nuestro comando sql
-                SqlDataAdapter dap = new SqlDataAdapter(com);
-                //creamos un data table 
-                DataTable dat = new DataTable();
-                //para llenarlo con los datos de la tabla desde el data adapter
-                dap.Fill(dat);
-                //lblusuario.Text = dat.Rows[0][0].ToString()+ dat.Rows[0][1].ToString()+ dat.Rows[0][2].ToString();
-                //evaluamos si la consulta nos devuelve filas quiere decir que si hay un elemento que coincida
-                if (dat.Rows.Count >= 1)
+                //preguntamos si ya hay un cierre hecho 
+                fecha = tbfecha.Text;
+
+                TheGym k = new TheGym
                 {
-                    //si al contar las filas del data table tenemos uno, el login es correcto
-                    //verificamos si es un admin o empleado
-                    if (dat.Rows[0][0].ToString() == "3" | dat.Rows[0][0].ToString() == "4" | dat.Rows[0][0].ToString() == "5" | dat.Rows[0][0].ToString() == "6")
+                    FechaIdDetCaja = fecha
+                };
+
+                DataTable dt = new DataTable();
+                dt = k.GetEstadoDetCaja();
+
+                if (dt.Rows.Count == 0)
+                {
+                    dt = k.GetIdDetCaja();
+                    id = dt.Rows[0][0].ToString();
+                    k.FK_det_caja = id;
+                    DataTable dt1 = new DataTable();
+                    dt1 = k.CierreDeCaja();
+                    
+                    if (dt1.Rows.Count > 0)
                     {
-                        lblerror.Text = "Ya se realizó el cierre de caja diaria.";
+                        GridView1.DataSource = dt;
+                        GridView1.DataBind();
+                        lblmonto.Visible = true;
+                        tbmonto0.Visible = true;
+                        tbmonto0.Text = GridView1.Rows[0].Cells[0].Text;
+                    }
+                    else
+                    {
+                        lblerror.Text = "Error en movimientos de caja";
                     }
                 }
                 else
                 {
-                    if (tbmonto.Text == string.Empty)
-                    {
-                        lblerror.Text = "Se debe ingresar un monto";
-                        lblerror.Visible = true;
-                    }
-                    else
-                    {
-                        TheGym k = new TheGym
-                        {
-                            FK_empleado = id,
-                            Estadocaja = tbestado.Text,
-                            FechaCaja = tbfecha.Text,
-                            Monto = tbmonto.Text
-                        };
-
-                        k.AperturaDeCaja();
-                    }
+                    lblerror.Text = "Caja ya cerrada";
                 }
-
             }
-            catch (Exception ex)
+            catch
             {
-                lblerror.Text = ex.Message.ToString();
-
+                lblerror.Text = "ERROR TOTAL";
             }
-
 
         }
 
