@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CierreCaja.aspx" />
     <Content Include="ConsultaActividades.aspx" />
     <Content Include="Consultarclientes.aspx" />
     <Content Include="ConsultarEmpleados.aspx" />
@@ -105,11 +106,19 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="AperturaCaja.aspx" />
     <Content Include="WebGerenteInicio.aspx" />
     <Content Include="WebInicioempleado.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLayer\TheGym.cs" />
+    <Compile Include="CierreCaja.aspx.cs">
+      <DependentUpon>CierreCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CierreCaja.aspx.designer.cs">
+      <DependentUpon>CierreCaja.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaActividades.aspx.cs">
       <DependentUpon>ConsultaActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -205,6 +214,13 @@
     </Compile>
     <Compile Include="RegistrarSucursales.aspx.designer.cs">
       <DependentUpon>RegistrarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AperturaCaja.aspx.cs">
+      <DependentUpon>AperturaCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AperturaCaja.aspx.designer.cs">
+      <DependentUpon>AperturaCaja.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGerenteInicio.aspx.cs">
       <DependentUpon>WebGerenteInicio.aspx</DependentUpon>
