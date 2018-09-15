@@ -55,12 +55,16 @@ namespace thegym19_08
             dt = k.GetAllPlans();
             if (dt.Rows.Count > 0)
             {
-                DdlPlan.Items.Add("Seleccione...");
-                DdlPlan.DataSource = dt;
+                //DdlPlan.Items.Add("Seleccione...");
+                //DdlPlan.DataSource = dt;
                 DdlPlan.DataTextField = "Nombre";
                 DdlPlan.DataValueField = "Id_plan";
-                //DdlPlan.DataSource = dt;
+                
+                DdlPlan.DataSource = dt;
                 DdlPlan.DataBind();
+                // DdlPlan.Items.Add("Seleccione...");
+                DdlPlan.Items.Insert(0, "Seleccione...");
+
             }
         }
 
@@ -133,13 +137,29 @@ namespace thegym19_08
             DdlMedioPago.Visible = true;
             GetAllMedioPago();
             aux = DdlPlan.SelectedValue;
-            TheGym k = new TheGym
+            if (aux != "Seleccione...")
             {
-                IdPlanMonto = aux
-            };
-            DataTable dt = new DataTable();
-            dt = k.GetTotalPlan();
-            TxTotal.Text = dt.Rows[0][0].ToString();
+                TheGym k = new TheGym
+                {
+                    IdPlanMonto = aux
+                };
+                DataTable dt = new DataTable();
+                dt = k.GetTotalPlan();
+                TxTotal.Text = dt.Rows[0][0].ToString();
+            }
+            else
+            {
+                TxTotal.Text = "";
+                LblMedioPago.Visible = false;
+                DdlMedioPago.Visible = false;
+            }
+            //TheGym k = new TheGym
+            //{
+            //    IdPlanMonto = aux
+            //};
+            //DataTable dt = new DataTable();
+            //dt = k.GetTotalPlan();
+            //TxTotal.Text = dt.Rows[0][0].ToString();
         }
 
         //public int GetIdDetCaja (string fecha)
@@ -165,23 +185,46 @@ namespace thegym19_08
 
         protected void BtnAceptar_Click(object sender, EventArgs e)
         {
-            int ID;
+            string ID;
             DataTable dt = new DataTable();
             TheGym k = new TheGym
             {
                 FechaIdDetCaja = TxFecha.Text
             };
             dt = k.GetEstadoDetCaja();
-            if (dt.Rows.Count > 0)
+            if (dt.Rows.Count <1)
             {
-                dt = k.GetIdProfesor();
-                ID = Convert.ToInt32(dt.Rows[0][0].ToString());
-                
+                //dt = ;
+                //ID = Session["IdSession"]; GetIdDetCaja
+                //ID = 3;
+                DataTable dt1 = new DataTable();
+                dt1 = k.GetEstadoDetCajaAP();
+                if (dt1.Rows.Count>0)
+                {
+                    DataTable dt2 = new DataTable();
+                    dt2 = k.GetIdDetCaja();
+                    ID = dt2.Rows[0][0].ToString();
+                    k.FKDetCajaMov = ID;
+                    k.FKFormaPagoMov = DdlMedioPago.SelectedValue.ToString();
+                    k.EstadoMov = "Ingreso";
+                    k.ComprobanteMov = TxbComprobante.Text;
+                    k.MontoMov = TxTotal.Text;
+                    k.ConceptoMov = "Pago Plan";
+                    k.HoraMov = Convert.ToString(DateTime.Now.TimeOfDay);
 
+                    k.AddMovimientoCaja();
+                }
+                else
+                {
+                    LblError.Visible = true;
+                    LblError.Text = "Caja No Abierta";
+                    LblError.ForeColor = System.Drawing.Color.Red;
+                }
 
             }
             else
             {
+                LblError.Visible = true;
                 LblError.Text="Caja Cerrada";
                 LblError.ForeColor = System.Drawing.Color.Red;
             }

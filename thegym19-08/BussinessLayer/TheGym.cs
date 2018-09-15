@@ -127,6 +127,14 @@ namespace thegym19_08.BusinessLayer
         public string IdPlanMonto;
         //Variable para buscar ID det pla
         public string FechaIdDetCaja;
+        //variables para registrar movimiento de caja
+        public string FKFormaPagoMov;
+        public string FKDetCajaMov;
+        public string MontoMov;
+        public string EstadoMov;
+        public string ConceptoMov;
+        public string ComprobanteMov;
+        public string HoraMov;
 
 
         public DataTable GetAllCaja()
@@ -135,6 +143,19 @@ namespace thegym19_08.BusinessLayer
             parameters[0] = DataLayer.DataAccess.AddParameter("@Id_sucursal", IdSucursalCarga, SqlDbType.Int,50);
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetAllCaja", parameters);
             return dt;
+        }
+
+        public void AddMovimientoCaja()
+        {
+            SqlParameter[] parameters = new SqlParameter[7];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@FK_formapago", FKFormaPagoMov, SqlDbType.Int, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Monto", MontoMov, SqlDbType.Money, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Estado", EstadoMov, SqlDbType.NVarChar, 20);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Concepto", ConceptoMov, SqlDbType.NVarChar, 100);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@Comprobante", ComprobanteMov, SqlDbType.NVarChar, 50);
+            parameters[5] = DataLayer.DataAccess.AddParameter("@FK_DetCaja", FKDetCajaMov, SqlDbType.Int, 50);
+            parameters[6] = DataLayer.DataAccess.AddParameter("@Hora", HoraMov, SqlDbType.Time, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddMovCaja", parameters);
         }
 
         public DataTable GetAllSucursal()
@@ -430,6 +451,15 @@ namespace thegym19_08.BusinessLayer
             DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetEstadoDetCaja", parameters);
             return dt;
         }
+
+        public DataTable GetEstadoDetCajaAP()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@Fecha", FechaIdDetCaja, SqlDbType.Date, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetEstadoDetCajaAP", parameters);
+            return dt;
+        }
+
 
         public DataTable GetTotalPlan()
         {
