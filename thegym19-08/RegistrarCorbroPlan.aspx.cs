@@ -186,6 +186,8 @@ namespace thegym19_08
         protected void BtnAceptar_Click(object sender, EventArgs e)
         {
             string ID;
+            int auxiliar;
+            DateTime auxiliar1;
             DataTable dt = new DataTable();
             TheGym k = new TheGym
             {
@@ -199,7 +201,7 @@ namespace thegym19_08
                 //ID = 3;
                 DataTable dt1 = new DataTable();
                 dt1 = k.GetEstadoDetCajaAP();
-                if (dt1.Rows.Count>0)
+                if (dt1.Rows.Count > 0)
                 {
                     DataTable dt2 = new DataTable();
                     dt2 = k.GetIdDetCaja();
@@ -213,6 +215,19 @@ namespace thegym19_08
                     k.HoraMov = Convert.ToString(DateTime.Now.TimeOfDay);
 
                     k.AddMovimientoCaja();
+
+                    k.FechaCuota = TxFecha.Text;
+                    k.FK_clienteCuota = GridView1.SelectedRow.Cells[0].Text;
+                    k.FK_planCuota = DdlPlan.SelectedValue.ToString();
+                    k.MontoCuota = TxTotal.Text;
+                    DataTable aux1 = new DataTable();
+                    k.IDPlanVencimiento = DdlPlan.SelectedValue;
+                    aux1 = k.GetVencimiento();
+                    auxiliar = Convert.ToInt32(aux1.Rows[0][0].ToString());
+                    auxiliar1= Convert.ToDateTime(TxFecha.Text).AddDays(auxiliar);
+                    k.VencimientoCuota = Convert.ToString(auxiliar1);
+                    k.AddCuota();
+
                 }
                 else
                 {

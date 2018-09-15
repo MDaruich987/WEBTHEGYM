@@ -135,8 +135,34 @@ namespace thegym19_08.BusinessLayer
         public string ConceptoMov;
         public string ComprobanteMov;
         public string HoraMov;
+        //Variable para registrar Cuota
+        public string FK_planCuota;
+        public string MontoCuota;
+        public string FechaCuota;
+        public string VencimientoCuota;
+        public string FK_clienteCuota;
+        // varialbe para calcular vencimiento
+        public string IDPlanVencimiento;
 
 
+        public void AddCuota()
+        {
+            SqlParameter[] parameters = new SqlParameter[5];
+            parameters[0] = DataLayer.DataAccess.AddParameter("@FK_Plan", FK_planCuota, SqlDbType.Int, 50);
+            parameters[1] = DataLayer.DataAccess.AddParameter("@Monto", MontoCuota, SqlDbType.Money, 50);
+            parameters[2] = DataLayer.DataAccess.AddParameter("@Fecha", FechaCuota, SqlDbType.DateTime, 30);
+            parameters[3] = DataLayer.DataAccess.AddParameter("@Vencimiento", VencimientoCuota, SqlDbType.Date, 20);
+            parameters[4] = DataLayer.DataAccess.AddParameter("@FK_Cliente", FK_clienteCuota, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_AddCuota", parameters);
+        }
+
+        public DataTable GetVencimiento()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataLayer.DataAccess.AddParameter("Id_Plan", IDPlanVencimiento, SqlDbType.Int, 50);
+            DataTable dt = DataLayer.DataAccess.ExcecuteDTbyProcedure("PA_GetVencimiento", parameters);
+            return dt;
+        }
         public DataTable GetAllCaja()
         {
             SqlParameter[] parameters = new SqlParameter[1];
